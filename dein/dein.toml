@@ -9,6 +9,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
 
