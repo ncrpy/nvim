@@ -53,3 +53,4 @@ set wildmenu
 set ruler
 
 colorscheme molokai
+let g:airline_theme = 'molokai'
