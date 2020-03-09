@@ -1,4 +1,4 @@
-" Requires:
+" Required:
 set termguicolors
 
 set background=dark
