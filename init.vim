@@ -51,3 +51,5 @@ set showcmd
 set background=dark
 set wildmenu
 set ruler
+
+colorscheme molokai
