@@ -3,5 +3,5 @@ set termguicolors
 
 set background=dark
 
-colorscheme iceberg
+colorscheme gruvbox
 "let g:airline_theme = 'molokai'
