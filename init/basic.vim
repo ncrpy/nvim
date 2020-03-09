@@ -12,5 +12,24 @@ set autoindent
 set showcmd
 set wildmenu
 set ruler
-
-
+set showmatch
+set tabstop=4
+set shiftwidth=4
+set wildmenu
+set wildmode=full
+set hidden
+set backspace=indent,eol,start
+set showmatch
+set cursorline
+set mouse=a
+set encoding=utf-8
+set fileencodings=utf-8
+set autoread
+set splitbelow
+set splitright
+set list
+set lazyredraw
+set smarttab
+set smartindent
+set showmode
+set wrapscan
