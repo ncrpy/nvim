@@ -9,8 +9,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'sonph/onehalf'
-rtp = 'vim'
+repo = 'joshdick/onedark.vim'
 
 [[plugins]]
 repo = 'morhetz/gruvbox'

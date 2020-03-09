@@ -3,5 +3,5 @@ set termguicolors
 
 set background=dark
 
-colorscheme onehalfdark
+colorscheme onedark
 "let g:airline_theme = 'molokai'
