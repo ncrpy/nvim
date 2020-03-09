@@ -48,6 +48,6 @@ set smartcase
 set laststatus=2
 set autoindent
 set showcmd
-set bachground=dark
+set background=dark
 set wildmenu
 set ruler
