@@ -2,10 +2,6 @@ filetype plugin indent on
 syntax enable
 
 set number
-set hlsearch
-set ignorecase
-set incsearch
-set smartcase
 set laststatus=2
 set showcmd
 set wildmenu
@@ -15,7 +11,6 @@ set wildmenu
 set wildmode=full
 set hidden
 set backspace=indent,eol,start
-set showmatch
 set cursorline
 set mouse=a
 set encoding=utf-8
@@ -26,4 +21,4 @@ set splitright
 set list
 set lazyredraw
 set showmode
-set wrapscan
+

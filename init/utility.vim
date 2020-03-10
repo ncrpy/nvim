@@ -1,3 +1,9 @@
+set ignorecase
+set smartcase
+set incresearch
+set hlsearch
+set wrapscan
+
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
