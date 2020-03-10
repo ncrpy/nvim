@@ -4,6 +4,9 @@ set incsearch
 set hlsearch
 set wrapscan
 
+set wildmenu
+set wildmode=list:longest,full
+
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
