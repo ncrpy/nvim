@@ -2,7 +2,6 @@ filetype plugin indent on
 syntax enable
 
 set number
-set expandtab
 set hlsearch
 set ignorecase
 set incsearch
@@ -13,8 +12,6 @@ set showcmd
 set wildmenu
 set ruler
 set showmatch
-set tabstop=4
-set shiftwidth=4
 set wildmenu
 set wildmode=full
 set hidden
@@ -29,7 +26,5 @@ set splitbelow
 set splitright
 set list
 set lazyredraw
-set smarttab
-set smartindent
 set showmode
 set wrapscan
