@@ -1,6 +1,6 @@
 set ignorecase
 set smartcase
-set incresearch
+set incsearch
 set hlsearch
 set wrapscan
 
