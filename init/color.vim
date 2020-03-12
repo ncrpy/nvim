@@ -5,5 +5,5 @@ set termguicolors
 set cursorline
 set background=dark
 
-colorscheme gruvbox
-"let g:airline_theme = 'molokai'
+colorscheme onedark
+let g:airline_theme = 'molokai'
