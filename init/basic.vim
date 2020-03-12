@@ -5,6 +5,7 @@ set fileencodings=utf-8
 
 set hidden
 set autoread
+autocmd CursorHold * checktime
 
 set number
 set ruler

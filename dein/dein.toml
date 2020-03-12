@@ -25,3 +25,36 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-airline.vim'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-fugitive.vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.vim'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-commentary.vim'
+
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.vim'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
