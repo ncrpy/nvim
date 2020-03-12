@@ -20,6 +20,7 @@ repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-airline.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'

@@ -14,6 +14,7 @@ set list
 set laststatus=2
 set showcmd
 set showmode
+set ambiwidth=double
 
 set showmatch
 set matchtime=1
