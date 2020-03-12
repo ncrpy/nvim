@@ -13,13 +13,17 @@ set list
 
 set laststatus=2
 set showcmd
-set wildmenu
-set showmatch
+set showmode
 
-set backspace=indent,eol,start
-set mouse=a
+set showmatch
+set matchtime=1
+set matchpairs& matchpairs+=<:>
+
 set splitbelow
 set splitright
 set lazyredraw
-set showmode
+
+set backspace=indent,eol,start
+set whichwrap=b,s,h,l,<,>,[,],~
+set mouse=a
 set virtualedit=onemore
