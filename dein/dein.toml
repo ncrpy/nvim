@@ -37,7 +37,14 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.vim'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 [[plugins]]
 repo = 'tpope/vim-repeat'
@@ -49,5 +56,4 @@ repo = 'sheerun/vim-polyglot'
 repo = 'dense-analysis/ale'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.vim'
 
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
+
