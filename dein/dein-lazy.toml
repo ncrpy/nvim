@@ -4,6 +4,11 @@ on_event = ['InsertEnter']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.vim'
 
 [[plugins]]
+repo = 'cohama/lexima.vim'
+on_event = ['InsertEnter']
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/lexima.vim'
+
+[[plugins]]
 repo = 'osyo-manga/vim-anzu'
 on_event = ['CmdlineEnter']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-anzu.vim'

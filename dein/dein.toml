@@ -50,9 +50,6 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-commentary.vim'
 repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
-repo = 'cohama/lexima.vim'
-
-[[plugins]]
 repo = 'dense-analysis/ale'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.vim'
 
