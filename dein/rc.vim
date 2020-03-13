@@ -29,9 +29,4 @@ endif
 filetype plugin indent on
 syntax enable
 
-" Install not-installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
 "End dein Scripts-------------------------
