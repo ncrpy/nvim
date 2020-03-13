@@ -25,6 +25,11 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-airline.vim'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
+" [[plugins]]
+" repo = 'Shougo/denite.nvim'
+" hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/denite.vim'
+" Too early to earn dark power...
+
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-fugitive.vim'
