@@ -43,10 +43,6 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.vim'
 repo = 'tpope/vim-repeat'
 
 [[plugins]]
-repo = 'tpope/vim-commentary'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-commentary.vim'
-
-[[plugins]]
 repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
