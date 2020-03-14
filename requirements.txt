@@ -1,6 +1,12 @@
+entrypoints==0.3
+flake8==3.7.9
+flake8-import-order==0.18.1
 greenlet==0.4.15
 jedi==0.16.0
+mccabe==0.6.1
 msgpack==1.0.0
 parso==0.6.2
 pkg-resources==0.0.0
+pycodestyle==2.5.0
+pyflakes==2.1.1
 pynvim==0.4.1
