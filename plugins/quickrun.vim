@@ -1,20 +1,20 @@
 let g:quickrun_config = {}
-let g:quickrun_config = {
-    \ 'runmode': "async:remote:vimproc",
-    \ }
-let g:quickrun_config['*'] = {
+
+" let g:quickrun_config['*'] = {
+"      \ 'runmode': "async:remote:vimproc",
+"      \ }
+
+let g:quickrun_config._ = {
     \ 'outputter/error/success': 'buffer',
     \ 'outputter/error/error': 'quickfix',
-    \ 'outputter/quickfix/open_cmd': 'copen',
     \ 'runner': 'vimproc',
-    \ 'runner/vimproc/updatetime': 60,
+    \ 'runner/vimproc/updatetime': 10,
     \ 'hook/time/enable': 1
     \ }
 
-" おまけの設定 for Python
+" for Python
 let g:quickrun_config.python = {
-    \ 'command': '~/.pyenv/shims/python',  " pyenvでインストールしたPythonを使う
-    \ 'cmdopt': '-u'  " 標準出力を都度表示する
+    \ 'cmdopt': '-u'
     \ }
 
 nnoremap <Leader>qr :<C-U>QuickRun<CR>
