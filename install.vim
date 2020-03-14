@@ -7,3 +7,6 @@ endif
 call map(dein#check_clean(), "delete(v:val, 'rf')")
 call dein#recache_runtimepath()
 
+" Update plugins on startup.
+call dein#clear_state()
+call dein#update()

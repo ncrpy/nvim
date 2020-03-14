@@ -20,19 +20,23 @@ repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-airline.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/airline.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
-" [[plugins]]
-" repo = 'Shougo/denite.nvim'
-" hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/denite.vim'
-" Too early to earn dark power...
+# [[plugins]]
+# repo = 'Shougo/denite.nvim'
+# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/denite.vim'
+# Too early to earn dark power...
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-fugitive.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/fugitive.vim'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -61,4 +65,7 @@ repo = 'sheerun/vim-polyglot'
 repo = 'dense-analysis/ale'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.vim'
 
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/quickrun.vim'
 

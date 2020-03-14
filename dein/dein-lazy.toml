@@ -6,7 +6,7 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.vim'
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/jedi-vim.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/jedi.vim'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -16,4 +16,4 @@ hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/lexima.vim'
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
 on_event = 'CmdlineEnter'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-anzu.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/anzu.vim'
