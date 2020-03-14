@@ -17,5 +17,7 @@ let g:quickrun_config.python = {
     \ 'cmdopt': '-u'
     \ }
 
-nnoremap <Leader>qr :<C-U>QuickRun<CR>
-xnoremap <Leader>qr gv:<C-U>QuickRun<CR>
+nnoremap <silent> qr :<C-u>QuickRun -mode n -input =@+<CR>
+vnoremap <silent> qr :<C-u>QuickRun -mode v -input =@+<CR>
+nnoremap <silent> qi :<C-u>QuickRun -mode n -input in<CR>
+vnoremap <silent> qi :<C-u>QuickRun -mode v -input in<CR>
