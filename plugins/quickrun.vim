@@ -7,6 +7,7 @@ let g:quickrun_config = {}
 let g:quickrun_config._ = {
     \ 'outputter/error/success': 'buffer',
     \ 'outputter/error/error': 'quickfix',
+    \ 'outputter/buffer/split': '10',
     \ 'runner': 'vimproc',
     \ 'runner/vimproc/updatetime': 10,
     \ 'hook/time/enable': 1

@@ -9,3 +9,4 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
 endfunction
 
 let g:NERDTreeLimitedSyntax = 1
+let g:NERDTreeWinSize=24
