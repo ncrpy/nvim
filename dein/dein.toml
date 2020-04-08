@@ -69,3 +69,5 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.vim'
 repo = 'thinca/vim-quickrun'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/quickrun.vim'
 
+[[plugins]]
+repo = 'lervag/vimtex'
