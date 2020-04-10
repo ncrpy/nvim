@@ -70,4 +70,8 @@ repo = 'thinca/vim-quickrun'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/quickrun.vim'
 
 [[plugins]]
+repo = 'kassio/neoterm'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/neoterm.vim'
+
+[[plugins]]
 repo = 'lervag/vimtex'

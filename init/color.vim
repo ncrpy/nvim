@@ -6,3 +6,4 @@ set cursorline
 set background=dark
 
 colorscheme onedark
+

@@ -11,4 +11,8 @@ nnoremap <silent>bn :bnext<CR>
 nnoremap <silent>bb :b#<CR>
 nnoremap <silent>bd :bdelete<CR>
 
+nnoremap ; :
+
 cnoremap w!! w !sudo tee > /dev/null %<CR> :e!<CR>
+
+tnoremap <silent> <ESC> <C-\><C-n>
