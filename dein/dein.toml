@@ -74,4 +74,6 @@ repo = 'kassio/neoterm'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/neoterm.vim'
 
 [[plugins]]
-repo = 'lervag/vimtex'
+repo = 'Shougo/neosnippet-snippets'
+
+
