@@ -1,10 +1,10 @@
 nnoremap <C-c><C-c> :nohlsearch<CR><C-c>
 nnoremap <silent>sh :botright vsplit<Bar>:terminal<CR>
 
-nnoremap <silent>bp :bprevious<CR>
-nnoremap <silent>bn :bnext<CR>
-nnoremap <silent>bb :b#<CR>
-nnoremap <silent>bd :bdelete<CR>
+nnoremap <silent> <C-b>p :bprevious<CR>
+nnoremap <silent> <C-b>n :bnext<CR>
+nnoremap <silent> <C-b>b :b#<CR>
+nnoremap <silent> <C-b>d :bdelete<CR>
 
 nnoremap ; :
 
