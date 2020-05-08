@@ -20,14 +20,18 @@ repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/airline.vim'
+hook_add = 'call Source("airline.vim")'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
+[[plugins]]
+repo = 'neovim/nvim-lsp'
+hook_add = 'call Source("nvim-lsp.vim")'
+
 # [[plugins]]
 # repo = 'Shougo/denite.nvim'
-# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/denite.vim'
+# hook_post_source = 'call Source("denite.vim")'
 # Too early to earn dark power...
 
 [[plugins]]
@@ -36,7 +40,7 @@ build = 'make'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/fugitive.vim'
+hook_add = 'call Source("fugitive.vim")'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -47,7 +51,7 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.vim'
+hook_add = 'call Source("nerdtree.vim")'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
@@ -63,15 +67,15 @@ repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 repo = 'dense-analysis/ale'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.vim'
+hook_add = 'call Source("ale.vim")'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/quickrun.vim'
+hook_add = 'call Source("quickrun.vim")'
 
 [[plugins]]
 repo = 'kassio/neoterm'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/neoterm.vim'
+hook_add = 'call Source("neoterm.vim")'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
