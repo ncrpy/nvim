@@ -20,14 +20,14 @@ repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
-hook_add = 'call Source("airline.vim")'
+hook_add = 'Source airline.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'neovim/nvim-lsp'
-hook_add = 'call Source("nvim-lsp.vim")'
+hook_add = 'Source nvim-lsp.vim'
 
 # [[plugins]]
 # repo = 'Shougo/denite.nvim'
@@ -40,7 +40,7 @@ build = 'make'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-hook_add = 'call Source("fugitive.vim")'
+hook_add = 'Source fugitive.vim'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -51,7 +51,7 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
-hook_add = 'call Source("nerdtree.vim")'
+hook_add = 'Source nerdtree.vim'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
@@ -67,15 +67,15 @@ repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 repo = 'dense-analysis/ale'
-hook_add = 'call Source("ale.vim")'
+hook_add = 'Source ale.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-hook_add = 'call Source("quickrun.vim")'
+hook_add = 'Source quickrun.vim'
 
 [[plugins]]
 repo = 'kassio/neoterm'
-hook_add = 'call Source("neoterm.vim")'
+hook_add = 'Source neoterm.vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
