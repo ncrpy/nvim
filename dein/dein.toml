@@ -31,12 +31,17 @@ hook_add = 'Source nvim-lsp.vim'
 
 # [[plugins]]
 # repo = 'Shougo/denite.nvim'
-# hook_post_source = 'call Source("denite.vim")'
-# Too early to earn dark power...
+# hook_add = 'Source denite.vim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
+
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# rev = 'next'
+# build = 'bash install.sh'
+# hook_add = 'Source LanguageClient.vim'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'

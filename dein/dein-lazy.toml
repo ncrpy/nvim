@@ -3,17 +3,24 @@ repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
 hook_source = 'Source deoplete.vim'
 
+[[plugins]]
+repo = 'Shougo/deoplete-lsp'
+on_event = 'InsertEnter'
+depends = ['nvim-lsp', 'deoplete.nvim']
+
 # [[plugins]]
 # repo = 'Shougo/neosnippet'
 # on_ft = ['snippet']
 # on_event = 'InsertEnter'
 # hook_post_source = 'call Source("neosnippet.vim")'
-# depends = ['neosnippet-snippets']
 
 [[plugins]]
-repo = 'davidhalter/jedi-vim'
+repo = 'deoplete-plugins/deoplete-jedi'
 on_ft = ['python']
-hook_add = 'Source jedi.vim'
+
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
+# on_ft = ['python']
 
 [[plugins]]
 repo = 'lervag/vimtex'

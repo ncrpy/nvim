@@ -16,6 +16,10 @@ let g:ale_python_black_executable = g:python3_host_prog
 let g:ale_python_black_options = '-m black'
 
 let g:ale_fix_on_save = 1
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:airline#extensions#ale#enabled = 1
 
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-S-j> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
