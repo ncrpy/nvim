@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
-hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.vim'
 
 # [[plugins]]
 # repo = 'Shougo/neosnippet'
