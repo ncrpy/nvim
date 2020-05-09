@@ -9,6 +9,7 @@ nnoremap <silent> <C-b>d :bdelete<CR>
 nnoremap ; :
 
 inoremap <silent><C-j> <ESC>
+vnoremap <silent><C-j> <ESC>
 
 cnoremap w!! :w !sudo tee > /dev/null %<CR>
 
