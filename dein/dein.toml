@@ -37,12 +37,6 @@ hook_add = 'Source nvim-lsp.vim'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-# [[plugins]]
-# repo = 'autozimu/LanguageClient-neovim'
-# rev = 'next'
-# build = 'bash install.sh'
-# hook_add = 'Source LanguageClient.vim'
-
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = 'Source fugitive.vim'
