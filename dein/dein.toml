@@ -54,6 +54,7 @@ hook_add = 'Source nerdtree.vim'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+hook_add = 'Source vim-devicons.vim'
 
 [[plugins]]
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
