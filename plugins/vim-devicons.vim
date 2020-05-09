@@ -1,5 +1,6 @@
-let s:file_node_extensions = {
-        \ 'tex'     : '󿭨',
-        \ 'r'       : '󿳒',
-        \ 'rproj'   : '󿫅'
-}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {
+        \ 'tex'      : '󿭨',
+        \ 'r'        : '󿳒',
+        \ 'rproj'    : '󿫅'
+        \}
