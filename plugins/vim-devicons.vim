@@ -1,5 +1,5 @@
 let s:file_node_extensions = {
-        \ 'tex'     : '󿭨'
-        \ 'r'       : '󿳒'
+        \ 'tex'     : '󿭨',
+        \ 'r'       : '󿳒',
         \ 'rproj'   : '󿫅'
 }
