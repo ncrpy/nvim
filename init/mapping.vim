@@ -11,6 +11,8 @@ nnoremap ; :
 inoremap <silent><C-j> <ESC>
 vnoremap <silent><C-j> <ESC>
 
+inoremap <C-l> <C-g>U<Right>
+
 cnoremap w!! :w !sudo tee > /dev/null %<CR>
 
 tnoremap <silent> <ESC> <C-\><C-n>

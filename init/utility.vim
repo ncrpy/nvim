@@ -16,3 +16,6 @@ set expandtab
 set smarttab
 set autoindent
 set smartindent
+
+set listset
+set listchars=tab:»-,trail:-,nbsp:%,eol:↲
