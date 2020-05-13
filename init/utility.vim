@@ -17,5 +17,5 @@ set smarttab
 set autoindent
 set smartindent
 
-set listset
+set list
 set listchars=tab:»-,trail:-,nbsp:%,eol:↲
