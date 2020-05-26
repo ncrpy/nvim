@@ -15,5 +15,5 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " For conceal markers.
 if has('conceal')
-  set conceallevel=1 concealcursor=
+  set conceallevel=2 concealcursor=
 endif
