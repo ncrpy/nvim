@@ -5,9 +5,9 @@ set termguicolors
 set cursorline
 set background=dark
 
-colorscheme gruvbox
+colorscheme molokai
 
 set list
 set listchars=tab:»-,trail:-,nbsp:%,eol:↲
-highlight NonText ctermfg=darkcyan guifg=darkcyan
-highlight SpecialKey ctermfg=darkcyan guifg=darkcyan
+highlight NonText ctermfg=81 guifg=#66D9EF
+highlight SpecialKey ctermfg=81 guifg=#66D9EF
