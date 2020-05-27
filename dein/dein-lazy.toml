@@ -24,6 +24,10 @@ on_ft = ['tex']
 hook_add = 'Source vimtex.vim'
 
 [[plugins]]
+repo = 'KeitaNakamura/tex-conceal.vim'
+on_ft = ['tex']
+
+[[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 hook_post_source = 'Source lexima.vim'
