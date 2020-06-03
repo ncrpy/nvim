@@ -12,4 +12,4 @@ endfunction
 runtime! dein/*.vim
 runtime! init/*.vim
 
-" runtime! install.vim
+runtime! install.vim

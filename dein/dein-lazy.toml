@@ -20,12 +20,9 @@ on_ft = ['python']
 
 [[plugins]]
 repo = 'lervag/vimtex'
-on_ft = ['tex']
+on_ft = ['tex', 'latex']
+merged = 0
 hook_add = 'Source vimtex.vim'
-
-[[plugins]]
-repo = 'KeitaNakamura/tex-conceal.vim'
-on_ft = ['tex']
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
