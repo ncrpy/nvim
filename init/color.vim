@@ -5,7 +5,7 @@ set termguicolors
 set cursorline
 set background=dark
 
-colorscheme gruvbox
+colorscheme molokai
 
 set list
 set listchars=tab:»-,trail:-,nbsp:%,eol:↲
