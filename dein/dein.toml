@@ -80,5 +80,7 @@ hook_add = 'Source neoterm.vim'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
-
+[[plugins]]
+repo = 'goerz/jupytext.vim'
+hook_add = 'Source jupytext.vim'
 
