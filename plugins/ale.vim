@@ -3,6 +3,9 @@ let g:ale_linters = {
     \ }
 
 let g:ale_fixers = {
+    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \ 'c': ['clang-format'],
+    \ 'cpp': ['clang-format'],
     \ 'python': ['autopep8', 'black', 'isort'],
     \ }
 
@@ -15,7 +18,7 @@ let g:ale_python_isort_options = '-m isort'
 let g:ale_python_black_executable = g:python3_host_prog
 let g:ale_python_black_options = '-m black'
 
-let g:ale_disable_lsp = 1
+" let g:ale_disable_lsp = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
