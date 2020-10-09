@@ -29,7 +29,7 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'neoclide/coc.nvim'
 merged = 0
 rev = 'release'
-hook_add = 'Source coc.nvim'
+hook_add = 'Source coc.vim'
 
 # [[plugins]]
 # repo = 'neovim/nvim-lspconfig'
