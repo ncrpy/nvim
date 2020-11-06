@@ -18,6 +18,8 @@ let g:ale_python_isort_options = '-m isort'
 let g:ale_python_black_executable = g:python3_host_prog
 let g:ale_python_black_options = '-m black'
 
+let g:ale_c_clangformat_options = '-style="{IndentWidth: 4}"'
+
 " let g:ale_disable_lsp = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = ''
