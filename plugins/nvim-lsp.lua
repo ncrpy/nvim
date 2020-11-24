@@ -1,4 +1,4 @@
-require'nvim_lsp'.clangd.setup{}
-require'nvim_lsp'.pyls.setup{}
-require'nvim_lsp'.texlab.setup{}
-require'nvim_lsp'.r_language_server.setup{}
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.pyls.setup{}
+require'lspconfig'.texlab.setup{}
+require'lspconfig'.r_language_server.setup{}
