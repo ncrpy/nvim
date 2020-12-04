@@ -51,6 +51,14 @@ hook_add = 'Source fugitive.vim'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = 'Source rainbow.vim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = 'Source indentline.vim'
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
