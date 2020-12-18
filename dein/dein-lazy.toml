@@ -6,7 +6,7 @@ hook_source = 'Source deoplete.vim'
 [[plugins]]
 repo = 'Shougo/deoplete-lsp'
 on_event = 'InsertEnter'
-depends = ['nvim-lsp', 'deoplete.nvim']
+depends = ['nvim-lspconfig', 'deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
