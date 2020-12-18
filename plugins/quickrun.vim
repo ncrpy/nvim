@@ -15,8 +15,12 @@ let g:quickrun_config._ = {
 
 " for Python
 let g:quickrun_config.python = {
-    \ 'cmdopt': '-u'
+    \ 'command': $VIRTUAL_ENV.'/bin/python',
+    \ 'cmdopt': '-u',
     \ }
+if isdirectory($VIRTUAL_ENV)
+    let g:quickrun_config.python['command'] = $VIRTUAL_ENV.'/bin/python'
+endif
 
 nnoremap <silent> qr :<C-u>QuickRun -mode n -input =@+<CR>
 vnoremap <silent> qr :<C-u>QuickRun -mode v -input =@+<CR>
