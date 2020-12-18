@@ -14,14 +14,13 @@ on_ft = ['snippet']
 on_event = 'InsertEnter'
 hook_post_source = 'Source neosnippet.vim'
 
-[[plugins]]
-repo = 'deoplete-plugins/deoplete-jedi'
-on_ft = ['python']
+# [[plugins]]
+# repo = 'deoplete-plugins/deoplete-jedi'
+# on_ft = ['python']
 
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex', 'latex']
-merged = 0
 hook_add = 'Source vimtex.vim'
 
 [[plugins]]
