@@ -19,11 +19,6 @@ hook_post_source = 'Source neosnippet.vim'
 # on_ft = ['python']
 
 [[plugins]]
-repo = 'lervag/vimtex'
-on_ft = ['tex', 'latex']
-hook_add = 'Source vimtex.vim'
-
-[[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
 on_ft = ['python']
 hook_add = 'Source virtualenv.vim'
@@ -36,6 +31,11 @@ on_ft = ['python']
 repo = 'hanschen/vim-ipython-cell'
 on_ft = ['python']
 hook_add = 'Source vim-ipython-cell.vim'
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex', 'latex']
+hook_add = 'Source vimtex.vim'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
