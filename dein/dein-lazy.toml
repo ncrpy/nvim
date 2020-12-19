@@ -38,6 +38,12 @@ on_ft = ['tex', 'latex']
 hook_add = 'Source vimtex.vim'
 
 [[plugins]]
+repo = 'jalvesaq/Nvim-R'
+on_ft = ['r', 'rmd']
+branch = 'stable'
+hook_add = 'Source Nvim-R.vim'
+
+[[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 hook_post_source = 'Source lexima.vim'
