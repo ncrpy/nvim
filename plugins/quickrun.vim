@@ -15,14 +15,13 @@ let g:quickrun_config._ = {
 
 " for Python
 let g:quickrun_config.python = {
-    \ 'command': $VIRTUAL_ENV.'/bin/python',
     \ 'cmdopt': '-u',
     \ }
 if isdirectory($VIRTUAL_ENV)
     let g:quickrun_config.python['command'] = $VIRTUAL_ENV.'/bin/python'
 endif
 
-nnoremap <silent> qr :<C-u>QuickRun -mode n -input =@+<CR>
-vnoremap <silent> qr :<C-u>QuickRun -mode v -input =@+<CR>
-nnoremap <silent> qi :<C-u>QuickRun -mode n -input in<CR>
-vnoremap <silent> qi :<C-u>QuickRun -mode v -input in<CR>
+nnoremap <silent> <leader>qr :<C-u>QuickRun -mode n -input =@+<CR>
+vnoremap <silent> <leader>qr :<C-u>QuickRun -mode v -input =@+<CR>
+nnoremap <leader>qi :<C-u>QuickRun -mode n -input 
+vnoremap <leader>qi :<C-u>QuickRun -mode v -input 
