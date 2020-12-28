@@ -32,4 +32,3 @@ set virtualedit=onemore
 set virtualedit+=block
 
 set clipboard+=unnamedplus
-
