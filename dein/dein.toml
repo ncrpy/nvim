@@ -2,20 +2,7 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'tomasr/molokai'
-hook_add = '''
-  let g:molokai_original = 1
-  let g:rehash256 = 1
-'''
-
-[[plugins]]
-repo = 'joshdick/onedark.vim'
-
-[[plugins]]
-repo = 'morhetz/gruvbox'
-
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
+repo = 'rafi/awesome-vim-colorschemes'
 
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
