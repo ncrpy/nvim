@@ -1,18 +1,21 @@
 nnoremap <C-c><C-c> :nohlsearch<CR><C-c>
 nnoremap <silent>sh :botright vsplit<Bar>:terminal<CR>
 
-nnoremap <silent> bad :enew<CR>
-nnoremap <silent> bn :bnext<CR>
-nnoremap <silent> bp :bprevious<CR>
-nnoremap <silent> bb :b#<CR>
-nnoremap <silent> bf :bfirst<CR>
-nnoremap <silent> bl :blast<CR>
-nnoremap <silent> bm :bmodified<CR>
-nnoremap <silent> bd :bdelete<CR>
-nnoremap <silent> bD :bdelete!<CR>
-nnoremap <silent> bo :BufOnly<CR>
+nnoremap <silent> <leader>bad :enew<CR>
+nnoremap <silent> <leader>bn :bnext<CR>
+nnoremap <silent> <leader>bp :bprevious<CR>
+nnoremap <silent> <leader>bb :b#<CR>
+nnoremap <silent> <leader>bf :bfirst<CR>
+nnoremap <silent> <leader>bl :blast<CR>
+nnoremap <silent> <leader>bm :bmodified<CR>
+nnoremap <silent> <leader>bd :bdelete<CR>
+nnoremap <silent> <leader>bD :bdelete!<CR>
+nnoremap <silent> <leader>bo :BufOnly<CR>
+
+nnoremap <silent> <C-a> ggVG
 
 nnoremap ; :
+nnoremap : ;
 
 inoremap <silent><C-j> <ESC>
 vnoremap <silent><C-j> <ESC>
