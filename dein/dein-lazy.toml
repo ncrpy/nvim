@@ -19,9 +19,35 @@ on_ft = ['snippet']
 on_event = 'InsertEnter'
 hook_post_source = 'Source neosnippet.vim'
 
-# [[plugins]]
-# repo = 'deoplete-plugins/deoplete-jedi'
-# on_ft = ['python']
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = ['Denite']
+depends = ['vim-devicons', 'neomru.vim', 'neoyank.vim']
+hook_add = 'Source denite.vim'
+hook_post_source = 'Source denite-lazy.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_cmd = ['Denite']
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_cmd = ['Denite']
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+on_cmd = ['NERDTree']
+depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
+hook_add = 'Source nerdtree.vim'
+
+[[plugins]]
+on_cmd = ['NERDTree']
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+on_event = ['InsertEnter', 'CmdlineEnter']
+hook_add = 'Source ale.vim'
 
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
@@ -57,3 +83,21 @@ hook_post_source = 'Source lexima.vim'
 repo = 'osyo-manga/vim-anzu'
 on_event = 'CmdlineEnter'
 hook_add = 'Source anzu.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_event = 'CmdlineEnter'
+hook_source = 'Source fugitive.vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+on_event = 'CmdlineEnter'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+on_event = 'CmdlineEnter'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_event = 'CmdlineEnter'
+hook_add = 'Source quickrun.vim'
