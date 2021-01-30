@@ -15,6 +15,6 @@ let g:slime_dont_ask_default = 1
 xmap <F5> <Plug>SlimeRegionSend
 nmap <F5> <Plug>SlimeParagraphSend
 "" セルを実行
-nnoremap <F6> :IPythonCellExecuteCellVerbose<CR>
+nnoremap <F6> <silent> :IPythonCellExecuteCellVerbose<CR>
 "" セルを実行して次のセルへ移動
-nnoremap <C-M> :IPythonCellExecuteCellVerboseJump<CR>
+nnoremap <C-M> <silent> :IPythonCellExecuteCellVerboseJump<CR>
