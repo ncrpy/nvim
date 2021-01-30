@@ -15,7 +15,8 @@ nnoremap <silent> <leader>bo :BufOnly<CR>
 nnoremap <silent> <C-a> ggVG
 
 nnoremap ; :
-nnoremap : ;
+nnoremap ,. ;
+nnoremap ,, ,
 
 inoremap <silent><C-j> <ESC>
 vnoremap <silent><C-j> <ESC>
