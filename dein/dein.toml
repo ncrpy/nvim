@@ -61,6 +61,7 @@ repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+hook_add = 'Source polyglot.vim'
 
 [[plugins]]
 repo = 'dense-analysis/ale'
@@ -69,10 +70,6 @@ hook_add = 'Source ale.vim'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = 'Source quickrun.vim'
-
-[[plugins]]
-repo = 'kassio/neoterm'
-hook_add = 'Source neoterm.vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
