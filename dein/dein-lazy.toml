@@ -1,4 +1,9 @@
 [[plugins]]
+repo = 'neovim/nvim-lspconfig'
+on_event = 'ColorScheme'
+hook_source = 'Source nvim-lsp.vim'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
 hook_source = 'Source deoplete.vim'

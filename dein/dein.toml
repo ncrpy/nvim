@@ -18,10 +18,6 @@ repo = 'vim-airline/vim-airline-themes'
 # rev = 'release'
 # hook_add = 'Source coc.nvim'
 
-[[plugins]]
-repo = 'neovim/nvim-lspconfig'
-hook_add = 'Source nvim-lsp.vim'
-
 # [[plugins]]
 # repo = 'Shougo/denite.nvim'
 # hook_add = 'Source denite.vim'
