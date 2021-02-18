@@ -17,6 +17,9 @@ nnoremap <silent> <C-a> ggVG
 nnoremap ; :
 nnoremap ,. ;
 nnoremap ,, ,
+vnoremap ; :
+vnoremap ,. ;
+vnoremap ,, ,
 
 inoremap <silent><C-j> <ESC>
 vnoremap <silent><C-j> <ESC>
