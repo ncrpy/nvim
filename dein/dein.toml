@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+hook_add = 'Source dein.vim'
 
 [[plugins]]
 repo = 'rafi/awesome-vim-colorschemes'
@@ -16,8 +17,11 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
+# [[plugins]]
+# repo = 'Shougo/neosnippet-snippets'
+
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
+repo = 'ncrpy/mysnippets'
 
 # [[plugins]]
 # repo = 'neoclide/coc.nvim'
