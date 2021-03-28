@@ -36,7 +36,7 @@ pynvim==0.4.2
 pyrsistent==0.17.3
 python-jsonrpc-server==0.4.0
 python-language-server==0.35.1
-PyYAML==5.3.1
+PyYAML==5.4
 regex==2020.9.27
 six==1.15.0
 toml==0.10.1
