@@ -31,7 +31,7 @@ psutil==5.7.2
 ptyprocess==0.6.0
 pycodestyle==2.6.0
 pyflakes==2.2.0
-Pygments==2.7.1
+Pygments==2.7.4
 pynvim==0.4.2
 pyrsistent==0.17.3
 python-jsonrpc-server==0.4.0
