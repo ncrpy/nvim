@@ -28,7 +28,6 @@ inoremap <C-l> <C-g>U<Right>
 
 inoremap <C-d> <C-x><C-o>
 inoremap . .<C-x><C-o>
-inoremap <expr><CR> pumvisible() ? "<C-y>" : "<CR>"
 
 cnoremap w!! :w !sudo tee > /dev/null %<CR>
 
