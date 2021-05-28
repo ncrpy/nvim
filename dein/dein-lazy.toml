@@ -45,11 +45,6 @@ on_cmd = ['NERDTree']
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 [[plugins]]
-repo = 'dense-analysis/ale'
-on_event = ['InsertEnter', 'CmdlineEnter']
-hook_add = 'Source ale.vim'
-
-[[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
 on_ft = ['python']
 hook_add = 'Source virtualenv.vim'
