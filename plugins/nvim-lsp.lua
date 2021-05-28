@@ -10,7 +10,7 @@ if ft == "" then do end
 elseif contains({"c", "cpp"}, ft) then
     require'lspconfig'.clangd.setup{}
 elseif contains({"python"}, ft) then
-    require'lspconfig'.pyls.setup{}
+    require'lspconfig'.jedi_language_server.setup{}
     require'lspconfig'.pyright.setup{}
 elseif contains({"tex", "latex"}, ft) then
     require'lspconfig'.texlab.setup{}
