@@ -1,32 +1,20 @@
 call devicons#plugins#denite#init()
 
-" Define mappings
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select')
-  nnoremap <silent><buffer><expr> <BS>
-  \ denite#do_map('move_up_path')
-endfunction
+let s:denite_winwidth = 0.75
+let s:denite_winheight = 0.75
 
-autocmd FileType denite-filter call s:denite_filter_my_settings()
-function! s:denite_filter_my_settings() abort
-  imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
-endfunction
+" Change denite default options.
+call denite#custom#option('default', {
+    \ 'split': 'floating',
+    \ 'winwidth': float2nr(&columns * s:denite_winwidth),
+    \ 'wincol': float2nr((&columns * (1 - s:denite_winwidth)) / 2),
+    \ 'winheight': float2nr(&lines * s:denite_winheight),
+    \ 'winrow': float2nr((&lines * (1 - s:denite_winheight)) / 2),
+    \ })
 
 " Change file/rec command.
 call denite#custom#var('file/rec', 'command',
-\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+\ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
 
 " Change matchers.
 call denite#custom#source(
@@ -62,25 +50,6 @@ let s:menus.my_commands.command_candidates = [
 
 call denite#custom#var('menu', 'menus', s:menus)
 
-" Ag command on grep source
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_opts',
-        \ ['-i', '--vimgrep'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
-" Ack command on grep source
-call denite#custom#var('grep', 'command', ['ack'])
-call denite#custom#var('grep', 'default_opts',
-        \ ['--ackrc', $HOME.'/.ackrc', '-H', '-i',
-        \  '--nopager', '--nocolor', '--nogroup', '--column'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--match'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
 " Ripgrep command on grep source
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts',
@@ -88,23 +57,6 @@ call denite#custom#var('grep', 'default_opts',
 call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
-" Pt command on grep source
-call denite#custom#var('grep', 'command', ['pt'])
-call denite#custom#var('grep', 'default_opts',
-        \ ['-i', '--nogroup', '--nocolor', '--smart-case'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
-" jvgrep command on grep source
-call denite#custom#var('grep', 'command', ['jvgrep'])
-call denite#custom#var('grep', 'default_opts', ['-i'])
-call denite#custom#var('grep', 'recursive_opts', ['-R'])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', [])
 call denite#custom#var('grep', 'final_opts', [])
 
 " Specify multiple paths in grep source
