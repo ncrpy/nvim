@@ -23,5 +23,5 @@ endif
 
 nnoremap <silent> <Leader>r :<C-u>QuickRun -mode n -input =@+<CR>
 vnoremap <silent> <Leader>r :<C-u>QuickRun -mode v -input =@+<CR>
-nnoremap <Leader>i :<C-u>QuickRun -mode n -input
-vnoremap <Leader>i :<C-u>QuickRun -mode v -input
+nnoremap <Leader>i :<C-u>QuickRun -mode n -input 
+vnoremap <Leader>i :<C-u>QuickRun -mode v -input 
