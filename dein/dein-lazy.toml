@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 on_event = 'ColorScheme'
-hook_source = 'Source nvim-lsp.vim'
+hook_post_source = 'Source nvim-lsp.vim'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -96,3 +96,9 @@ on_event = 'CmdlineEnter'
 repo = 'thinca/vim-quickrun'
 on_event = 'CmdlineEnter'
 hook_add = 'Source quickrun.vim'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+do = ':TSUpdate'
+on_event = 'ColorScheme'
+hook_post_source = 'Source nvim-treesitter.vim'
