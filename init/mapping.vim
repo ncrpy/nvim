@@ -27,7 +27,7 @@ vnoremap <silent><C-j> <ESC>
 inoremap <C-l> <C-g>U<Right>
 
 inoremap <C-d> <C-x><C-o>
-inoremap . .<C-x><C-o>
+inoremap <expr> . &omnifunc ? '.<C-x><C-o>' : '.'
 
 cnoremap w!! :w !sudo tee > /dev/null %<CR>
 
