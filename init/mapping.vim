@@ -21,9 +21,6 @@ vnoremap ; :
 vnoremap ,. ;
 vnoremap ,, ,
 
-inoremap <silent><C-j> <ESC>
-vnoremap <silent><C-j> <ESC>
-
 inoremap <C-l> <C-g>U<Right>
 
 inoremap <C-d> <C-x><C-o>
