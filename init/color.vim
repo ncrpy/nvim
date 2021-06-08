@@ -14,7 +14,7 @@ augroup transparent_bg
     autocmd ColorScheme * highlight EndOfBuffer guibg=none
 augroup END
 
-autocmd VimEnter * nested colorscheme sonokai
+autocmd VimEnter * nested colorscheme onedark
 " colorscheme molokai
 " let g:molokai_original = 1
 " let g:rehash256 = 1
