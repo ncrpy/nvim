@@ -1,1 +1,1 @@
-let g:polyglot_disabled = ['ftdetect']
+let g:polyglot_disabled = ['autoindent','sensible','ftdetect']
