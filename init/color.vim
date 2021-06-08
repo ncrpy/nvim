@@ -5,7 +5,16 @@ set termguicolors
 set cursorline
 set background=dark
 
-autocmd VimEnter * nested colorscheme molokai
+augroup transparent_bg
+    autocmd!
+    autocmd ColorScheme * highlight Normal guibg=none
+    autocmd ColorScheme * highlight NonText guibg=none
+    autocmd ColorScheme * highlight LineNr guibg=none
+    autocmd ColorScheme * highlight Folded guibg=none
+    autocmd ColorScheme * highlight EndOfBuffer guibg=none
+augroup END
+
+autocmd VimEnter * nested colorscheme sonokai
 " colorscheme molokai
 " let g:molokai_original = 1
 " let g:rehash256 = 1
