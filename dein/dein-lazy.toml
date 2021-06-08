@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 on_event = 'ColorScheme'
-hook_post_source = 'Source nvim-lsp.vim'
+hook_source = 'Source nvim-lsp.vim'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -24,7 +24,7 @@ repo = 'Shougo/denite.nvim'
 on_cmd = ['Denite']
 depends = ['vim-devicons', 'neomru.vim', 'neoyank.vim']
 hook_add = 'Source denite.vim'
-hook_post_source = 'Source denite-lazy.vim'
+hook_source = 'Source denite-lazy.vim'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
@@ -100,4 +100,4 @@ hook_add = 'Source quickrun.vim'
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 on_event = 'ColorScheme'
-hook_post_source = 'Source nvim-treesitter.vim'
+hook_soruce = 'Source nvim-treesitter.vim'
