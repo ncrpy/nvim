@@ -51,3 +51,16 @@ let g:airline_right_alt_sep = '󾂵'
 
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#virtualenv#enabled = 1
+
+" for ale
+let g:airline#extensions#ale#enabled = 1
+let airline#extensions#ale#error_symbol = ' '
+let airline#extensions#ale#warning_symbol = ' '
+let airline#extensions#ale#show_line_numbers = 1
+let airline#extensions#ale#open_lnum_symbol = '(:'
+let airline#extensions#ale#close_lnum_symbol = ')'
+
+" for nvim-lsp
+let g:airline#extensions#nvimlsp#enabled = 1
+let airline#extensions#nvimlsp#error_symbol = ' '
+let airline#extensions#nvimlsp#warning_symbol = ' '

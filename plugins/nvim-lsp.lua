@@ -17,3 +17,12 @@ elseif contains({"tex", "latex"}, ft) then
 elseif contains({"r"}, ft) then
     require'lspconfig'.r_language_server.setup{}
 end
+
+vim.fn.sign_define("LspDiagnosticsSignError",
+    {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignWarning",
+    {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignInformation",
+    {text = ""})
+vim.fn.sign_define("LspDiagnosticsSignHint",
+    {text = ""})
