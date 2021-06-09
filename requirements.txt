@@ -15,7 +15,7 @@ ipython==7.23.1
 ipython-genutils==0.2.0
 isort==5.8.0
 jedi==0.18.0
-jedi-language-server==0.30.2
+jedi-language-server==0.31.1
 jsonschema==3.2.0
 jupyter-core==4.7.1
 jupytext==1.11.2
