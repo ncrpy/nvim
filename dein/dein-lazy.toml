@@ -27,6 +27,11 @@ hook_add = 'Source denite.vim'
 hook_source = 'Source denite-lazy.vim'
 
 [[plugins]]
+repo = 'tbodt/deoplete-tabnine'
+build = './install.sh'
+on_source = 'deoplete.nvim'
+
+[[plugins]]
 repo = 'Shougo/neomru.vim'
 on_cmd = ['Denite']
 
