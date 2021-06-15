@@ -12,7 +12,7 @@ if ft == "" then do end
 elseif contains({"c", "cpp"}, ft) then
     nvim_lsp.clangd.setup{}
 elseif contains({"python"}, ft) then
-    require'lspconfig'.jedi_language_server.setup{}
+    nvim_lsp.jedi_language_server.setup{}
     nvim_lsp.pyright.setup{}
 --    nvim_lsp.pylsp.setup{
 --        settings = {
@@ -41,23 +41,23 @@ elseif contains({"r"}, ft) then
 end
 nvim_lsp.efm.setup{
     init_options = {
-        documentFormatting = true
+        documentFormatting = false
     },
     filetypes = {"python"},
     settings = {
         languages = {
             python = {
                 {
-                    LintCommand = "flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
+                    LintCommand = vim.g.python3_host_prog.." -m flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
                     lintStdin = true,
                     lintFormats = {"%f:%l:%c: %m"}
                 },
 --                {
---                    formatCommand = venv_bin.."isort --quiet -",
+--                    formatCommand = vim.g.python3_host_prog.." -m isort --quiet -",
 --                    formatStdin = true
 --                },
 --                {
---                    formatCommand = venv_bin.."black --quiet -",
+--                    formatCommand = vim.g.python3_host_prog.." -m black --quiet -",
 --                    formatStdin = true
 --                }
             }

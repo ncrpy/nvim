@@ -12,6 +12,6 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
-" BUG - formatting duplicate the last line"
-" autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil,1000)
-" nnoremap <silent> ff <cmd>lua vim.lsp.buf.formatting_sync(nil,1000)<CR>
+" BUG - formatting duplicate the last line when it has fix"
+" autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
+" nnoremap <silent> ff <cmd>lua vim.lsp.buf.formatting()<CR>
