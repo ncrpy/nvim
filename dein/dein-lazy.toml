@@ -31,6 +31,14 @@ repo = 'tbodt/deoplete-tabnine'
 build = './install.sh'
 on_source = 'deoplete.nvim'
 
+# [[plugins]]
+# repo = 'Shougo/neosnippet-snippets'
+# on_source = 'neoosnippet'
+
+[[plugins]]
+repo = 'ncrpy/mysnippets'
+on_source = 'neosnippet'
+
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 on_cmd = ['Denite']

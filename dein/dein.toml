@@ -18,12 +18,6 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 # [[plugins]]
-# repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'ncrpy/mysnippets'
-
-# [[plugins]]
 # repo = 'neoclide/coc.nvim'
 # merged = 0
 # rev = 'release'
