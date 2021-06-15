@@ -54,4 +54,4 @@ set autoindent
 set smartindent
 
 set nofixeol
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
