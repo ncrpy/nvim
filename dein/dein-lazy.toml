@@ -54,8 +54,8 @@ depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
 hook_add = 'Source nerdtree.vim'
 
 [[plugins]]
-on_cmd = ['NERDTree']
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+on_source = 'nerdtree'
 
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
