@@ -73,3 +73,5 @@ vim.fn.sign_define("LspDiagnosticsSignInformation",
     {text = ""})
 vim.fn.sign_define("LspDiagnosticsSignHint",
     {text = ""})
+
+vim.api.nvim_set_keymap('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
