@@ -57,10 +57,10 @@ hook_add = 'Source nerdtree.vim'
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 on_source = 'nerdtree'
 
-[[plugins]]
-repo = 'glepnir/lspsaga.nvim'
-on_source = 'nvim-lspconfig'
-hook_source = 'LuaSource lspsaga.lua'
+# [[plugins]]
+# repo = 'glepnir/lspsaga.nvim'
+# on_source = 'nvim-lspconfig'
+# hook_source = 'LuaSource lspsaga.lua'
 
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
