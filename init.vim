@@ -10,7 +10,7 @@ function! Source(plugin_vim)
     execute source_plugin
 endfunction
 function! LuaSource(plugin_lua)
-    let lua_source_plugin = join(['lua ',$XDG_CONFIG_HOME,'/nvim/plugins/lua/',a:plugin_lua],'')
+    let lua_source_plugin = join(['luafile ',$XDG_CONFIG_HOME,'/nvim/plugins/lua/',a:plugin_lua],'')
     execute lua_source_plugin
 endfunction
 
