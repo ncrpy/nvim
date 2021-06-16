@@ -1,4 +1,4 @@
-luafile $XDG_CONFIG_HOME/nvim/plugins/nvim-lsp.lua
+LuaSource nvim-lsp.lua
 
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
