@@ -116,6 +116,11 @@ on_event = 'CmdlineEnter'
 hook_add = 'Source quickrun.vim'
 
 [[plugins]]
+repo = 'mhartington/formatter.nvim'
+on_event = 'VimEnter'
+hook_source = 'LuaSource formatter.lua'
+
+[[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 on_event = 'VimEnter'
 hook_soruce = 'Source nvim-treesitter.vim'

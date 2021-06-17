@@ -23,9 +23,9 @@ build = 'make'
 # rev = 'release'
 # hook_add = 'Source coc.nvim'
 
-[[plugins]]
-repo = 'dense-analysis/ale'
-hook_add = 'Source ale.vim'
+# [[plugins]]
+# repo = 'dense-analysis/ale'
+# hook_add = 'Source ale.vim'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
