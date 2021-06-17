@@ -12,28 +12,28 @@ if ft == "" then do end
 elseif contains({"c", "cpp"}, ft) then
     nvim_lsp.clangd.setup{}
 elseif contains({"python"}, ft) then
-    nvim_lsp.jedi_language_server.setup{}
+--    nvim_lsp.jedi_language_server.setup{}
     nvim_lsp.pyright.setup{}
---    nvim_lsp.pylsp.setup{
---        settings = {
---            pylsp = {
---                configurationSources = {"flake8"},
---                plugins = {
---                    mccabe = {enabled = false},
---                    pycodestyle = {enabled = false},
---                    pydocstyle = {enabled = false},
---                    pyflakes = {enabled = false},
---                    pylint = {enabled = false},
---                    autopep8 = {enabled = false},
---                    yapf = {enabled = false},
---                    preload = {enabled = false},
---                    flake8 = {enabled = true},
+    nvim_lsp.pylsp.setup{
+        settings = {
+            pylsp = {
+                configurationSources = {"flake8"},
+                plugins = {
+                    mccabe = {enabled = false},
+                    pycodestyle = {enabled = false},
+                    pydocstyle = {enabled = false},
+                    pyflakes = {enabled = false},
+                    pylint = {enabled = false},
+                    autopep8 = {enabled = false},
+                    yapf = {enabled = false},
+                    preload = {enabled = false},
+                    flake8 = {enabled = true},
 --                    python_lsp_black = {enabled = true},
 --                    pyls_isort = {enabled = true}
---                }
---            }
---        }
---    }
+                }
+            }
+        }
+    }
 elseif contains({"tex", "latex"}, ft) then
     nvim_lsp.texlab.setup{}
 elseif contains({"r"}, ft) then
@@ -47,11 +47,11 @@ nvim_lsp.efm.setup{
     settings = {
         languages = {
             python = {
-                {
-                    LintCommand = vim.g.python3_host_prog.." -m flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
-                    lintStdin = true,
-                    lintFormats = {"%f:%l:%c: %m"}
-                },
+--                {
+--                    LintCommand = vim.g.python3_host_prog.." -m flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
+--                    lintStdin = true,
+--                    lintFormats = {"%f:%l:%c: %m"}
+--                },
 --                {
 --                    formatCommand = vim.g.python3_host_prog.." -m isort --quiet -",
 --                    formatStdin = true
@@ -97,4 +97,4 @@ vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line
 vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
--- vim.api.nvim_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+--  vim.api.nvim_set_keymap("n", "<leader>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
