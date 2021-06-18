@@ -87,10 +87,10 @@ on_ft = ['r', 'rmd']
 branch = 'stable'
 hook_add = 'Source Nvim-R.vim'
 
-[[plugins]]
-repo = 'cohama/lexima.vim'
-on_event = 'InsertEnter'
-hook_post_source = 'Source lexima.vim'
+# [[plugins]]
+# repo = 'cohama/lexima.vim'
+# on_event = 'InsertEnter'
+# hook_post_source = 'Source lexima.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
@@ -124,3 +124,13 @@ hook_source = 'LuaSource formatter.lua'
 repo = 'nvim-treesitter/nvim-treesitter'
 on_event = 'VimEnter'
 hook_soruce = 'Source nvim-treesitter.vim'
+
+[[plugins]]
+repo = 'p00f/nvim-ts-rainbow'
+on_source = 'nvim-treesitter'
+
+[[plugins]]
+repo = 'windwp/nvim-autopairs'
+on_event = 'InsertEnter'
+hook_source = 'LuaSource npairs.lua'
+depends = ['nvim-treesitter']
