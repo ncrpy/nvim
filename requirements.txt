@@ -29,6 +29,7 @@ parso==0.8.2
 pathspec==0.8.1
 pexpect==4.8.0
 pickleshare==0.7.5
+pluggy==0.13.1
 prompt-toolkit==3.0.18
 psutil==5.8.0
 ptyprocess==0.7.0
@@ -39,6 +40,8 @@ pygls==0.10.3
 Pygments==2.9.0
 pynvim==0.4.3
 pyrsistent==0.17.3
+python-lsp-jsonrpc==1.0.0
+python-lsp-server==1.0.1
 PyYAML==5.4.1
 regex==2021.4.4
 six==1.16.0
@@ -47,5 +50,7 @@ traitlets==5.0.5
 typed-ast==1.4.3
 typeguard==2.12.1
 typing-extensions==3.10.0.0
+ujson==4.0.2
 wcwidth==0.2.5
+yapf==0.31.0
 zipp==3.4.1
