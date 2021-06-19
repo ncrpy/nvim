@@ -12,28 +12,48 @@ if ft == "" then do end
 elseif contains({"c", "cpp"}, ft) then
     nvim_lsp.clangd.setup{}
 elseif contains({"python"}, ft) then
---    nvim_lsp.jedi_language_server.setup{}
-    nvim_lsp.pyright.setup{}
-    nvim_lsp.pylsp.setup{
-        settings = {
-            pylsp = {
-                configurationSources = {"flake8"},
-                plugins = {
-                    mccabe = {enabled = false},
-                    pycodestyle = {enabled = false},
-                    pydocstyle = {enabled = false},
-                    pyflakes = {enabled = false},
-                    pylint = {enabled = false},
-                    autopep8 = {enabled = false},
-                    yapf = {enabled = false},
-                    preload = {enabled = false},
-                    flake8 = {enabled = true},
---                    python_lsp_black = {enabled = true},
---                    pyls_isort = {enabled = true}
-                }
-            }
+    nvim_lsp.jedi_language_server.setup{
+        init_options = {
+            diagnostics = {enable = false},
+            completion = {disableSnippets = true},
         }
     }
+--    nvim_lsp.pylsp.setup{
+--        settings = {
+--            pylsp = {
+--                configurationSources = {"flake8"},
+--                plugins = {
+--                    autopep8 = {enabled = false},
+--                    folding = {enabled = false},
+--                    flake8 = {enabled = true},
+--                    jedi_completion = {enabled = false},
+--                    jedi_definition = {enabled = false},
+--                    jedi_hover = {enabled = false},
+--                    jedi_highlight = {enabled = false},
+--                    jedi_references = {enabled = false},
+--                    fedi_rename = {enabled = false},
+--                    jedi_signature_help = {enabled = false},
+--                    jedi_synbols = {enabled = false},
+--                    mccabe = {enabled = false},
+--                    preload = {enabled = false},
+--                    pycodestyle = {enabled = false},
+--                    pydocstyle = {enabled = false},
+--                    pyflakes = {enabled = false},
+--                    pylint = {enabled = false},
+--                    rope_completion = {enabled = false},
+--                    rope_rename = {enabled = false},
+--                    yapf = {enabled = false},
+--                }
+--            }
+--        }
+--    }
+--    nvim_lsp.pyright.setup{
+--        settings = {
+--            pyright = {
+--                disableLanguageServices = true
+--            }
+--        }
+--    }
 elseif contains({"tex", "latex"}, ft) then
     nvim_lsp.texlab.setup{}
 elseif contains({"r"}, ft) then
@@ -47,11 +67,19 @@ nvim_lsp.efm.setup{
     settings = {
         languages = {
             python = {
---                {
---                    LintCommand = vim.g.python3_host_prog.." -m flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
---                    lintStdin = true,
---                    lintFormats = {"%f:%l:%c: %m"}
---                },
+                {
+                    LintCommand = vim.g.python3_host_prog.." -m flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
+                    lintStdin = true,
+                    lintFormats = {"%f:%l:%c: %m"}
+                },
+                {
+                    LintCommand = "mypy --show-column-numbers",
+                    lintFormats = {
+                        "%f:%l:%c: %trror: %m",
+                        "%f:%l:%c: %tarning: %m",
+                        "%f:%l:%c: %tote: %m"
+                    },
+                },
 --                {
 --                    formatCommand = vim.g.python3_host_prog.." -m isort --quiet -",
 --                    formatStdin = true
