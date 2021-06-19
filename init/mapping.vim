@@ -12,14 +12,13 @@ nnoremap <silent> <leader>bd :bdelete<CR>
 nnoremap <silent> <leader>bD :bdelete!<CR>
 nnoremap <silent> <leader>bo :BufOnly<CR>
 
+noremap <leader>w <C-w>
+
 nnoremap <silent> <C-a> ggVG
 
-nnoremap ; :
-nnoremap ,. ;
-nnoremap ,, ,
-vnoremap ; :
-vnoremap ,. ;
-vnoremap ,, ,
+noremap ; :
+noremap ,. ;
+noremap ,, ,
 
 inoremap <C-l> <C-g>U<Right>
 
