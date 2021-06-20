@@ -130,3 +130,18 @@ repo = 'windwp/nvim-autopairs'
 on_event = 'InsertEnter'
 hook_source = 'LuaSource npairs.lua'
 depends = ['nvim-treesitter']
+
+[[plugins]]
+repo = 'nvim-lua/popup.nvim'
+on_lua = ['telescope']
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+on_lua = ['telescope']
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+on_lua = ['telescope']
+hook_add = 'Source telescope.vim'
+hook_source = 'LuaSource telescope.lua'
+depends = ['popup.nvim', 'plenary.nvim']
