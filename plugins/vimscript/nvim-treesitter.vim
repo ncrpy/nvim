@@ -1,4 +1,4 @@
-LuaSource nvim-treesitter.lua
+LuaSource treesitter.lua
 
 highlight link TSPunctBracket Normal
 " :TSUpdate

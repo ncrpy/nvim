@@ -126,10 +126,6 @@ on_event = 'VimEnter'
 hook_soruce = 'Source nvim-treesitter.vim'
 
 [[plugins]]
-repo = 'p00f/nvim-ts-rainbow'
-on_source = 'nvim-treesitter'
-
-[[plugins]]
 repo = 'windwp/nvim-autopairs'
 on_event = 'InsertEnter'
 hook_source = 'LuaSource npairs.lua'
