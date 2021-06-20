@@ -48,6 +48,10 @@ repo = 'Shougo/neoyank.vim'
 on_cmd = ['Denite']
 
 [[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+on_event = 'ColorScheme'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NERDTree']
 depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
