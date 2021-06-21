@@ -6,64 +6,65 @@ local function contains(tab, val)
     return set[val] ~= nil
 end
 
-local ft = vim.bo.filetype
-
-if ft == "" then do end
-elseif contains({"c", "cpp"}, ft) then
-    nvim_lsp.clangd.setup{}
-elseif contains({"python"}, ft) then
-    nvim_lsp.jedi_language_server.setup{
-        init_options = {
-            diagnostics = {enable = false},
-            completion = {disableSnippets = true},
-        }
+nvim_lsp.clangd.setup{
+    filetypes = {"c", "cpp"},
+}
+nvim_lsp.jedi_language_server.setup{
+    filetypes = {"python"},
+    init_options = {
+        diagnostics = {enable = false},
+        completion = {disableSnippets = true},
     }
---    nvim_lsp.pylsp.setup{
---        settings = {
---            pylsp = {
---                configurationSources = {"flake8"},
---                plugins = {
---                    autopep8 = {enabled = false},
---                    folding = {enabled = false},
---                    flake8 = {enabled = true},
---                    jedi_completion = {enabled = false},
---                    jedi_definition = {enabled = false},
---                    jedi_hover = {enabled = false},
---                    jedi_highlight = {enabled = false},
---                    jedi_references = {enabled = false},
---                    fedi_rename = {enabled = false},
---                    jedi_signature_help = {enabled = false},
---                    jedi_synbols = {enabled = false},
---                    mccabe = {enabled = false},
---                    preload = {enabled = false},
---                    pycodestyle = {enabled = false},
---                    pydocstyle = {enabled = false},
---                    pyflakes = {enabled = false},
---                    pylint = {enabled = false},
---                    rope_completion = {enabled = false},
---                    rope_rename = {enabled = false},
---                    yapf = {enabled = false},
---                }
+}
+--nvim_lsp.pylsp.setup{
+--    filetypes = {"python"},
+--    settings = {
+--        pylsp = {
+--            configurationSources = {"flake8"},
+--            plugins = {
+--                autopep8 = {enabled = false},
+--                folding = {enabled = false},
+--                flake8 = {enabled = true},
+--                jedi_completion = {enabled = false},
+--                jedi_definition = {enabled = false},
+--                jedi_hover = {enabled = false},
+--                jedi_highlight = {enabled = false},
+--                jedi_references = {enabled = false},
+--                fedi_rename = {enabled = false},
+--                jedi_signature_help = {enabled = false},
+--                jedi_synbols = {enabled = false},
+--                mccabe = {enabled = false},
+--                preload = {enabled = false},
+--                pycodestyle = {enabled = false},
+--                pydocstyle = {enabled = false},
+--                pyflakes = {enabled = false},
+--                pylint = {enabled = false},
+--                rope_completion = {enabled = false},
+--                rope_rename = {enabled = false},
+--                yapf = {enabled = false},
 --            }
 --        }
 --    }
---    nvim_lsp.pyright.setup{
---        settings = {
---            pyright = {
---                disableLanguageServices = true
---            }
+--}
+--nvim_lsp.pyright.setup{
+--    filetypes = {"python"},
+--    settings = {
+--        pyright = {
+--            disableLanguageServices = true
 --        }
 --    }
-elseif contains({"tex", "latex"}, ft) then
-    nvim_lsp.texlab.setup{}
-elseif contains({"r"}, ft) then
-    nvim_lsp.r_language_server.setup{}
-end
+--}
+nvim_lsp.texlab.setup{
+    filetypes = {"tex", "latex"},
+}
+nvim_lsp.r_language_server.setup{
+    filetypes = {"r"},
+}
 nvim_lsp.efm.setup{
+    filetypes = {"python"},
     init_options = {
         documentFormatting = false
     },
-    filetypes = {"python"},
     settings = {
         languages = {
             python = {
