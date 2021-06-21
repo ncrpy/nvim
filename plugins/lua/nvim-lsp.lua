@@ -53,6 +53,9 @@ nvim_lsp.texlab.setup{
     filetypes = {"tex", "latex", "bib"},
 }
 nvim_lsp.r_language_server.setup{}
+nvim_lsp.vimls.setup{
+    cmd = {vim.fn.stdpath('data').."/lspinstall/node_modules/.bin/vim-language-server", "--stdio"}
+}
 nvim_lsp.efm.setup{
     filetypes = {"python"},
     init_options = {
