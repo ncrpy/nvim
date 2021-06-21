@@ -6,18 +6,14 @@ local function contains(tab, val)
     return set[val] ~= nil
 end
 
-nvim_lsp.clangd.setup{
-    filetypes = {"c", "cpp"},
-}
+nvim_lsp.clangd.setup{}
 nvim_lsp.jedi_language_server.setup{
-    filetypes = {"python"},
     init_options = {
         diagnostics = {enable = false},
         completion = {disableSnippets = true},
     }
 }
 --nvim_lsp.pylsp.setup{
---    filetypes = {"python"},
 --    settings = {
 --        pylsp = {
 --            configurationSources = {"flake8"},
@@ -47,7 +43,6 @@ nvim_lsp.jedi_language_server.setup{
 --    }
 --}
 --nvim_lsp.pyright.setup{
---    filetypes = {"python"},
 --    settings = {
 --        pyright = {
 --            disableLanguageServices = true
@@ -55,11 +50,9 @@ nvim_lsp.jedi_language_server.setup{
 --    }
 --}
 nvim_lsp.texlab.setup{
-    filetypes = {"tex", "latex"},
+    filetypes = {"tex", "latex", "bib"},
 }
-nvim_lsp.r_language_server.setup{
-    filetypes = {"r"},
-}
+nvim_lsp.r_language_server.setup{}
 nvim_lsp.efm.setup{
     filetypes = {"python"},
     init_options = {
@@ -93,6 +86,8 @@ nvim_lsp.efm.setup{
         }
     }
 }
+
+vim.api.nvim_command("LuaSource sumneko-lua.lua")
 
 vim.fn.sign_define("LspDiagnosticsSignError",
     {text = ""})
