@@ -73,7 +73,7 @@ nvim_lsp.efm.setup{
                     lintFormats = {"%f:%l:%c: %m"}
                 },
                 {
-                    LintCommand = vim.g.python3_host_prog.."mypy --show-column-numbers",
+                    LintCommand = vim.g.python3_host_prog.." -m mypy --show-column-numbers",
                     lintFormats = {
                         "%f:%l:%c: %trror: %m",
                         "%f:%l:%c: %tarning: %m",
