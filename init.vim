@@ -10,6 +10,7 @@ function! Source(plugin_vim)
 endfunction
 
 runtime! dein/*.vim
+runtime! init/*.vim
+
 " runtime! install.vim
 lua require("setup")
-runtime! init/*.vim
