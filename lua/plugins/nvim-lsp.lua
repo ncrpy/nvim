@@ -90,7 +90,7 @@ nvim_lsp.efm.setup{
     }
 }
 
-vim.api.nvim_command("LuaSource sumneko-lua.lua")
+require("plugins.sumneko-lua")
 
 vim.fn.sign_define("LspDiagnosticsSignError",
     {text = ""})

@@ -1,4 +1,4 @@
-LuaSource nvim-lsp.lua
+lua require("plugins.nvim-lsp")
 
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
