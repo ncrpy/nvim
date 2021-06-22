@@ -49,3 +49,13 @@ hook_add = 'Source polyglot.vim'
 [[plugins]]
 repo = 'goerz/jupytext.vim'
 hook_add = 'Source jupytext.vim'
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+
+[[plugins]]
+repo = 'mhartington/formatter.nvim'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+merged = 0

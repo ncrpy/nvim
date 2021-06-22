@@ -1,9 +1,4 @@
 [[plugins]]
-repo = 'neovim/nvim-lspconfig'
-on_event = 'VimEnter'
-hook_source = 'Source nvim-lsp.vim'
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
 hook_source = 'Source deoplete.vim'
@@ -61,11 +56,6 @@ hook_add = 'Source nerdtree.vim'
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 on_source = 'nerdtree'
 
-# [[plugins]]
-# repo = 'glepnir/lspsaga.nvim'
-# on_event = 'VimEnter'
-# hook_source = 'lua require("plugins.lspsaga")'
-
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
 on_ft = ['python']
@@ -120,21 +110,9 @@ on_event = 'CmdlineEnter'
 hook_add = 'Source quickrun.vim'
 
 [[plugins]]
-repo = 'mhartington/formatter.nvim'
-on_event = 'VimEnter'
-hook_source = 'lua require("plugins.formatter")'
-
-[[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
-merged = 0
-on_event = 'VimEnter'
-hook_source = 'Source nvim-treesitter.vim'
-
-[[plugins]]
 repo = 'windwp/nvim-autopairs'
 on_event = 'InsertEnter'
 hook_source = 'lua require("plugins.npairs")'
-depends = ['nvim-treesitter']
 
 [[plugins]]
 repo = 'nvim-lua/popup.nvim'
