@@ -14,10 +14,10 @@ augroup transparent_bg
     autocmd ColorScheme * highlight EndOfBuffer guibg=none
 augroup END
 
-autocmd VimEnter * nested colorscheme onedark
-" colorscheme molokai
-" let g:molokai_original = 1
-" let g:rehash256 = 1
+autocmd VimEnter * nested colorscheme sonokai
+let g:sonokai_style = 'shusia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
 
 set list
 set listchars=tab:»-,trail:-,nbsp:%,eol:↲
