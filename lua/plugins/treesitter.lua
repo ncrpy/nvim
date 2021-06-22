@@ -12,7 +12,8 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
---  for non-ts rainbow plugin; I don't know why it works :(
+--  for non-ts rainbow plugin; I don't know why it works :P
+require"nvim-treesitter.highlight"
 local hlmap = vim.treesitter.highlighter.hl_map
 hlmap.error = ""
 hlmap["punctuation.delimiter"] = "Delimiter"
