@@ -10,5 +10,6 @@ nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
 
 nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
+nnoremap <leader>fd <cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>
 nnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
 vnoremap <leader>ca <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
