@@ -1,7 +1,7 @@
 set runtimepath+=$XDG_CONFIG_HOME/nvim
 let g:python3_host_prog = $XDG_CONFIG_HOME.'/nvim/venv/bin/python'
 
-let $PATH = $PATH.':'.$XDG_CONFIG_HOME.'/nvim/venv/bin'
+let $PATH = $PATH.':'.$XDG_CONFIG_HOME.'/nvim/venv/bin'.':'.$XDG_CONFIG_HOME.'/node_modules/.bin'
 
 command! -nargs=1 Source call Source(<f-args>)
 function! Source(plugin_vim)
