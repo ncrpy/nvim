@@ -68,7 +68,7 @@ local servers = {
                         lintFormats = {"%f:%l:%c: %m"}
                     },
                     {
-                        LintCommand = vim.g.python3_host_prog.." -m mypy --show-column-numbers",
+                        LintCommand = vim.g.python3_host_prog.." -m mypy --show-column-numbers --ignore-missing-imports",
                         lintFormats = {
                             "%f:%l:%c: %trror: %m",
                             "%f:%l:%c: %tarning: %m",
