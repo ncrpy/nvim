@@ -54,6 +54,9 @@ local servers = {
         filetypes = {"tex", "latex", "bib"},
     },
     r_language_server = {},
+    vimls = {
+        cmd = {vim.fn.stdpath('data').."/lspinstall/node_modules/.bin/vim-language-server", "--stdio"}
+    },
     efm = {
         filetypes = {"python"},
         init_options = {
@@ -90,7 +93,9 @@ local servers = {
 }
 
 for server, config in pairs(servers) do
-    nvim_lsp[server].setup(config)
+    if vim.fn.executable(server) then
+        nvim_lsp[server].setup(config)
+    end
 end
 
 require("plugins.sumneko-lua")
