@@ -6,89 +6,92 @@ local function contains(tab, val)
     return set[val] ~= nil
 end
 
-nvim_lsp.clangd.setup{}
-nvim_lsp.jedi_language_server.setup{
-    init_options = {
-        diagnostics = {enable = false},
-        completion = {disableSnippets = true},
-    }
-}
---nvim_lsp.pylsp.setup{
---    settings = {
---        pylsp = {
---            configurationSources = {"flake8"},
---            plugins = {
---                autopep8 = {enabled = false},
---                folding = {enabled = false},
---                flake8 = {enabled = true},
---                jedi_completion = {enabled = false},
---                jedi_definition = {enabled = false},
---                jedi_hover = {enabled = false},
---                jedi_highlight = {enabled = false},
---                jedi_references = {enabled = false},
---                fedi_rename = {enabled = false},
---                jedi_signature_help = {enabled = false},
---                jedi_synbols = {enabled = false},
---                mccabe = {enabled = false},
---                preload = {enabled = false},
---                pycodestyle = {enabled = false},
---                pydocstyle = {enabled = false},
---                pyflakes = {enabled = false},
---                pylint = {enabled = false},
---                rope_completion = {enabled = false},
---                rope_rename = {enabled = false},
---                yapf = {enabled = false},
+local servers = {
+    clangd = {},
+    jedi_language_server = {
+        init_options = {
+            diagnostics = {enable = false},
+            completion = {disableSnippets = true},
+        }
+    },
+--    pylsp = {
+--        settings = {
+--            pylsp = {
+--                configurationSources = {"flake8"},
+--                plugins = {
+--                    autopep8 = {enabled = false},
+--                    folding = {enabled = false},
+--                    flake8 = {enabled = true},
+--                    jedi_completion = {enabled = false},
+--                    jedi_definition = {enabled = false},
+--                    jedi_hover = {enabled = false},
+--                    jedi_highlight = {enabled = false},
+--                    jedi_references = {enabled = false},
+--                    fedi_rename = {enabled = false},
+--                    jedi_signature_help = {enabled = false},
+--                    jedi_synbols = {enabled = false},
+--                    mccabe = {enabled = false},
+--                    preload = {enabled = false},
+--                    pycodestyle = {enabled = false},
+--                    pydocstyle = {enabled = false},
+--                    pyflakes = {enabled = false},
+--                    pylint = {enabled = false},
+--                    rope_completion = {enabled = false},
+--                    rope_rename = {enabled = false},
+--                    yapf = {enabled = false},
+--                }
 --            }
 --        }
---    }
---}
---nvim_lsp.pyright.setup{
---    settings = {
---        pyright = {
---            disableLanguageServices = true
+--    },
+--    pyright = {
+--        settings = {
+--            pyright = {
+--                disableLanguageServices = true
+--            }
 --        }
---    }
---}
-nvim_lsp.texlab.setup{
-    filetypes = {"tex", "latex", "bib"},
-}
-nvim_lsp.r_language_server.setup{}
-nvim_lsp.vimls.setup{
-    cmd = {vim.fn.stdpath('data').."/lspinstall/node_modules/.bin/vim-language-server", "--stdio"}
-}
-nvim_lsp.efm.setup{
-    filetypes = {"python"},
-    init_options = {
-        documentFormatting = false
+--    },
+    texlab = {
+        filetypes = {"tex", "latex", "bib"},
     },
-    settings = {
-        languages = {
-            python = {
-                {
-                    LintCommand = vim.g.python3_host_prog.." -m flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
-                    lintStdin = true,
-                    lintFormats = {"%f:%l:%c: %m"}
-                },
-                {
-                    LintCommand = vim.g.python3_host_prog.." -m mypy --show-column-numbers",
-                    lintFormats = {
-                        "%f:%l:%c: %trror: %m",
-                        "%f:%l:%c: %tarning: %m",
-                        "%f:%l:%c: %tote: %m"
+    r_language_server = {},
+    efm = {
+        filetypes = {"python"},
+        init_options = {
+            documentFormatting = false
+        },
+        settings = {
+            languages = {
+                python = {
+                    {
+                        LintCommand = vim.g.python3_host_prog.." -m flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
+                        lintStdin = true,
+                        lintFormats = {"%f:%l:%c: %m"}
                     },
-                },
---                {
---                    formatCommand = vim.g.python3_host_prog.." -m isort --quiet -",
---                    formatStdin = true
---                },
---                {
---                    formatCommand = vim.g.python3_host_prog.." -m black --quiet -",
---                    formatStdin = true
---                }
+                    {
+                        LintCommand = vim.g.python3_host_prog.." -m mypy --show-column-numbers",
+                        lintFormats = {
+                            "%f:%l:%c: %trror: %m",
+                            "%f:%l:%c: %tarning: %m",
+                            "%f:%l:%c: %tote: %m"
+                        },
+                    },
+--                    {
+--                        formatCommand = vim.g.python3_host_prog.." -m isort --quiet -",
+--                        formatStdin = true
+--                    },
+--                    {
+--                        formatCommand = vim.g.python3_host_prog.." -m black --quiet -",
+--                        formatStdin = true
+--                    },
+                }
             }
         }
-    }
+    },
 }
+
+for server, config in pairs(servers) do
+    nvim_lsp[server].setup(config)
+end
 
 require("plugins.sumneko-lua")
 
