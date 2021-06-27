@@ -71,11 +71,11 @@ require('formatter').setup({
 
 vim.api.nvim_set_keymap('n', '<leader>F', ':Format<CR>', { noremap=true, silent=true })
 vim.api.nvim_set_keymap('v', '<leader>F', ':Format<CR>', { noremap=true, silent=true })
-if ft_supported then
+--if ft_supported then
   vim.api.nvim_exec([[
   augroup FormatAutogroup
     autocmd!
     autocmd BufWritePost * FormatWrite
   augroup END
   ]], true)
-end
+--end
