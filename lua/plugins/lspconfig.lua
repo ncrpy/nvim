@@ -55,7 +55,7 @@ local servers = {
     },
     r_language_server = {},
     vimls = {
-        cmd = {vim.fn.stdpath('data').."/lspinstall/node_modules/.bin/vim-language-server", "--stdio"}
+        cmd = {vim.fn.stdpath('config').."/node_modules/.bin/vim-language-server", "--stdio"}
     },
     efm = {
         filetypes = {"python"},
