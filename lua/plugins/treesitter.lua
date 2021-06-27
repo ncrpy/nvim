@@ -3,7 +3,7 @@ require'nvim-treesitter.configs'.setup {
     ignore_installed = {},
     highlight = {
         enable = true,
-        disable = {},
+        disable = {"latex"},
     },
     rainbow = {
         enable = false,
