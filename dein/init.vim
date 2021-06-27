@@ -1,6 +1,6 @@
 "dein Scripts-----------------------------
 
-let s:dein_config_dir = $XDG_CONFIG_HOME . '/nvim/dein'
+let s:dein_config_dir = stdpath('config') . '/dein'
 let s:dein_cache_dir = $XDG_CACHE_HOME . '/dein'
 
 
