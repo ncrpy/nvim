@@ -42,6 +42,10 @@ hook_add = 'Source indentline.vim'
 repo = 'ryanoasis/vim-devicons'
 hook_add = 'Source vim-devicons.vim'
 
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+# on_event = 'ColorScheme'
+
 # [[plugins]]
 # repo = 'sheerun/vim-polyglot'
 # hook_add = 'Source polyglot.vim'
@@ -62,3 +66,9 @@ merged = 0
 
 [[plugins]]
 repo = 'p00f/nvim-ts-rainbow'
+depends = ['nvim-treesitter']
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+hook_add = 'Source telescope.vim'
+depends = ['popup.nvim', 'plenary.nvim']

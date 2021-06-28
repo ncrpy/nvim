@@ -43,10 +43,6 @@ repo = 'Shougo/neoyank.vim'
 on_cmd = ['Denite']
 
 [[plugins]]
-repo = 'kyazdani42/nvim-web-devicons'
-on_event = 'ColorScheme'
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NERDTree']
 depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
@@ -121,11 +117,3 @@ on_source = 'telescope.nvim'
 [[plugins]]
 repo = 'nvim-lua/plenary.nvim'
 on_source = 'telescope.nvim'
-
-[[plugins]]
-repo = 'nvim-telescope/telescope.nvim'
-on_cmd = ['Telescope']
-on_lua = ['telescope']
-hook_add = 'Source telescope.vim'
-hook_source = 'lua require("plugins.telescope")'
-depends = ['popup.nvim', 'plenary.nvim']
