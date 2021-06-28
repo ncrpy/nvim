@@ -3,6 +3,7 @@ local plugins = {
   "formatter",
   "treesitter",
 }
+
 for _, plugin in ipairs(plugins) do
-  require("plugins."..plugin)
+  pcall(require, 'plugins.'..plugin)
 end
