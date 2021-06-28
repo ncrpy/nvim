@@ -1,10 +1,12 @@
 local plugins = {
   "lspconfig",
   "formatter",
-  "treesitter",
+  "nvim-treesitter",
   "telescope",
 }
 
 for _, plugin in ipairs(plugins) do
-  pcall(require, 'plugins.'..plugin)
+  if package.loaders[2](plugin) then
+    require("plugins."..plugin)
+  end
 end
