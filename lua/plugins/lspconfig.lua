@@ -50,9 +50,7 @@ local servers = {
 --            }
 --        }
 --    },
-    texlab = {
-        filetypes = {"tex", "latex", "bib"},
-    },
+    texlab = {},
     r_language_server = {},
     vimls = {
         cmd = {vim.fn.stdpath('config').."/node_modules/.bin/vim-language-server", "--stdio"}
@@ -66,12 +64,12 @@ local servers = {
             languages = {
                 python = {
                     {
-                        LintCommand = vim.g.python3_host_prog.." -m flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
+                        LintCommand = "flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
                         lintStdin = true,
                         lintFormats = {"%f:%l:%c: %m"}
                     },
                     {
-                        LintCommand = vim.g.python3_host_prog.." -m mypy --show-column-numbers --ignore-missing-imports --no-site-packages",
+                        LintCommand = "mypy --show-column-numbers --ignore-missing-imports --no-site-packages",
                         lintFormats = {
                             "%f:%l:%c: %trror: %m",
                             "%f:%l:%c: %tarning: %m",
@@ -79,11 +77,11 @@ local servers = {
                         },
                     },
 --                    {
---                        formatCommand = vim.g.python3_host_prog.." -m isort --quiet -",
+--                        formatCommand = "isort --quiet -",
 --                        formatStdin = true
 --                    },
 --                    {
---                        formatCommand = vim.g.python3_host_prog.." -m black --quiet -",
+--                        formatCommand = "black --quiet -",
 --                        formatStdin = true
 --                    },
                 }

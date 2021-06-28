@@ -58,14 +58,14 @@ for _, ft in pairs({"python"}) do
   local formatters = {
     function()
       return {
-        exe = vim.g.python3_host_prog.." -m isort",
+        exe = "isort",
         args = {"-"},
         stdin = true,
       }
     end,
     function()
       return {
-        exe = vim.g.python3_host_prog.." -m black",
+        exe = "black",
         args = {"-"},
         stdin = true,
       }
