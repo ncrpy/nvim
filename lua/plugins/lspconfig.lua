@@ -69,7 +69,7 @@ local servers = {
                         lintFormats = {"%f:%l:%c: %m"}
                     },
                     {
-                        LintCommand = "mypy --show-column-numbers --ignore-missing-imports --no-site-packages --cache-dir=/dev/null",
+                        LintCommand = "mypy --show-column-numbers --ignore-missing-imports --no-site-packages",
                         lintFormats = {
                             "%f:%l:%c: %trror: %m",
                             "%f:%l:%c: %tarning: %m",
