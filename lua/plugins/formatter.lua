@@ -1,6 +1,5 @@
 local filetype = {}
-local ft_table = {"c", "cpp", "lua", "python"}
-local ft_supported = false
+vim.g.formatter_filetype = {"c", "cpp", "lua", "python", "format-mode"}
 
 local global_formatters = {}
 
@@ -9,11 +8,9 @@ local function merge_table(tb1, tb2)
   return tb1
 end
 
-for _, ft in pairs(ft_table) do
+for _, ft in pairs(vim.g.formatter_filetype) do
   filetype[ft] = merge_table({}, global_formatters)
-  if ft == vim.bo.filetype then ft_supported = true end
 end
-if not(ft_supported) then filetype[vim.bo.filetype] = merge_table({}, global_formatters) end
 
 --[[Template
 for _, ft in pairs({}) do
@@ -84,12 +81,11 @@ require('formatter').setup({
 
 vim.api.nvim_set_keymap('n', '<leader>F', ':Format<CR>', { noremap=true, silent=true })
 vim.api.nvim_set_keymap('v', '<leader>F', ':Format<CR>', { noremap=true, silent=true })
---if ft_supported then
-  vim.api.nvim_exec([[
-  let format_on_write_ft = ["c", "cpp", "python"]
+
+vim.api.nvim_exec([[
+  command! FormatToggle if &filetype=="format-mode" | filetype detect | else | setfiletype format-mode | endif
   augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePost * if index(format_on_write_ft, &filetype)>=0 | execute'FormatWrite' | endif
+    autocmd BufWritePost * if index(g:formatter_filetype, &filetype)>=0 | execute'FormatWrite' | endif
   augroup END
   ]], true)
---end
