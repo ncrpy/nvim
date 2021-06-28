@@ -1,5 +1,5 @@
 local filetype = {}
-local ft_table = {"c", "cpp", "python"}
+local ft_table = {"c", "cpp", "lua", "python"}
 local ft_supported = false
 
 local global_formatters = {}
@@ -44,6 +44,19 @@ for _, ft in pairs({"c", "cpp"}) do
   merge_table(filetype[ft], formatters)
 end
 
+for _, ft in pairs({"lua"}) do
+  local formatters = {
+    function()
+      return {
+        exe = "luafmt",
+        args = {"--indent-count", 2, "--stdin"},
+        stdin = true,
+      }
+    end
+  }
+  merge_table(filetype[ft], formatters)
+end
+
 for _, ft in pairs({"python"}) do
   local formatters = {
     function()
@@ -73,9 +86,10 @@ vim.api.nvim_set_keymap('n', '<leader>F', ':Format<CR>', { noremap=true, silent=
 vim.api.nvim_set_keymap('v', '<leader>F', ':Format<CR>', { noremap=true, silent=true })
 --if ft_supported then
   vim.api.nvim_exec([[
+  let format_on_write_ft = ["c", "cpp", "python"]
   augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePost * FormatWrite
+    autocmd BufWritePost * if index(format_on_write_ft, &filetype)>=0 | execute'FormatWrite' | endif
   augroup END
   ]], true)
 --end
