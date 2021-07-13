@@ -17,6 +17,10 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+hook_add = 'Source defx.vim'
+
 # [[plugins]]
 # repo = 'neoclide/coc.nvim'
 # merged = 0
@@ -44,6 +48,9 @@ hook_add = 'Source vim-devicons.vim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
 
 # [[plugins]]
 # repo = 'sheerun/vim-polyglot'
