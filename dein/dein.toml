@@ -17,9 +17,9 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-[[plugins]]
-repo = 'Shougo/defx.nvim'
-hook_add = 'Source defx.vim'
+# [[plugins]]
+# repo = 'Shougo/defx.nvim'
+# hook_add = 'Source defx.vim'
 
 # [[plugins]]
 # repo = 'neoclide/coc.nvim'
@@ -49,8 +49,8 @@ hook_add = 'Source vim-devicons.vim'
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
 
-[[plugins]]
-repo = 'kristijanhusak/defx-icons'
+# [[plugins]]
+# repo = 'kristijanhusak/defx-icons'
 
 # [[plugins]]
 # repo = 'sheerun/vim-polyglot'
@@ -70,9 +70,9 @@ repo = 'mhartington/formatter.nvim'
 repo = 'nvim-treesitter/nvim-treesitter'
 merged = 0
 
-[[plugins]]
-repo = 'p00f/nvim-ts-rainbow'
-depends = ['nvim-treesitter']
+# [[plugins]]
+# repo = 'p00f/nvim-ts-rainbow'
+# depends = ['nvim-treesitter']
 
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
