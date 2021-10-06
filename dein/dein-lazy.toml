@@ -90,7 +90,6 @@ hook_add = 'Source anzu.vim'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 on_event = 'CmdlineEnter'
-hook_source = 'Source fugitive.vim'
 
 [[plugins]]
 repo = 'tpope/vim-surround'

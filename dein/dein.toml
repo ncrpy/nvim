@@ -33,6 +33,7 @@ build = 'make'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+hook_add = 'Source gitgutter.vim'
 
 [[plugins]]
 repo = 'luochen1990/rainbow'

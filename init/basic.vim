@@ -55,3 +55,5 @@ set smartindent
 
 set nofixeol
 " autocmd BufWritePre * :%s/\s\+$//e
+
+set updatetime=400
