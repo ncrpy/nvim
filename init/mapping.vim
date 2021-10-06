@@ -1,5 +1,4 @@
 nnoremap <C-c><C-c> :nohlsearch<CR><C-c>
-nnoremap <silent>sh :botright vsplit<Bar>:terminal<CR>
 
 nnoremap <silent> <leader>bad :enew<CR>
 nnoremap <silent> <leader>bn :bnext<CR>
@@ -25,4 +24,5 @@ inoremap <C-l> <C-g>U<Right>
 " inoremap <C-d> <C-x><C-o>
 inoremap <expr> . &omnifunc ? '.<C-x><C-o>' : '.'
 
+nnoremap <silent>tm :botright vsplit<Bar>:terminal<CR>
 tnoremap <silent> <ESC> <C-\><C-n>
