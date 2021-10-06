@@ -42,9 +42,9 @@ hook_add = 'Source rainbow.vim'
 repo = 'Yggdroot/indentLine'
 hook_add = 'Source indentline.vim'
 
-# [[plugins]]
-# repo = 'ryanoasis/vim-devicons'
-# hook_add = 'Source vim-devicons.vim'
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = 'Source vim-devicons.vim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
