@@ -41,7 +41,7 @@ set wrapscan
 set inccommand=split
 
 set wildmenu
-set wildmode=list,full
+set wildmode=list:longest,full
 set completeopt=menuone,noselect
 
 set tabstop=4
