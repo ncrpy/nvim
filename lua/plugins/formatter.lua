@@ -82,10 +82,10 @@ require('formatter').setup({
 vim.api.nvim_set_keymap('n', '<leader>F', ':Format<CR>', { noremap=true, silent=true })
 vim.api.nvim_set_keymap('v', '<leader>F', ':Format<CR>', { noremap=true, silent=true })
 
-vim.api.nvim_exec([[
-  command! FormatToggle if &filetype=="format-mode" | filetype detect | else | setfiletype format-mode | endif
-  augroup FormatAutogroup
-    autocmd!
-    autocmd BufWritePost * if index(g:formatter_filetype, &filetype)>=0 | execute'FormatWrite' | endif
-  augroup END
-  ]], true)
+--vim.api.nvim_exec([[
+--  command! FormatToggle if &filetype=="format-mode" | filetype detect | else | setfiletype format-mode | endif
+--  augroup FormatAutogroup
+--    autocmd!
+--    autocmd BufWritePost * if index(g:formatter_filetype, &filetype)>=0 | execute'FormatWrite' | endif
+--  augroup END
+--  ]], true)
