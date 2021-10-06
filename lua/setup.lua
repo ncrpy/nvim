@@ -3,6 +3,7 @@ local plugins = {
   "formatter",
   "nvim-treesitter",
   "telescope",
+  "nvim-tree"
 }
 
 for _, plugin in ipairs(plugins) do

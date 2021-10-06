@@ -42,9 +42,9 @@ hook_add = 'Source rainbow.vim'
 repo = 'Yggdroot/indentLine'
 hook_add = 'Source indentline.vim'
 
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
-hook_add = 'Source vim-devicons.vim'
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
+# hook_add = 'Source vim-devicons.vim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
@@ -78,3 +78,8 @@ merged = 0
 repo = 'nvim-telescope/telescope.nvim'
 hook_add = 'Source telescope.vim'
 depends = ['popup.nvim', 'plenary.nvim']
+
+[[plugins]]
+repo = 'kyazdani42/nvim-tree.lua'
+hook_add = 'Source nvim-tree.vim'
+depends = ['nvim-web-devicons']

@@ -42,15 +42,15 @@ on_cmd = ['Denite']
 repo = 'Shougo/neoyank.vim'
 on_cmd = ['Denite']
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-on_cmd = ['NERDTree']
-depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
-hook_add = 'Source nerdtree.vim'
+# [[plugins]]
+# repo = 'scrooloose/nerdtree'
+# on_cmd = ['NERDTree']
+# depends = ['vim-devicons', 'vim-nerdtree-syntax-highlight']
+# hook_add = 'Source nerdtree.vim'
 
-[[plugins]]
-repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-on_source = 'nerdtree'
+# [[plugins]]
+# repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+# on_source = 'nerdtree'
 
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
