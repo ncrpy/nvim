@@ -58,4 +58,6 @@ set nofixeol
 
 set updatetime=400
 
+let g:tex_flavor='latex'
+
 autocmd TermOpen * startinsert
