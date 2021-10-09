@@ -13,7 +13,7 @@ nnoremap <silent> <leader>bo :BufOnly<CR>
 
 noremap <leader>w <C-w>
 
-nnoremap <silent> <C-a> ggVG
+nnoremap <silent> <leader>a ggVG
 
 noremap ; :
 noremap ,. ;
@@ -24,5 +24,5 @@ inoremap <C-l> <C-g>U<Right>
 " inoremap <C-d> <C-x><C-o>
 inoremap <expr> . &omnifunc ? '.<C-x><C-o>' : '.'
 
-nnoremap <silent>tm :botright vsplit<Bar>:terminal<CR>
+nnoremap <silent> <leader>t :botright vsplit<Bar>:terminal<CR>
 tnoremap <silent> <ESC> <C-\><C-n>
