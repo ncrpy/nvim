@@ -1,6 +1,6 @@
 require "nvim-treesitter.configs".setup {
   ensure_installed = "maintained",
-  ignore_installed = {},
+  ignore_install = {"elixir"},
   highlight = {
     enable = true,
     disable = {"latex"}
