@@ -3,8 +3,8 @@ let g:python3_host_prog = stdpath('config').'/venv/bin/python'
 
 let $PATH = $PATH.':'.stdpath('config').'/venv/bin'.':'.stdpath('config').'/node_modules/.bin'
 
-command! -nargs=1 Source call Source(<f-args>)
-function! Source(plugin_vim)
+command! -nargs=1 SourcePlugin call SourcePlugin(<f-args>)
+function! SourcePlugin(plugin_vim)
     let source_plugin = join(['source ',stdpath('config'),'/plugins/',a:plugin_vim],'')
     execute source_plugin
 endfunction

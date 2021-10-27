@@ -1,14 +1,14 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
-hook_add = 'Source dein.vim'
+hook_add = 'SourcePlugin dein.vim'
 
 [[plugins]]
 repo = 'sainnhe/sonokai'
-hook_add = 'Source sonokai.vim'
+hook_add = 'SourcePlugin sonokai.vim'
 
 [[plugins]]
 repo = 'folke/tokyonight.nvim'
-hook_add = 'Source tokyonight.vim'
+hook_add = 'SourcePlugin tokyonight.vim'
 
 [[plugins]]
 repo = 'joshdick/onedark.vim'
@@ -16,7 +16,7 @@ repo = 'joshdick/onedark.vim'
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
-hook_add = 'Source airline.vim'
+hook_add = 'SourcePlugin airline.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
@@ -27,33 +27,33 @@ build = 'make'
 
 # [[plugins]]
 # repo = 'Shougo/defx.nvim'
-# hook_add = 'Source defx.vim'
+# hook_add = 'SourcePlugin defx.vim'
 
 # [[plugins]]
 # repo = 'neoclide/coc.nvim'
 # merged = 0
 # rev = 'release'
-# hook_add = 'Source coc.nvim'
+# hook_add = 'SourcePlugin coc.nvim'
 
 # [[plugins]]
 # repo = 'dense-analysis/ale'
-# hook_add = 'Source ale.vim'
+# hook_add = 'SourcePlugin ale.vim'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-hook_add = 'Source gitgutter.vim'
+hook_add = 'SourcePlugin gitgutter.vim'
 
 [[plugins]]
 repo = 'luochen1990/rainbow'
-hook_add = 'Source rainbow.vim'
+hook_add = 'SourcePlugin rainbow.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-hook_add = 'Source indentline.vim'
+hook_add = 'SourcePlugin indentline.vim'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
-hook_add = 'Source vim-devicons.vim'
+hook_add = 'SourcePlugin vim-devicons.vim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
@@ -63,11 +63,11 @@ repo = 'kyazdani42/nvim-web-devicons'
 
 # [[plugins]]
 # repo = 'sheerun/vim-polyglot'
-# hook_add = 'Source polyglot.vim'
+# hook_add = 'SourcePlugin polyglot.vim'
 
 [[plugins]]
 repo = 'goerz/jupytext.vim'
-hook_add = 'Source jupytext.vim'
+hook_add = 'SourcePlugin jupytext.vim'
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
@@ -85,10 +85,10 @@ merged = 0
 
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
-hook_add = 'Source telescope.vim'
+hook_add = 'SourcePlugin telescope.vim'
 depends = ['popup.nvim', 'plenary.nvim']
 
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
-hook_add = 'Source nvim-tree.vim'
+hook_add = 'SourcePlugin nvim-tree.vim'
 depends = ['nvim-web-devicons']
