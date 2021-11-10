@@ -40,6 +40,10 @@ build = 'make'
 # hook_add = 'SourcePlugin ale.vim'
 
 [[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = 'SourcePlugin easymotion.vim'
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = 'SourcePlugin gitgutter.vim'
 
