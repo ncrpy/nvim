@@ -7,6 +7,11 @@ local function contains(tab, val)
 end
 
 local servers = {
+    ccls = {
+      init_options = {
+        highlight = {lsRanges = true}
+      }
+    },
     clangd = {},
     jedi_language_server = {
         init_options = {
