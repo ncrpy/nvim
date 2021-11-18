@@ -44,10 +44,10 @@ let g:airline_symbols.maxlinenr = '☰  '
 let g:airline_symbols.dirty='⚡'
 
 " for Cica font
-let g:airline_left_sep = '󾂰'
-let g:airline_left_alt_sep = '󾂱'
-let g:airline_right_sep = '󾂴'
-let g:airline_right_alt_sep = '󾂵'
+" let g:airline_left_sep = '󾂰'
+" let g:airline_left_alt_sep = '󾂱'
+" let g:airline_right_sep = '󾂴'
+" let g:airline_right_alt_sep = '󾂵'
 
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#virtualenv#enabled = 1
