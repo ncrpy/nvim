@@ -33,8 +33,11 @@ for _, ft in pairs({"c", "cpp"}) do
     function()
       return {
         exe = "clang-format",
-        args = {"-assume-filename="..vim.fn.bufname("%"), "-style='{BasedOnStyle: Google, IndentWidth: 4}'"},
-        stdin = true,
+        args = {
+          "-assume-filename=" .. vim.fn.bufname("%"),
+          "-style='{BasedOnStyle: Google, AllowShortFunctionsOnASingleLine: Inline, ColumnLimit: 0}'"
+        },
+        stdin = true
       }
     end
   }
