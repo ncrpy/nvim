@@ -2,6 +2,7 @@ local plugins = {
   "lspconfig",
   "formatter",
   "nvim-treesitter",
+  "colorizer",
   "telescope",
   "nvim-tree"
 }

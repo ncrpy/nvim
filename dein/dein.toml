@@ -47,9 +47,9 @@ hook_add = 'SourcePlugin easymotion.vim'
 repo = 'airblade/vim-gitgutter'
 hook_add = 'SourcePlugin gitgutter.vim'
 
-[[plugins]]
-repo = 'luochen1990/rainbow'
-hook_add = 'SourcePlugin rainbow.vim'
+# [[plugins]]
+# repo = 'luochen1990/rainbow'
+# hook_add = 'SourcePlugin rainbow.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -83,9 +83,12 @@ repo = 'mhartington/formatter.nvim'
 repo = 'nvim-treesitter/nvim-treesitter'
 merged = 0
 
-# [[plugins]]
-# repo = 'p00f/nvim-ts-rainbow'
-# depends = ['nvim-treesitter']
+[[plugins]]
+repo = 'p00f/nvim-ts-rainbow'
+depends = ['nvim-treesitter']
+
+[[plugins]]
+repo = 'norcalli/nvim-colorizer.lua'
 
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
