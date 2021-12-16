@@ -35,7 +35,7 @@ for _, ft in pairs({"c", "cpp"}) do
         exe = "clang-format",
         args = {
           "-assume-filename=" .. vim.fn.bufname("%"),
-          "-style='{BasedOnStyle: Google, AllowShortFunctionsOnASingleLine: Inline, ColumnLimit: 0}'"
+          "-style=file"
         },
         stdin = true
       }
