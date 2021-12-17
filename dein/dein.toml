@@ -91,6 +91,10 @@ repo = 'p00f/nvim-ts-rainbow'
 depends = ['nvim-treesitter']
 
 [[plugins]]
+repo = 'andymass/vim-matchup'
+dependes = ['nvim-treesitter']
+
+[[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
 
 [[plugins]]

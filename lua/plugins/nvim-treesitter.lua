@@ -18,6 +18,9 @@ require "nvim-treesitter.configs".setup {
       "#ae81ff",
       "#7070f0"
     }
+  },
+  matchup = {
+    enable = true,
   }
 }
 
