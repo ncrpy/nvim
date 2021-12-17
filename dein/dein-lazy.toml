@@ -1,12 +1,28 @@
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
+repo = 'Shougo/ddc.vim'
 on_event = 'InsertEnter'
-hook_source = 'SourcePlugin deoplete.vim'
+depends = ['denops.vim']
+hook_source = 'SourcePlugin ddc.vim'
 
 [[plugins]]
-repo = 'Shougo/deoplete-lsp'
-on_event = 'InsertEnter'
-depends = ['nvim-lspconfig', 'deoplete.nvim']
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'LumaKernel/ddc-file'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'LumaKernel/ddc-tabnine'
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -20,11 +36,6 @@ on_cmd = ['Denite']
 depends = ['vim-devicons', 'neomru.vim', 'neoyank.vim']
 hook_add = 'SourcePlugin denite.vim'
 hook_source = 'SourcePlugin denite-lazy.vim'
-
-[[plugins]]
-repo = 'tbodt/deoplete-tabnine'
-build = './install.sh'
-on_source = 'deoplete.nvim'
 
 # [[plugins]]
 # repo = 'Shougo/neosnippet-snippets'

@@ -22,6 +22,9 @@ hook_add = 'SourcePlugin airline.vim'
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
