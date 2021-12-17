@@ -63,4 +63,4 @@ let g:termdebug_wide = 160
 
 let g:tex_flavor='latex'
 
-autocmd TermOpen * startinsert
+" autocmd TermOpen * startinsert

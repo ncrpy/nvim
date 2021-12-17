@@ -1,15 +1,15 @@
-nnoremap <C-c><C-c> :nohlsearch<CR><C-c>
+nnoremap <C-l> :<C-u>nohlsearch<CR><C-l>
 
-nnoremap <silent> <leader>bad :enew<CR>
-nnoremap <silent> <leader>bn :bnext<CR>
-nnoremap <silent> <leader>bp :bprevious<CR>
-nnoremap <silent> <leader>bb :b#<CR>
-nnoremap <silent> <leader>bf :bfirst<CR>
-nnoremap <silent> <leader>bl :blast<CR>
-nnoremap <silent> <leader>bm :bmodified<CR>
-nnoremap <silent> <leader>bd :bdelete<CR>
-nnoremap <silent> <leader>bD :bdelete!<CR>
-nnoremap <silent> <leader>bo :BufOnly<CR>
+nnoremap <silent> <leader>bad :<C-u>enew<CR>
+nnoremap <silent> <leader>bn :<C-u>bnext<CR>
+nnoremap <silent> <leader>bp :<C-u>bprevious<CR>
+nnoremap <silent> <leader>bb :<C-u>b#<CR>
+nnoremap <silent> <leader>bf :<C-u>bfirst<CR>
+nnoremap <silent> <leader>bl :<C-u>blast<CR>
+nnoremap <silent> <leader>bm :<C-u>bmodified<CR>
+nnoremap <silent> <leader>bd :<C-u>bdelete<CR>
+nnoremap <silent> <leader>bD :<C-u>bdelete!<CR>
+nnoremap <silent> <leader>bo :<C-u>BufOnly<CR>
 
 noremap <leader>w <C-w>
 
@@ -20,9 +20,10 @@ noremap ,. ;
 noremap ,, ,
 
 inoremap <C-l> <C-g>U<Right>
+inoremap <C-f> <ESC><Left>"zx"zpa
 
 " inoremap <C-d> <C-x><C-o>
 inoremap <expr> . &omnifunc ? '.<C-x><C-o>' : '.'
 
-nnoremap <silent> <leader>t :botright vsplit<Bar>:terminal<CR>
+nnoremap <silent> <leader>t :<C-u>botright vsplit<Bar>:terminal<CR>
 tnoremap <silent> <ESC> <C-\><C-n>
