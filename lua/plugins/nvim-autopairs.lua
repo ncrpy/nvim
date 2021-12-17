@@ -1,3 +1,7 @@
 local npairs = require('nvim-autopairs')
 
-npairs.setup{}
+npairs.setup({
+  check_ts = true,
+})
+
+vim.api.nvim_set_keymap('i', '<C-h>', '<BS>', {noremap = false})
