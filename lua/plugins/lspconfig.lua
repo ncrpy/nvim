@@ -56,6 +56,7 @@ local servers = {
         cmd = {vim.fn.stdpath('config').."/node_modules/.bin/vim-language-server", "--stdio"}
     },
     efm = {
+        single_file_support = true,
         filetypes = {"python"},
         init_options = {
             documentFormatting = false
