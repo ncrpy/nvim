@@ -102,3 +102,6 @@ depends = ['popup.nvim', 'plenary.nvim']
 repo = 'kyazdani42/nvim-tree.lua'
 hook_add = 'SourcePlugin nvim-tree.vim'
 depends = ['nvim-web-devicons']
+
+[[plugins]]
+repo = 'windwp/nvim-autopairs'

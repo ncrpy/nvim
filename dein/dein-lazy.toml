@@ -88,10 +88,10 @@ on_ft = ['r', 'rmd']
 branch = 'stable'
 hook_add = 'SourcePlugin Nvim-R.vim'
 
-[[plugins]]
-repo = 'cohama/lexima.vim'
-on_event = 'InsertEnter'
-hook_source = 'SourcePlugin lexima.vim'
+# [[plugins]]
+# repo = 'cohama/lexima.vim'
+# on_event = 'InsertEnter'
+# hook_source = 'SourcePlugin lexima.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
@@ -114,11 +114,6 @@ on_event = 'CmdlineEnter'
 repo = 'thinca/vim-quickrun'
 on_event = 'CmdlineEnter'
 hook_add = 'SourcePlugin quickrun.vim'
-
-# [[plugins]]
-# repo = 'windwp/nvim-autopairs'
-# on_event = 'InsertEnter'
-# hook_source = 'lua require("plugins.npairs")'
 
 [[plugins]]
 repo = 'nvim-lua/popup.nvim'

@@ -4,11 +4,12 @@ local plugins = {
   "nvim-treesitter",
   "colorizer",
   "telescope",
-  "nvim-tree"
+  "nvim-tree",
+  "nvim-autopairs"
 }
 
 for _, plugin in ipairs(plugins) do
   if package.loaders[2](plugin) then
-    require("plugins."..plugin)
+    require("plugins." .. plugin)
   end
 end
