@@ -1,6 +1,8 @@
 " Required:
 syntax enable
 set termguicolors
+set pumblend=20
+set winblend=20
 
 set cursorline
 set background=dark
