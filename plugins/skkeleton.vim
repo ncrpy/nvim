@@ -4,7 +4,7 @@ cmap <C-b> <Plug>(skkeleton-toggle)
 function! s:skkeleton_init() abort
   call skkeleton#config({
     \   'eggLikeNewline': v:true,
-    \   'globalJisyo': "/usr/local/share/skk/SKK-JISYO.L",
+    \   'globalJisyo': "~/.skk/SKK-JISYO.L",
     \   'markerHenkan': "▽ ",
     \   'markerHenkanSelect': "▼ ",
     \ })
