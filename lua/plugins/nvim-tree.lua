@@ -52,7 +52,7 @@ diagnostics = {
     args = {}
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     custom = {}
   },
   view = {
