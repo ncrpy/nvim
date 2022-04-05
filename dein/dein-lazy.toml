@@ -26,7 +26,8 @@ on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
-on_source = 'ddc.vim'
+on_event = 'CmdUndefined Skkeleton'
+hook_add = 'SourcePlugin skkeleton-map.vim'
 hook_source = 'SourcePlugin skkeleton.vim'
 
 [[plugins]]

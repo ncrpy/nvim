@@ -1,6 +1,3 @@
-imap <C-b> <Plug>(skkeleton-toggle)
-cmap <C-b> <Plug>(skkeleton-toggle)
-
 function! s:skkeleton_init() abort
   call skkeleton#config({
     \   'eggLikeNewline': v:true,
