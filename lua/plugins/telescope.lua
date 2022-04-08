@@ -1,4 +1,5 @@
 local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
 
 require("telescope").setup {
   defaults = {
@@ -10,7 +11,11 @@ require("telescope").setup {
     sorting_strategy = "ascending",
     mappings = {
       n = {
-        ["q"] = actions.close
+        ["q"] = actions.close,
+        ["<C-t>"] = trouble.open_with_trouble
+      },
+      i = {
+        ["<C-t>"] = trouble.open_with_trouble
       }
     }
   }

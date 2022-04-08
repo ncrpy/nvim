@@ -112,3 +112,7 @@ depends = ['nvim-web-devicons']
 
 [[plugins]]
 repo = 'windwp/nvim-autopairs'
+
+[[plugins]]
+repo = 'folke/trouble.nvim'
+depends = ['kyazdani42/nvim-web-devicons']

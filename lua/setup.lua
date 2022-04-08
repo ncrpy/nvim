@@ -6,7 +6,8 @@ local plugins = {
   "colorizer",
   "telescope",
   "nvim-tree",
-  "nvim-autopairs"
+  "nvim-autopairs",
+  "trouble"
 }
 
 for _, plugin in ipairs(plugins) do
