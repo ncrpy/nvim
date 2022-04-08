@@ -1,5 +1,6 @@
 local plugins = {
   "lspconfig",
+  "nvim-lsp-installer",
   "formatter",
   "nvim-treesitter",
   "colorizer",

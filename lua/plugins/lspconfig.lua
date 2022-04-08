@@ -1,103 +1,103 @@
-local nvim_lsp = require'lspconfig'
-
-local function contains(tab, val)
-    local set = {}
-    for _, l in ipairs(tab) do set[l] = true end
-    return set[val] ~= nil
-end
-
-local servers = {
-    clangd = {},
-    jedi_language_server = {
-        init_options = {
-            diagnostics = {enable = false},
-            completion = {disableSnippets = true},
-        }
-    },
---    pylsp = {
+--local nvim_lsp = require'lspconfig'
+--
+--local function contains(tab, val)
+--    local set = {}
+--    for _, l in ipairs(tab) do set[l] = true end
+--    return set[val] ~= nil
+--end
+--
+--local servers = {
+--    clangd = {},
+--    jedi_language_server = {
+--        init_options = {
+--            diagnostics = {enable = false},
+--            completion = {disableSnippets = true},
+--        }
+--    },
+----    pylsp = {
+----        settings = {
+----            pylsp = {
+----                configurationSources = {"flake8"},
+----                plugins = {
+----                    autopep8 = {enabled = false},
+----                    folding = {enabled = false},
+----                    flake8 = {enabled = true},
+----                    jedi_completion = {enabled = false},
+----                    jedi_definition = {enabled = false},
+----                    jedi_hover = {enabled = false},
+----                    jedi_highlight = {enabled = false},
+----                    jedi_references = {enabled = false},
+----                    fedi_rename = {enabled = false},
+----                    jedi_signature_help = {enabled = false},
+----                    jedi_synbols = {enabled = false},
+----                    mccabe = {enabled = false},
+----                    preload = {enabled = false},
+----                    pycodestyle = {enabled = false},
+----                    pydocstyle = {enabled = false},
+----                    pyflakes = {enabled = false},
+----                    pylint = {enabled = false},
+----                    rope_completion = {enabled = false},
+----                    rope_rename = {enabled = false},
+----                    yapf = {enabled = false},
+----                }
+----            }
+----        }
+----    },
+----    pyright = {
+----        settings = {
+----            pyright = {
+----                disableLanguageServices = true
+----            }
+----        }
+----    },
+--    texlab = {},
+--    r_language_server = {},
+--    vimls = {
+--        cmd = {vim.fn.stdpath('config').."/node_modules/.bin/vim-language-server", "--stdio"}
+--    },
+--    efm = {
+--        single_file_support = true,
+--        filetypes = {"python"},
+--        init_options = {
+--            documentFormatting = false
+--        },
 --        settings = {
---            pylsp = {
---                configurationSources = {"flake8"},
---                plugins = {
---                    autopep8 = {enabled = false},
---                    folding = {enabled = false},
---                    flake8 = {enabled = true},
---                    jedi_completion = {enabled = false},
---                    jedi_definition = {enabled = false},
---                    jedi_hover = {enabled = false},
---                    jedi_highlight = {enabled = false},
---                    jedi_references = {enabled = false},
---                    fedi_rename = {enabled = false},
---                    jedi_signature_help = {enabled = false},
---                    jedi_synbols = {enabled = false},
---                    mccabe = {enabled = false},
---                    preload = {enabled = false},
---                    pycodestyle = {enabled = false},
---                    pydocstyle = {enabled = false},
---                    pyflakes = {enabled = false},
---                    pylint = {enabled = false},
---                    rope_completion = {enabled = false},
---                    rope_rename = {enabled = false},
---                    yapf = {enabled = false},
+--            languages = {
+--                python = {
+--                    {
+--                        LintCommand = "flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
+--                        lintStdin = true,
+--                        lintFormats = {"%f:%l:%c: %m"}
+--                    },
+--                    {
+--                        LintCommand = "mypy --show-column-numbers --ignore-missing-imports --no-site-packages --cache-dir=/dev/null",
+--                        lintFormats = {
+--                            "%f:%l:%c: %trror: %m",
+--                            "%f:%l:%c: %tarning: %m",
+--                            "%f:%l:%c: %tote: %m"
+--                        },
+--                    },
+----                    {
+----                        formatCommand = "isort --quiet -",
+----                        formatStdin = true
+----                    },
+----                    {
+----                        formatCommand = "black --quiet -",
+----                        formatStdin = true
+----                    },
 --                }
 --            }
 --        }
 --    },
---    pyright = {
---        settings = {
---            pyright = {
---                disableLanguageServices = true
---            }
---        }
---    },
-    texlab = {},
-    r_language_server = {},
-    vimls = {
-        cmd = {vim.fn.stdpath('config').."/node_modules/.bin/vim-language-server", "--stdio"}
-    },
-    efm = {
-        single_file_support = true,
-        filetypes = {"python"},
-        init_options = {
-            documentFormatting = false
-        },
-        settings = {
-            languages = {
-                python = {
-                    {
-                        LintCommand = "flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
-                        lintStdin = true,
-                        lintFormats = {"%f:%l:%c: %m"}
-                    },
-                    {
-                        LintCommand = "mypy --show-column-numbers --ignore-missing-imports --no-site-packages --cache-dir=/dev/null",
-                        lintFormats = {
-                            "%f:%l:%c: %trror: %m",
-                            "%f:%l:%c: %tarning: %m",
-                            "%f:%l:%c: %tote: %m"
-                        },
-                    },
---                    {
---                        formatCommand = "isort --quiet -",
---                        formatStdin = true
---                    },
---                    {
---                        formatCommand = "black --quiet -",
---                        formatStdin = true
---                    },
-                }
-            }
-        }
-    },
-}
-
-for server, config in pairs(servers) do
-    if vim.fn.executable(server) then
-        nvim_lsp[server].setup(config)
-    end
-end
-
-require("plugins.sumneko-lua")
+--}
+--
+--for server, config in pairs(servers) do
+--    if vim.fn.executable(server) then
+--        nvim_lsp[server].setup(config)
+--    end
+--end
+--
+--require("plugins.sumneko-lua")
 
 vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})
 vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})

@@ -80,6 +80,9 @@ hook_add = 'SourcePlugin jupytext.vim'
 repo = 'neovim/nvim-lspconfig'
 
 [[plugins]]
+repo = 'williamboman/nvim-lsp-installer'
+
+[[plugins]]
 repo = 'mhartington/formatter.nvim'
 
 [[plugins]]
