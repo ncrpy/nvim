@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "lua-fmt": "^2.6.0",
-    "tree-sitter-cli": "^0.19.5",
-    "vim-language-server": "^2.2.3"
+    "tree-sitter-cli": "^0.19.5"
   }
 }
