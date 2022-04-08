@@ -25,32 +25,6 @@ lsp_installer.on_server_ready(
           completion = {disableSnippets = true}
         }
       },
-      efm = {
-        single_file_support = true,
-        filetypes = {"python"},
-        init_options = {
-          documentFormatting = false
-        },
-        settings = {
-          languages = {
-            python = {
-              {
-                LintCommand = "flake8 --max-complexity 10 --stdin-display-name ${INPUT} -",
-                lintStdin = true,
-                lintFormats = {"%f:%l:%c: %m"}
-              },
-              {
-                LintCommand = "mypy --show-column-numbers --ignore-missing-imports --no-site-packages --cache-dir=/dev/null",
-                lintFormats = {
-                  "%f:%l:%c: %trror: %m",
-                  "%f:%l:%c: %tarning: %m",
-                  "%f:%l:%c: %tote: %m"
-                }
-              }
-            }
-          }
-        }
-      },
       sumneko_lua = {
         settings = {
           Lua = {
