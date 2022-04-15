@@ -1,6 +1,7 @@
 local filetype = {}
-vim.g.formatter_filetype = {"c", "cpp", "lua", "python", "format-mode"}
+vim.g.formatter_filetype = {"c", "cpp", "lua", "python", "verilog", "format-mode"}
 
+local lsp_servers = vim.fn.stdpath("data") .. "/lsp_servers"
 local global_formatters = {}
 
 local function merge_table(tb1, tb2)
@@ -69,6 +70,19 @@ for _, ft in pairs({"python"}) do
     function()
       return {
         exe = "black",
+        args = {"-"},
+        stdin = true,
+      }
+    end
+  }
+  merge_table(filetype[ft], formatters)
+end
+
+for _, ft in pairs({"verilog"}) do
+  local formatters = {
+    function()
+      return {
+        exe = lsp_servers .. "/verible/verible/bin/verible-verilog-format",
         args = {"-"},
         stdin = true,
       }
