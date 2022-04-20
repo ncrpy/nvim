@@ -39,6 +39,7 @@ hook_source = 'SourceCfg colorizer'
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
 on_cmd = ['Telescope']
+on_lua = ['telescope', 'telescope.builtin']
 hook_add = 'SourceCfg telescope.vim'
 hook_source = 'SourceCfg telescope'
 depends = ['plenary.nvim']
@@ -63,5 +64,6 @@ hook_source = 'SourceCfg nvim-autopairs'
 repo = 'folke/trouble.nvim'
 on_cmd = ['TroubleToggle']
 on_source = 'telescope.nvim'
+hook_add = 'SourceCfg trouble-map'
 hook_source = 'SourceCfg trouble'
 depends = ['nvim-web-devicons']
