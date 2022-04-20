@@ -3,7 +3,6 @@ black==22.3.0
 click==8.1.2
 fastjsonschema==2.15.3
 greenlet==1.1.2
-importlib-resources==5.7.0
 isort==5.10.1
 jsonschema==4.4.0
 jupyter-core==4.9.2
@@ -25,4 +24,3 @@ toml==0.10.2
 tomli==2.0.1
 traitlets==5.1.1
 typing_extensions==4.1.1
-zipp==3.8.0
