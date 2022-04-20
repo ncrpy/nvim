@@ -1,43 +1,67 @@
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+on_event = ['BufNewFile', 'BufRead']
+hook_source = 'SourceCfg lspconfig'
 
 [[plugins]]
 repo = 'williamboman/nvim-lsp-installer'
+on_cmd = ['LspInstallInfo']
+on_source = 'nvim-lspconfig'
+hook_source = 'SourceCfg nvim-lsp-installer'
+depends = 'nvim-lspconfig'
 
 [[plugins]]
 repo = 'mhartington/formatter.nvim'
+on_cmd = 'Format'
+hook_source = 'SourceCfg formatter'
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 merged = 0
+on_event = ['BufNewFile', 'BufRead']
+hook_post_update = 'TSUpdate'
+hook_source = 'SourceCfg nvim-treesitter'
 
 [[plugins]]
 repo = 'p00f/nvim-ts-rainbow'
-depends = ['nvim-treesitter']
+on_source = 'nvim-treesitter'
+depends = 'nvim-treesitter'
 
 [[plugins]]
 repo = 'andymass/vim-matchup'
-dependes = ['nvim-treesitter']
+on_source = 'nvim-treesitter'
 
 [[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
+on_event = ['BufNewFile', 'BufRead']
+hook_source = 'SourceCfg colorizer'
 
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
-hook_add = 'SourcePlugin telescope.vim'
+on_cmd = ['Telescope']
+hook_add = 'SourceCfg telescope.vim'
+hook_source = 'SourceCfg telescope'
 depends = ['plenary.nvim']
 
 [[plugins]]
 repo = 'nvim-lua/plenary.nvim'
+on_source = 'telescope.nvim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
-hook_add = 'SourcePlugin nvim-tree.vim'
+on_cmd = ['NvimTreeToggle']
+hook_add = 'SourceCfg nvim-tree.vim'
+hook_source = 'SourceCfg nvim-tree'
 depends = ['nvim-web-devicons']
 
 [[plugins]]
 repo = 'windwp/nvim-autopairs'
+on_event = 'InsertEnter'
+hook_source = 'SourceCfg nvim-autopairs'
 
 [[plugins]]
 repo = 'folke/trouble.nvim'
-depends = ['kyazdani42/nvim-web-devicons']
+on_cmd = ['TroubleToggle']
+on_source = 'telescope.nvim'
+hook_source = 'SourceCfg trouble'
+depends = ['nvim-web-devicons']

@@ -17,7 +17,7 @@ if dein#load_state(s:dein_cache_dir)
  
   " Load TOML in order to add or remove plugins.
   call dein#load_toml(s:dein_config_dir . '/dein.toml', {'lazy': 0})
-  call dein#load_toml(s:dein_config_dir . '/dein-lua.toml', {'lazy': 0})
+  call dein#load_toml(s:dein_config_dir . '/dein-lua.toml', {'lazy': 1})
   call dein#load_toml(s:dein_config_dir . '/dein-lazy.toml', {'lazy': 1})
 
   " Required:

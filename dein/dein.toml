@@ -1,14 +1,14 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
-hook_add = 'SourcePlugin dein.vim'
+hook_add = 'SourceCfg dein.vim'
 
 [[plugins]]
 repo = 'sainnhe/sonokai'
-hook_add = 'SourcePlugin sonokai.vim'
+hook_add = 'SourceCfg sonokai.vim'
 
 [[plugins]]
 repo = 'folke/tokyonight.nvim'
-hook_add = 'SourcePlugin tokyonight.vim'
+hook_add = 'SourceCfg tokyonight.vim'
 
 [[plugins]]
 repo = 'joshdick/onedark.vim'
@@ -16,7 +16,7 @@ repo = 'joshdick/onedark.vim'
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
-hook_add = 'SourcePlugin airline.vim'
+hook_add = 'SourceCfg airline.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
@@ -30,37 +30,37 @@ build = 'make'
 
 # [[plugins]]
 # repo = 'Shougo/defx.nvim'
-# hook_add = 'SourcePlugin defx.vim'
+# hook_add = 'SourceCfg defx.vim'
 
 # [[plugins]]
 # repo = 'neoclide/coc.nvim'
 # merged = 0
 # rev = 'release'
-# hook_add = 'SourcePlugin coc.nvim'
+# hook_add = 'SourceCfg coc.nvim'
 
 # [[plugins]]
 # repo = 'dense-analysis/ale'
-# hook_add = 'SourcePlugin ale.vim'
+# hook_add = 'SourceCfg ale.vim'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
-hook_add = 'SourcePlugin easymotion.vim'
+hook_add = 'SourceCfg easymotion.vim'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-hook_add = 'SourcePlugin gitgutter.vim'
+hook_add = 'SourceCfg gitgutter.vim'
 
 # [[plugins]]
 # repo = 'luochen1990/rainbow'
-# hook_add = 'SourcePlugin rainbow.vim'
+# hook_add = 'SourceCfg rainbow.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-hook_add = 'SourcePlugin indentline.vim'
+hook_add = 'SourceCfg indentline.vim'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
-hook_add = 'SourcePlugin vim-devicons.vim'
+hook_add = 'SourceCfg vim-devicons.vim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
@@ -70,8 +70,8 @@ repo = 'kyazdani42/nvim-web-devicons'
 
 # [[plugins]]
 # repo = 'sheerun/vim-polyglot'
-# hook_add = 'SourcePlugin polyglot.vim'
+# hook_add = 'SourceCfg polyglot.vim'
 
 [[plugins]]
 repo = 'goerz/jupytext.vim'
-hook_add = 'SourcePlugin jupytext.vim'
+hook_add = 'SourceCfg jupytext.vim'
