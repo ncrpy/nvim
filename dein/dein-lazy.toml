@@ -120,11 +120,3 @@ on_event = 'CmdlineEnter'
 repo = 'thinca/vim-quickrun'
 on_event = 'CmdlineEnter'
 hook_add = 'SourcePlugin quickrun.vim'
-
-[[plugins]]
-repo = 'nvim-lua/popup.nvim'
-on_source = 'telescope.nvim'
-
-[[plugins]]
-repo = 'nvim-lua/plenary.nvim'
-on_source = 'telescope.nvim'
