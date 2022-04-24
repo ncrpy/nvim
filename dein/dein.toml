@@ -14,12 +14,15 @@ hook_add = 'SourceCfg tokyonight.vim'
 repo = 'joshdick/onedark.vim'
 
 [[plugins]]
-repo    = 'vim-airline/vim-airline'
-depends = ['vim-airline-themes']
-hook_add = 'SourceCfg airline.vim'
+repo = 'EdenEast/nightfox.nvim'
 
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
+# [[plugins]]
+# repo    = 'vim-airline/vim-airline'
+# depends = ['vim-airline-themes']
+# hook_add = 'SourceCfg airline.vim'
+# 
+# [[plugins]]
+# repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
@@ -46,9 +49,9 @@ build = 'make'
 repo = 'easymotion/vim-easymotion'
 hook_add = 'SourceCfg easymotion.vim'
 
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-hook_add = 'SourceCfg gitgutter.vim'
+# [[plugins]]
+# repo = 'airblade/vim-gitgutter'
+# hook_add = 'SourceCfg gitgutter.vim'
 
 # [[plugins]]
 # repo = 'luochen1990/rainbow'

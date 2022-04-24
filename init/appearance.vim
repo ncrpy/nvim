@@ -16,7 +16,7 @@ augroup transparent_bg
     autocmd ColorScheme * highlight EndOfBuffer guibg=none
 augroup END
 
-autocmd VimEnter * nested colorscheme tokyonight
+autocmd VimEnter * nested colorscheme duskfox
 
 set list
 set listchars=tab:»-,trail:-,nbsp:%,eol:↲
