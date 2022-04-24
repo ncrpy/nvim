@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-on_event = ['BufNewFile', 'BufRead']
+on_if = 1
 hook_source = 'SourceCfg lspconfig'
 
 [[plugins]]
@@ -18,7 +18,7 @@ hook_source = 'SourceCfg formatter'
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 merged = 0
-on_event = ['BufNewFile', 'BufRead']
+on_if = 1
 hook_post_update = 'TSUpdate'
 hook_source = 'SourceCfg nvim-treesitter'
 
@@ -33,7 +33,7 @@ on_source = 'nvim-treesitter'
 
 [[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
-on_event = ['BufNewFile', 'BufRead']
+on_if = 1
 hook_source = 'SourceCfg colorizer'
 
 [[plugins]]
@@ -63,7 +63,7 @@ hook_source = 'SourceCfg nvim-autopairs'
 [[plugins]]
 repo = 'folke/trouble.nvim'
 on_cmd = ['TroubleToggle']
-on_source = 'telescope.nvim'
+on_lua = ['trouble', 'trouble.providers.telescope']
 hook_add = 'SourceCfg trouble-map'
 hook_source = 'SourceCfg trouble'
 depends = ['nvim-web-devicons']
