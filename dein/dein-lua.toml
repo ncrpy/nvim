@@ -11,11 +11,6 @@ hook_source = 'SourceCfg nvim-lsp-installer'
 depends = 'nvim-lspconfig'
 
 [[plugins]]
-repo = 'mhartington/formatter.nvim'
-on_cmd = 'Format'
-hook_source = 'SourceCfg formatter'
-
-[[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 merged = 0
 on_if = 1
@@ -57,6 +52,12 @@ depends = ['nvim-web-devicons']
 repo = 'hrsh7th/nvim-cmp'
 on_event = ['InsertEnter']
 hook_source = 'SourceCfg nvim-cmp'
+
+[[plugins]]
+repo = 'mhartington/formatter.nvim'
+on_cmd = 'Format'
+hook_add = 'SourceCfg formatter-map'
+hook_source = 'SourceCfg formatter'
 
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'

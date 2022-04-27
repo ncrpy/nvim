@@ -96,9 +96,6 @@ require('formatter').setup({
   filetype = filetype
 })
 
-vim.api.nvim_set_keymap('n', '<leader>k', ':Format<CR>', { noremap=true, silent=true })
-vim.api.nvim_set_keymap('v', '<leader>k', ':Format<CR>', { noremap=true, silent=true })
-
 --vim.api.nvim_exec([[
 --  command! FormatToggle if &filetype=="format-mode" | filetype detect | else | setfiletype format-mode | endif
 --  augroup FormatAutogroup
