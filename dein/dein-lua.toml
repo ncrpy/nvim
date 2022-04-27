@@ -48,6 +48,12 @@ hook_source = 'SourceCfg lualine'
 depends = ['nvim-web-devicons']
 
 [[plugins]]
+repo = 'romgrk/barbar.nvim'
+on_event = 'ColorScheme'
+hook_source = 'SourceCfg barbar'
+depends = ['nvim-web-devicons']
+
+[[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
 on_cmd = ['Telescope']
 on_lua = ['telescope', 'telescope.builtin']
