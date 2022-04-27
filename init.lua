@@ -15,8 +15,11 @@ vim.api.nvim_create_user_command(
       if vim.fn.filereadable(cfg_path) == 1 then
         dofile(cfg_path)
       end
-    elseif package.loaders[2](cfg) then
-      require("plugins." .. cfg)
+    else
+      local cfg_path = vim.fn.stdpath("config") .. "/lua/plugins/" .. cfg .. ".lua"
+      if vim.fn.filereadable(cfg_path) == 1 then
+        require("plugins." .. cfg)
+      end
     end
   end,
   {nargs = 1}
