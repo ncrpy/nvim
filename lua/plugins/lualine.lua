@@ -57,7 +57,10 @@ require("lualine").setup {
         update_in_insert = false, -- Update diagnostics in insert mode.
         always_visible = false,   -- Show diagnostics even if there are none.
       },
-      "filename"
+      {
+        "filename",
+        path = 1
+      }
     },
     lualine_x = {
       "encoding",
@@ -72,7 +75,16 @@ require("lualine").setup {
       }
     },
     lualine_y = {"filetype"},
-    lualine_z = {"progress", "location"},
+    lualine_z = {
+      {
+        "progress",
+        padding = { left = 0, right = 1 }
+      },
+      {
+        "location",
+        padding = { left = 0, right = 0 }
+      }
+    }
   },
   inactive_sections = {
     lualine_a = {},
@@ -82,13 +94,6 @@ require("lualine").setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {
-    lualine_a = {"buffers"},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {"tabs"},
-  },
+  tabline = {},
   extensions = {"nvim-tree"}
 }
