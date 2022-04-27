@@ -19,6 +19,7 @@ if dein#load_state(s:dein_cache_dir)
   call dein#load_toml(s:dein_config_dir . '/dein.toml', {'lazy': 0})
   call dein#load_toml(s:dein_config_dir . '/dein-lua.toml', {'lazy': 1})
   call dein#load_toml(s:dein_config_dir . '/dein-lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:dein_config_dir . '/dein-cmp.toml', {'lazy': 1, 'on_source': 'nvim-cmp'})
 
   " Required:
   call dein#end()

@@ -1,28 +1,28 @@
-[[plugins]]
-repo = 'Shougo/ddc.vim'
-on_event = 'InsertEnter'
-depends = ['denops.vim']
-hook_source = 'SourceCfg ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-matcher_head'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-sorter_rank'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-nvim-lsp'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'LumaKernel/ddc-file'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'LumaKernel/ddc-tabnine'
-on_source = 'ddc.vim'
+# [[plugins]]
+# repo = 'Shougo/ddc.vim'
+# on_event = 'InsertEnter'
+# depends = ['denops.vim']
+# hook_source = 'SourceCfg ddc.vim'
+# 
+# [[plugins]]
+# repo = 'Shougo/ddc-matcher_head'
+# on_source = 'ddc.vim'
+# 
+# [[plugins]]
+# repo = 'Shougo/ddc-sorter_rank'
+# on_source = 'ddc.vim'
+# 
+# [[plugins]]
+# repo = 'Shougo/ddc-nvim-lsp'
+# on_source = 'ddc.vim'
+# 
+# [[plugins]]
+# repo = 'LumaKernel/ddc-file'
+# on_source = 'ddc.vim'
+# 
+# [[plugins]]
+# repo = 'LumaKernel/ddc-tabnine'
+# on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
@@ -30,11 +30,19 @@ on_event = 'CmdUndefined Skkeleton'
 hook_add = 'SourceCfg skkeleton-map.vim'
 hook_source = 'SourceCfg skkeleton.vim'
 
+# [[plugins]]
+# repo = 'Shougo/neosnippet'
+# on_ft = ['snippet']
+# on_event = 'InsertEnter'
+# hook_post_source = 'SourceCfg neosnippet.vim'
+
 [[plugins]]
-repo = 'Shougo/neosnippet'
-on_ft = ['snippet']
+repo = 'hrsh7th/vim-vsnip'
 on_event = 'InsertEnter'
-hook_post_source = 'SourceCfg neosnippet.vim'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+on_source = 'vim-vsnip'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -47,9 +55,9 @@ hook_source = 'SourceCfg denite-lazy.vim'
 # repo = 'Shougo/neosnippet-snippets'
 # on_source = 'neoosnippet'
 
-[[plugins]]
-repo = 'ncrpy/mysnippets'
-on_source = 'neosnippet'
+# [[plugins]]
+# repo = 'ncrpy/mysnippets'
+# on_source = 'neosnippet'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
