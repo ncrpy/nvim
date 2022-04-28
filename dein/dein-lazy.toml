@@ -39,9 +39,10 @@ hook_source = 'SourceCfg skkeleton.vim'
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
 on_event = 'InsertEnter'
+hook_source = 'SourceCfg vim-vsnip.vim'
 
 [[plugins]]
-repo = 'hrsh7th/vim-vsnip-integ'
+repo = 'rafamadriz/friendly-snippets'
 on_source = 'vim-vsnip'
 
 [[plugins]]
