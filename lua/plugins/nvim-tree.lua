@@ -1,4 +1,7 @@
 require'nvim-tree'.setup {
+  renderer = {
+    special_files = { "README.md", "Makefile" }
+  },
   filters = {
     dotfiles = true
   },
