@@ -45,6 +45,7 @@ depends = ['nvim-web-devicons']
 [[plugins]]
 repo = 'romgrk/barbar.nvim'
 on_event = 'ColorScheme'
+hook_add = 'SourceCfg barbar.vim'
 hook_source = 'SourceCfg barbar'
 depends = ['nvim-web-devicons']
 

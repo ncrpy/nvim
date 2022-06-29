@@ -1,53 +1,5 @@
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
--- Move to previous/next
-map('n', '<leader>bN', ':BufferPrevious<CR>', opts)
-map('n', '<leader>bn', ':BufferNext<CR>', opts)
--- Re-order to previous/next
-map('n', '<leader>b<', ':BufferMovePrevious<CR>', opts)
-map('n', '<leader>b>', ' :BufferMoveNext<CR>', opts)
--- Goto buffer in position...
-map('n', '<leader>b1', ':BufferGoto 1<CR>', opts)
-map('n', '<leader>b2', ':BufferGoto 2<CR>', opts)
-map('n', '<leader>b3', ':BufferGoto 3<CR>', opts)
-map('n', '<leader>b4', ':BufferGoto 4<CR>', opts)
-map('n', '<leader>b5', ':BufferGoto 5<CR>', opts)
-map('n', '<leader>b6', ':BufferGoto 6<CR>', opts)
-map('n', '<leader>b7', ':BufferGoto 7<CR>', opts)
-map('n', '<leader>b8', ':BufferGoto 8<CR>', opts)
-map('n', '<leader>b9', ':BufferGoto 9<CR>', opts)
-map('n', '<leader>b0', ':BufferLast<CR>', opts)
--- Pin/unpin buffer
-map('n', '<leader>bp', ':BufferPin<CR>', opts)
--- Close buffer
-map('n', '<leader>bc', ':BufferClose<CR>', opts)
-map('n', '<leader>bd', ':BufferDelete<CR>', opts)
--- Wipeout buffer
---                 :BufferWipeout<CR>
-map('n', '<leader>bw', ':BufferWipeout<CR>', opts)
--- Close commands
---                 :BufferCloseAllButCurrent<CR>
---                 :BufferCloseAllButPinned<CR>
---                 :BufferCloseBuffersLeft<CR>
---                 :BufferCloseBuffersRight<CR>
-map('n', '<leader>bo', ':BufferCloseAllButCurrent<CR>', opts)
-map('n', '<leader>bi', ':BufferCloseAllButPinned<CR>', opts)
--- Magic buffer-picking mode
-map('n', '<leader>bs', ':BufferPick<CR>', opts)
--- Sort automatically by...
-map('n', '<leader>brb', ':BufferOrderByBufferNumber<CR>', opts)
-map('n', '<leader>brd', ':BufferOrderByDirectory<CR>', opts)
-map('n', '<leader>brl', ':BufferOrderByLanguage<CR>', opts)
-map('n', '<leader>brw', ':BufferOrderByWindowNumber<CR>', opts)
-
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used
-
-
 -- Set barbar's options
-vim.g.bufferline = {
+require'bufferline'.setup {
   -- Enable/disable animations
   animation = true,
 
@@ -113,14 +65,3 @@ vim.g.bufferline = {
   -- where X is the buffer number. But only a static string is accepted here.
   no_name_title = nil,
 }
-
-vim.cmd([[
-augroup transparent_barbar_bg
-  autocmd!
-  autocmd ColorScheme * highlight BufferCurrent guibg=none
-  autocmd ColorScheme * highlight BufferCurrentIndex guibg=none
-  autocmd ColorScheme * highlight BufferCurrentMod guibg=none
-  autocmd ColorScheme * highlight BufferCurrentSign guibg=none
-  autocmd ColorScheme * highlight BufferCurrentTarget guibg=none
-augroup END
-]])
