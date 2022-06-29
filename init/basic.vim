@@ -44,9 +44,9 @@ set wildmenu
 set wildmode=list:longest,full
 set completeopt=menuone,noselect
 
-set tabstop=4
+set tabstop=2
 set softtabstop=0
-set shiftwidth=4
+set shiftwidth=2
 
 set expandtab
 set smarttab
