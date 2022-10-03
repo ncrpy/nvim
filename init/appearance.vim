@@ -5,6 +5,9 @@ set pumblend=20
 set winblend=20
 
 set cursorline
+set number
+set relativenumber
+
 set background=dark
 
 augroup transparent_bg
