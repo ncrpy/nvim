@@ -45,12 +45,12 @@ hook_source = 'SourceCfg vim-vsnip.vim'
 repo = 'rafamadriz/friendly-snippets'
 on_source = 'vim-vsnip'
 
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-on_cmd = ['Denite']
-depends = ['vim-devicons', 'neomru.vim', 'neoyank.vim']
-hook_add = 'SourceCfg denite.vim'
-hook_source = 'SourceCfg denite-lazy.vim'
+# [[plugins]]
+# repo = 'Shougo/denite.nvim'
+# on_cmd = ['Denite']
+# depends = ['vim-devicons', 'neomru.vim', 'neoyank.vim']
+# hook_add = 'SourceCfg denite.vim'
+# hook_source = 'SourceCfg denite-lazy.vim'
 
 # [[plugins]]
 # repo = 'Shougo/neosnippet-snippets'
@@ -60,13 +60,13 @@ hook_source = 'SourceCfg denite-lazy.vim'
 # repo = 'ncrpy/mysnippets'
 # on_source = 'neosnippet'
 
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-on_cmd = ['Denite']
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
-on_cmd = ['Denite']
+# [[plugins]]
+# repo = 'Shougo/neomru.vim'
+# on_cmd = ['Denite']
+# 
+# [[plugins]]
+# repo = 'Shougo/neoyank.vim'
+# on_cmd = ['Denite']
 
 # [[plugins]]
 # repo = 'scrooloose/nerdtree'
