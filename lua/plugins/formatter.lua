@@ -1,7 +1,7 @@
 local filetype = {}
 vim.g.formatter_filetype = {"c", "cpp", "lua", "python", "verilog", "format-mode"}
 
-local lsp_servers = vim.fn.stdpath("data") .. "/lsp_servers"
+local mason_bin = vim.fn.stdpath("data") .. "/mason/bin/"
 local global_formatters = {}
 
 local function merge_table(tb1, tb2)
@@ -33,7 +33,7 @@ for _, ft in pairs({"c", "cpp"}) do
   local formatters = {
     function()
       return {
-        exe = "clang-format",
+        exe = mason_bin .. "clang-format",
         args = {
           "-assume-filename=" .. vim.fn.bufname("%"),
           "-style=file"
@@ -45,31 +45,31 @@ for _, ft in pairs({"c", "cpp"}) do
   merge_table(filetype[ft], formatters)
 end
 
-for _, ft in pairs({"lua"}) do
-  local formatters = {
-    function()
-      return {
-        exe = "luafmt",
-        args = {"--indent-count", 2, "--stdin"},
-        stdin = true,
-      }
-    end
-  }
-  merge_table(filetype[ft], formatters)
-end
+--  for _, ft in pairs({"lua"}) do
+--    local formatters = {
+--      function()
+--        return {
+--          exe = "luafmt",
+--          args = {"--indent-count", 2, "--stdin"},
+--          stdin = true,
+--        }
+--      end
+--    }
+--    merge_table(filetype[ft], formatters)
+--  end
 
 for _, ft in pairs({"python"}) do
   local formatters = {
     function()
       return {
-        exe = "isort",
+        exe = mason_bin .. "isort",
         args = {"-"},
         stdin = true,
       }
     end,
     function()
       return {
-        exe = "black",
+        exe = mason_bin .. "black",
         args = {"-"},
         stdin = true,
       }
@@ -78,18 +78,18 @@ for _, ft in pairs({"python"}) do
   merge_table(filetype[ft], formatters)
 end
 
-for _, ft in pairs({"verilog"}) do
-  local formatters = {
-    function()
-      return {
-        exe = lsp_servers .. "/verible/verible/bin/verible-verilog-format",
-        args = {"-"},
-        stdin = true,
-      }
-    end
-  }
-  merge_table(filetype[ft], formatters)
-end
+--  for _, ft in pairs({"verilog"}) do
+--    local formatters = {
+--      function()
+--        return {
+--          exe = lsp_servers .. "/verible/verible/bin/verible-verilog-format",
+--          args = {"-"},
+--          stdin = true,
+--        }
+--      end
+--    }
+--    merge_table(filetype[ft], formatters)
+--  end
 
 require('formatter').setup({
   logging = false,
