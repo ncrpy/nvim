@@ -31,6 +31,12 @@ hook_add = 'SourceCfg skkeleton-map.vim'
 hook_source = 'SourceCfg skkeleton.vim'
 
 # [[plugins]]
+# repo = 'github/copilot.vim'
+# on_event = 'InsertEnter'
+# on_cmd = 'Copilot'
+# hook_source = 'SourceCfg copilot.vim'
+
+# [[plugins]]
 # repo = 'Shougo/neosnippet'
 # on_ft = ['snippet']
 # on_event = 'InsertEnter'

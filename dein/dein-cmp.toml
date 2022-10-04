@@ -54,9 +54,3 @@ depends = 'skkeleton'
 repo = 'onsails/lspkind.nvim'
 on_source = 'nvim-cmp'
 on_lua = 'lspkind'
-
-[[plugins]]
-repo = 'zbirenbaum/copilot-cmp'
-on_source = 'nvim-cmp'
-hook_source = 'SourceCfg copilot-cmp'
-depends = 'copilot.lua'

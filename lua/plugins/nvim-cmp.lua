@@ -32,7 +32,6 @@ cmp.setup({
         vsnip = "[VSnip]",
         treesitter = "[TS]",
         cmp_tabnine = "[TN]",
-        copilot = "[Cop]"
       }
     })
   },
@@ -83,7 +82,6 @@ cmp.setup({
       {name = "nvim_lsp"},
       {name = "nvim_lua"},
       {name = "cmp_tabnine"},
-      {name = "copilot"},
       {name = "vsnip"}
     },
     {

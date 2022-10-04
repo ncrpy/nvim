@@ -49,11 +49,14 @@ hook_add = 'SourceCfg barbar.vim'
 hook_source = 'SourceCfg barbar'
 depends = ['nvim-web-devicons']
 
-[[plugins]]
-repo = 'zbirenbaum/copilot.lua'
-on_event = 'InsertEnter'
-on_cmd = ['CopilotAuth', 'CopilotPanel']
-hook_source = 'SourceCfg copilot'
+# [[plugins]]
+# repo = 'zbirenbaum/copilot.lua'
+# on_event = 'InsertEnter'
+
+# [[plugins]]
+# repo = 'zbirenbaum/copilot-cmp'
+# on_source = 'copilot.lua'
+# hook_source = 'SourceCfg copilot'
 
 [[plugins]]
 repo = 'hrsh7th/nvim-cmp'
