@@ -106,6 +106,19 @@ on_event = 'InsertEnter'
 hook_source = 'SourceCfg nvim-autopairs'
 
 [[plugins]]
+repo = 'mfussenegger/nvim-dap'
+on_event = 'CmdlineEnter'
+on_lua = ['dap', 'dapui']
+hook_source = 'SourceCfg nvim-dap'
+
+[[plugins]]
+repo = 'rcarriga/nvim-dap-ui'
+on_source = 'nvim-dap'
+hook_add = 'SourceCfg nvim-dap-map'
+hook_source = 'SourceCfg nvim-dap-ui'
+depends = 'nvim-dap'
+
+[[plugins]]
 repo = 'folke/trouble.nvim'
 on_cmd = ['TroubleToggle']
 on_lua = ['trouble', 'trouble.providers.telescope']
