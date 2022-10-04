@@ -3,12 +3,24 @@ repo = 'neovim/nvim-lspconfig'
 on_if = 1
 hook_source = 'SourceCfg lspconfig'
 
+# [[plugins]]
+# repo = 'williamboman/nvim-lsp-installer'
+# on_cmd = ['LspInstallInfo']
+# on_source = 'nvim-lspconfig'
+# hook_source = 'SourceCfg nvim-lsp-installer'
+# depends = 'nvim-lspconfig'
+
 [[plugins]]
-repo = 'williamboman/nvim-lsp-installer'
-on_cmd = ['LspInstallInfo']
+repo = 'williamboman/mason.nvim'
+on_cmd = ['Mason']
 on_source = 'nvim-lspconfig'
-hook_source = 'SourceCfg nvim-lsp-installer'
 depends = 'nvim-lspconfig'
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+on_source = 'mason.nvim'
+hook_source = 'SourceCfg mason'
+depends = ['nvim-lspconfig', 'mason.nvim']
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
