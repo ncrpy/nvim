@@ -18,6 +18,10 @@ dap.configurations.cpp = {
     name = "Launch file",
     type = "codelldb",
     request = "launch",
+--    args = function()
+--      local arguments = vim.fn.input('Program arguments: ')
+--      return vim.fn.split(arguments, " ", true)
+--    end,
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
@@ -28,3 +32,5 @@ dap.configurations.cpp = {
 
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
+
+--require("nvim-dap-virtual-text").setup()

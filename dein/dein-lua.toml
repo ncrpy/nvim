@@ -107,16 +107,20 @@ hook_source = 'SourceCfg nvim-autopairs'
 
 [[plugins]]
 repo = 'mfussenegger/nvim-dap'
-on_event = 'CmdlineEnter'
 on_lua = ['dap', 'dapui']
-hook_source = 'SourceCfg nvim-dap'
+hook_add = 'SourceCfg nvim-dap'
 
 [[plugins]]
 repo = 'rcarriga/nvim-dap-ui'
-on_source = 'nvim-dap'
+on_lua = 'dapui'
 hook_add = 'SourceCfg nvim-dap-map'
 hook_source = 'SourceCfg nvim-dap-ui'
 depends = 'nvim-dap'
+
+# [[plugins]]
+# repo = 'theHamsta/nvim-dap-virtual-text'
+# on_lua = 'dap'
+# depends = ['nvim-tresitter', 'nvim-dap']
 
 [[plugins]]
 repo = 'folke/trouble.nvim'

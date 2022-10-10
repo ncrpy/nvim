@@ -6,7 +6,7 @@ require("dapui").setup({
         { id = "scopes", size = 0.25 },
         "breakpoints",
         "stacks",
-        "watches",
+        "watches"
       },
       size = 40, -- 40 columns
       position = "right",
@@ -16,8 +16,32 @@ require("dapui").setup({
         "repl",
         "console",
       },
-      size = 10,
+      size = 0.25,
       position = "bottom",
     },
-  }
+  },
+  controls = {
+    -- Requires Neovim nightly (or 0.8 when released)
+    enabled = true,
+    -- Display controls in this element
+    element = "repl",
+    icons = {
+      pause = "",
+      play = "",
+      step_into = "",
+      step_over = "",
+      step_out = "",
+      step_back = "",
+      run_last = "↻",
+      terminate = "□",
+    },
+  },
+  floating = {
+    max_height = 0.5, -- These can be integers or a float between 0 and 1.
+    max_width = 0.5, -- Floats will be treated as percentage of your screen.
+    border = "single", -- Border style. Can be "single", "double" or "rounded"
+    mappings = {
+      close = { "q", "<Esc>" },
+    },
+  },
 })
