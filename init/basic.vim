@@ -1,16 +1,17 @@
 filetype plugin indent on
 
 set encoding=utf-8
-set fileencodings=utf-8
+" set fileencodings=utf-8
 
 set hidden
 set autoread
 autocmd CursorHold * checktime
 
 set number
+set relativenumber
 set ruler
 set title
-set list
+" set list
 
 set laststatus=2
 set showcmd
@@ -23,7 +24,7 @@ set matchpairs& matchpairs+=<:>
 
 set splitbelow
 set splitright
-set lazyredraw
+" set lazyredraw
 
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,],~
@@ -37,11 +38,12 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-set wrapscan
+" set wrapscan
 set inccommand=split
 
 set wildmenu
-set wildmode=list:longest,full
+set wildmode=full
+" set wildmode=list:longest,full
 set completeopt=menuone,noselect
 
 set tabstop=2
@@ -49,7 +51,7 @@ set softtabstop=0
 set shiftwidth=2
 
 set expandtab
-set smarttab
+" set smarttab
 set autoindent
 set smartindent
 
