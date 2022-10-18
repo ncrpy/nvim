@@ -9,7 +9,7 @@ mason.setup({})
 mason_lspconfig.setup_handlers({
   function(server_name)
     local opts = {}
-    opts.capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    opts.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     -- (optional) Customize the options passed to the server
     -- if server.name == "tsserver" then
