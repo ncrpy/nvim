@@ -41,9 +41,8 @@ set hlsearch
 " set wrapscan
 set inccommand=split
 
-set wildmenu
-set wildmode=full
-" set wildmode=list:longest,full
+set nowildmenu
+set wildmode=list:longest,full
 set completeopt=menuone,noselect
 
 set tabstop=2
