@@ -82,16 +82,16 @@ hook_add = 'SourceCfg formatter-map'
 hook_source = 'SourceCfg formatter'
 
 [[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+on_if = 1
+
+[[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
 on_cmd = ['Telescope']
 on_lua = ['telescope', 'telescope.builtin']
-hook_add = 'SourceCfg telescope.vim'
+hook_add = 'SourceCfg telescope-map'
 hook_source = 'SourceCfg telescope'
 depends = ['plenary.nvim']
-
-[[plugins]]
-repo = 'nvim-lua/plenary.nvim'
-on_source = 'telescope.nvim'
 
 [[plugins]]
 repo = 'kyazdani42/nvim-tree.lua'
@@ -129,3 +129,9 @@ on_lua = ['trouble', 'trouble.providers.telescope']
 hook_add = 'SourceCfg trouble-map'
 hook_source = 'SourceCfg trouble'
 depends = ['nvim-web-devicons']
+
+[[plugins]]
+repo = 'LinArcX/telescope-command-palette.nvim'
+on_lua = ['telescope']
+hook_source = 'SourceCfg command-palette'
+depends = ['telescope.nvim']
