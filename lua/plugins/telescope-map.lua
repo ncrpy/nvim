@@ -15,4 +15,4 @@ vim.keymap.set('n', '<leader>fd', '<Cmd>lua require("telescope.builtin").diagnos
 
 vim.keymap.set('n', '<leader>fb', '<Cmd>lua require("telescope.builtin").builtin()<CR>')
 
-vim.keymap.set('n', '<leader>c', '<Cmd>lua require("telescope").extensions.command_palette.command_palette()<CR>')
+vim.keymap.set('n', '<leader>fp', '<Cmd>lua require("telescope").extensions.command_palette.command_palette()<CR>')
