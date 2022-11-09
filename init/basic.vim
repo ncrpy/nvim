@@ -29,10 +29,11 @@ set splitright
 set backspace=indent,eol,start
 set whichwrap=b,s,h,l,<,>,[,],~
 set mouse=a
-set virtualedit=onemore
+set virtualedit=onemore,block
 set virtualedit+=block
 
-set clipboard+=unnamedplus
+set clipboard&
+set clipboard^=unnamedplus
 
 set ignorecase
 set smartcase
