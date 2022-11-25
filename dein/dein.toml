@@ -57,9 +57,9 @@ hook_add = 'SourceCfg easymotion.vim'
 # repo = 'luochen1990/rainbow'
 # hook_add = 'SourceCfg rainbow.vim'
 
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-hook_add = 'SourceCfg indentline.vim'
+# [[plugins]]
+# repo = 'Yggdroot/indentLine'
+# hook_add = 'SourceCfg indentline.vim'
 
 # [[plugins]]
 # repo = 'ryanoasis/vim-devicons'

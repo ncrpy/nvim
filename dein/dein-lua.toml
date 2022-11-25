@@ -61,6 +61,11 @@ hook_add = 'SourceCfg barbar.vim'
 hook_source = 'SourceCfg barbar'
 depends = ['nvim-web-devicons']
 
+[[plugins]]
+repo = 'lukas-reineke/indent-blankline.nvim'
+on_event = 'ColorScheme'
+hook_source = 'SourceCfg indent-blankline'
+
 # [[plugins]]
 # repo = 'zbirenbaum/copilot.lua'
 # on_event = 'InsertEnter'
