@@ -1,1 +1,2 @@
-highlight! link Conceal Special
+setlocal conceallevel=2
+highlight clear Conceal

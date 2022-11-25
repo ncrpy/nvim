@@ -101,7 +101,6 @@ hook_add = 'SourceCfg virtualenv.vim'
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex', 'latex']
-hook_add = 'SourceCfg vimtex.vim'
 
 [[plugins]]
 repo = 'jalvesaq/Nvim-R'
