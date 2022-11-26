@@ -137,7 +137,7 @@ depends = ['nvim-web-devicons']
 
 [[plugins]]
 repo = 'LinArcX/telescope-command-palette.nvim'
-on_lua = ['telescope']
+on_source = 'telescope.nvim'
 hook_source = 'SourceCfg command-palette'
 depends = ['telescope.nvim']
 
