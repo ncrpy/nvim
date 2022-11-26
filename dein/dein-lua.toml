@@ -140,3 +140,8 @@ repo = 'LinArcX/telescope-command-palette.nvim'
 on_lua = ['telescope']
 hook_source = 'SourceCfg command-palette'
 depends = ['telescope.nvim']
+
+[[plugins]]
+repo = 'j-hui/fidget.nvim'
+on_event = 'ColorScheme'
+hook_source = 'SourceCfg fidget'
