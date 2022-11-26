@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>f<Space>', ':<C-u>Telescope<Space>')
+vim.keymap.set('n', '<leader>f', ':<C-u>Telescope')
 
 vim.keymap.set('n', '<leader>ff', '<Cmd>lua require("telescope.builtin").find_files()<CR>')
 vim.keymap.set('n', '<leader>fg', '<Cmd>lua require("telescope.builtin").live_grep()<CR>')

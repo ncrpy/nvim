@@ -11,7 +11,7 @@ nnoremap <silent> <leader>bm :<C-u>bmodified<CR>
 " nnoremap <silent> <leader>bD :<C-u>bdelete!<CR>
 " nnoremap <silent> <leader>bo :<C-u>BufOnly<CR>
 
-noremap <leader>w <C-w>
+nmap <leader>w <C-w>
 
 nnoremap <silent> <leader>a ggVG
 

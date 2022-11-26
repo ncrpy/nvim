@@ -136,6 +136,11 @@ hook_source = 'SourceCfg trouble'
 depends = ['nvim-web-devicons']
 
 [[plugins]]
+repo = 'folke/which-key.nvim'
+on_event = 'ColorScheme'
+hook_source = 'SourceCfg which-key'
+
+[[plugins]]
 repo = 'LinArcX/telescope-command-palette.nvim'
 on_source = 'telescope.nvim'
 hook_source = 'SourceCfg command-palette'
