@@ -25,5 +25,5 @@ inoremap <C-f> <ESC><Left>"zx"zpa
 " inoremap <C-d> <C-x><C-o>
 " inoremap <expr> . &omnifunc ? '.<C-x><C-o>' : '.'
 
-noremap <silent> <leader>t <Cmd>botright vsplit<CR><Cmd>terminal<CR>
+noremap <silent> <leader>t <Cmd>botright vsplit<Bar>terminal<CR>
 tnoremap <silent> <ESC> <C-\><C-n>

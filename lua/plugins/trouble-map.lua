@@ -1,18 +1,18 @@
-vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
-  {silent = true, noremap = true}
+vim.keymap.set("n", "<leader>xx", "<Cmd>TroubleToggle<CR>",
+  { desc = 'Toggle Trouble' }
 )
-vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
-  {silent = true, noremap = true}
+vim.keymap.set("n", "<leader>xw", "<Cmd>TroubleToggle workspace_diagnostics<CR>",
+  { desc = 'Workspace Diagnostics' }
 )
-vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
-  {silent = true, noremap = true}
+vim.keymap.set("n", "<leader>xd", "<Cmd>TroubleToggle document_diagnostics<CR>",
+  { desc = 'Document Diagnostics' }
 )
-vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
-  {silent = true, noremap = true}
+vim.keymap.set("n", "<leader>xl", "<Cmd>TroubleToggle loclist<CR>",
+  { desc = 'Location List' }
 )
-vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
-  {silent = true, noremap = true}
+vim.keymap.set("n", "<leader>xq", "<Cmd>TroubleToggle quickfix<CR>",
+  { desc = 'Quickfix' }
 )
-vim.api.nvim_set_keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
-  {silent = true, noremap = true}
+vim.keymap.set("n", "gr", "<Cmd>TroubleToggle lsp_references<CR>",
+  { desc = 'LSP References' }
 )

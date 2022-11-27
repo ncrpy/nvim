@@ -108,23 +108,54 @@ vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "DiagnosticSign
 vim.api.nvim_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 -- Mappings.
-local opts = { noremap=true, silent=true }
+--  local opts = { noremap=true, silent=true }
 
 -- See `:help vim.lsp.*` for documentation on any of the below functions
-vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 --  vim.api.nvim_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
 --  vim.api.nvim_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
 --  vim.api.nvim_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 --  vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'g,', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'g.', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', 'g,', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', 'g.', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+--  vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
 --  vim.api.nvim_set_keymap("n", "<leader>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+vim.keymap.set('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>',
+  { desc = 'Go to Declaration' }
+)
+vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>',
+  { desc = 'Go to Definition' }
+)
+vim.keymap.set('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>',
+  { desc = 'Go to Implementation' }
+)
+vim.keymap.set('n', 'gt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>',
+  { desc = 'Go to Type Definition' }
+)
+vim.keymap.set('n', 'gn', '<Cmd>lua vim.lsp.buf.rename()<CR>',
+  { desc = 'Rename Symbol' }
+)
+vim.keymap.set('n', 'g,', '<Cmd>lua vim.diagnostic.goto_prev()<CR>',
+  { desc = 'Go to Previous Diagnostic' }
+)
+vim.keymap.set('n', 'g.', '<Cmd>lua vim.diagnostic.goto_next()<CR>',
+  { desc = 'Go to Next Diagnostic' }
+)
+vim.keymap.set('n', '<leader>e', '<Cmd>lua vim.diagnostic.open_float()<CR>',
+  { desc = 'Show Diagnostics for the Current Line' }
+)
+vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>',
+  { desc = 'Hover' }
+)
+vim.keymap.set('n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>',
+  { desc = 'Signature Help' }
+)
