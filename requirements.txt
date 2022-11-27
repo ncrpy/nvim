@@ -2,7 +2,7 @@ attrs==21.4.0
 fastjsonschema==2.15.3
 greenlet==1.1.2
 jsonschema==4.4.0
-jupyter-core==4.9.2
+jupyter-core==4.11.2
 jupytext==1.13.8
 markdown-it-py==2.0.1
 mdit-py-plugins==0.3.0
