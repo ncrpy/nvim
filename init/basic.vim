@@ -59,6 +59,7 @@ set nofixeol
 " autocmd BufWritePre * :%s/\s\+$//e
 
 set updatetime=400
+set timeoutlen=400
 
 packadd! termdebug
 let g:termdebug_wide = 160

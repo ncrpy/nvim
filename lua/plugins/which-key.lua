@@ -12,4 +12,12 @@
 -- 
 -- clearTable(presets)
 
-require('which-key').setup{}
+local wk = require('which-key')
+
+wk.setup{
+  plugins = {
+    presets = {
+      windows = false
+    }
+  }
+}
