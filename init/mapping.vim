@@ -1,4 +1,5 @@
-noremap <C-l> <Cmd>nohlsearch<CR><C-l>
+map <C-l> <Cmd>nohlsearch<CR><C-l>
+map <leader>w <C-w>
 
 noremap <silent> <leader>ba <Cmd>enew<CR>
 noremap <silent> <leader>bb <Cmd>b#<CR>
@@ -11,9 +12,9 @@ noremap <silent> <leader>bm <Cmd>bmodified<CR>
 " noremap <silent> <leader>bD <Cmd>bdelete!<CR>
 " noremap <silent> <leader>bo <Cmd>BufOnly<CR>
 
-map <leader>w <C-w>
+noremap <silent> <leader>i <Cmd>set invrelativenumber<CR>
 
-nnoremap <silent> <leader>a ggVG
+noremap <silent> <leader>a ggVG
 
 noremap ; :
 noremap ,. ;

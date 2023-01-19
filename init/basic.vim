@@ -8,7 +8,7 @@ set autoread
 autocmd CursorHold * checktime
 
 set number
-set relativenumber
+" set relativenumber
 set ruler
 set title
 " set list
