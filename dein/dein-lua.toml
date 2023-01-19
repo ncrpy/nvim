@@ -67,6 +67,11 @@ on_event = 'ColorScheme'
 hook_source = 'SourceCfg indent-blankline'
 
 # [[plugins]]
+# repo = 'jose-elias-alvarez/null-ls.nvim'
+# on_if = 1
+# hook_source = 'SourceCfg null-ls'
+
+# [[plugins]]
 # repo = 'zbirenbaum/copilot.lua'
 # on_event = 'InsertEnter'
 
