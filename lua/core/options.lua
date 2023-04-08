@@ -9,7 +9,6 @@ set encoding=utf-8
 set ambiwidth=single
 
 set number
-set title
 set ruler
 
 set laststatus=2
