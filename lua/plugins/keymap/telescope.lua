@@ -1,6 +1,6 @@
-local builtin = require("telescope.builtin")
+local ok, builtin = pcall(require, "telescope.builtin")
 
-return {
+return ok and {
   {
     "<leader>f<Space>",
     ":<C-u>Telescope<Space>",
@@ -67,4 +67,4 @@ return {
     builtin.diagnostics,
     { desc = "LSP Diagnostics in the Current Buffer" }
   },
-}
+} or {}
