@@ -9,7 +9,6 @@ return {
 
   {
     "romgrk/barbar.nvim",
-    version = "^1.0.0",
     dependencies = {
       "nvim-tree/nvim-web-devicons"
     },
@@ -17,7 +16,7 @@ return {
     init = function()
       vim.g.barbar_auto_setup = false
       vim.api.nvim_create_autocmd("ColorScheme", {
-        group = vim.api.nvim_create_augroup("config_custom_highlights", {}),
+        group = vim.api.nvim_create_augroup("transparent_barbar_bg", {}),
         callback = function()
           vim.api.nvim_set_hl(0, "BufferCurrent", { bg = "none" })
           vim.api.nvim_set_hl(0, "BufferCurrentIndex", { bg = "none" })
@@ -25,7 +24,7 @@ return {
           vim.api.nvim_set_hl(0, "BufferCurrentSign", { bg = "none" })
           vim.api.nvim_set_hl(0, "BufferCurrentTarget", { bg = "none" })
         end
-    })
+      })
     end,
     config = function()
       require("plugins.config.barbar")

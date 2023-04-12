@@ -1,6 +1,7 @@
 return {
   defaults = {
-    lazy = true
+    lazy = true,
+    version = "*"
   },
   ui = {
     icons = {
