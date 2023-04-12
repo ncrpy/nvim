@@ -2,8 +2,8 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = function()
-      return require("plugins.config.lualine")
+    config = function()
+      require("plugins.config.lualine")
     end
   },
 
@@ -27,7 +27,9 @@ return {
         end
     })
     end,
-    opts = {}
+    config = function()
+      require("plugins.config.barbar")
+    end
   },
 
   {

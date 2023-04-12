@@ -8,7 +8,7 @@ return {
     keys = function()
       return require("plugins.keymap.nvim-tree")
     end,
-    opts = {}
+    config = true
   },
 
   {
@@ -22,8 +22,8 @@ return {
     keys = function()
       return require("plugins.keymap.telescope")
     end,
-    opts = function()
-      return require("plugins.config.telescope")
+    config = function()
+      require("plugins.config.telescope")
     end
   },
 
@@ -33,6 +33,6 @@ return {
     keys = function()
       return require("plugins.keymap.trouble")
     end,
-    opts = {}
+    config = true
   }
 }

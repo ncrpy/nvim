@@ -18,6 +18,6 @@ return {
       "MasonUninstallAll",
       "MasonLog"
     },
-    opts = {}
+    config = true
   }
 }
