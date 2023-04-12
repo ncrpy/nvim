@@ -1,12 +1,15 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    version = false,
     dependencies = {
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-nvim-lua" },
-      { "saadparwaiz1/cmp_luasnip", dependencies = "L3MON4D3/LuaSnip" }
+      { "saadparwaiz1/cmp_luasnip", dependencies = "L3MON4D3/LuaSnip" },
+      { "zbirenbaum/copilot-cmp", dependencies = "zbirenbaum/copilot.lua", config = true },
+      { "onsails/lspkind.nvim" }
     },
     event = { "InsertEnter" },
     config = function()
@@ -19,6 +22,12 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
     },
+    config = true
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = { "Copilot" },
     config = true
   },
 

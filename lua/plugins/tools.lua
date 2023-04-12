@@ -33,5 +33,19 @@ return {
       return require("plugins.keymap.trouble")
     end,
     config = true
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      -- https://github.com/rcarriga/nvim-dap-ui/issues/258
+      "rcarriga/nvim-dap-ui", version = "3.6.4"
+    },
+    keys = function()
+      return require("plugins.keymap.dap")
+    end,
+    config = function()
+      require("plugins.config.dap")
+    end
   }
 }

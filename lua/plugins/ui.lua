@@ -9,6 +9,7 @@ return {
 
   {
     "romgrk/barbar.nvim",
+    version = false,
     dependencies = {
       "nvim-tree/nvim-web-devicons"
     },
@@ -35,4 +36,10 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     event = "VeryLazy"
   },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "VeryLazy",
+    config = true
+  }
 }

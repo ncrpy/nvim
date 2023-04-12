@@ -5,6 +5,7 @@ local has_words_before = function()
 end
 
 local luasnip = require("luasnip")
+local lspkind = require("lspkind")
 local cmp = require("cmp")
 
 cmp.setup {
@@ -73,7 +74,15 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
+    { name = "copilot" }
   }, {
     { name = "buffer" },
   }),
+  
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = "symbol",
+      maxwidth = 50,
+    })
+  }
 }
