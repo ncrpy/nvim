@@ -27,6 +27,9 @@ return {
 
   {
     "zbirenbaum/copilot.lua",
+    enabled = function()
+      return vim.fn.executable("node") == 1
+    end,
     cmd = { "Copilot" },
     config = true
   },
