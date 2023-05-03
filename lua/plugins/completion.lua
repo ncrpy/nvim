@@ -3,12 +3,12 @@ return {
     "hrsh7th/nvim-cmp",
     version = false,
     dependencies = {
-      { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-nvim-lua" },
       { "saadparwaiz1/cmp_luasnip", dependencies = "L3MON4D3/LuaSnip" },
-      { "zbirenbaum/copilot-cmp", dependencies = "zbirenbaum/copilot.lua", config = true },
+--       { "zbirenbaum/copilot-cmp", dependencies = "zbirenbaum/copilot.lua", config = true },
+      { "zbirenbaum/copilot.lua" },
       { "onsails/lspkind.nvim" }
     },
     event = { "InsertEnter" },
@@ -31,7 +31,9 @@ return {
       return vim.fn.executable("node") == 1
     end,
     cmd = { "Copilot" },
-    config = true
+    config = function()
+      require("plugins.config.copilot")
+    end
   },
 
   {

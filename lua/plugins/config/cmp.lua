@@ -10,27 +10,27 @@ local cmp = require("cmp")
 
 cmp.setup {
   snippet = {
-     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-     end,
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
   },
 
   window = {
     -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
 
   mapping = cmp.mapping.preset.insert({
-    ["<Down>"] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}),
-    ["<Up>"] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select}),
-    ["<C-n>"] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Insert}),
-    ["<C-p>"] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Insert}),
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
+    ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.abort(),
     ["<C-s>"] = cmp.mapping.complete(),
-    ["<C-y>"] = cmp.mapping.confirm({select = true, behavior = cmp.ConfirmBehavior.Replace}),
+    ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 
     ["<CR>"] = cmp.mapping({
       i = function(fallback)
@@ -45,12 +45,15 @@ cmp.setup {
     }),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
+      local suggestion = require("copilot.suggestion")
       if cmp.visible() then
-        cmp.select_next_item()
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
       -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
       -- they way you will only jump inside the snippet region
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
+      elseif suggestion.is_visible() then
+        suggestion.accept()
       elseif has_words_before() then
         cmp.complete()
       else
@@ -60,7 +63,7 @@ cmp.setup {
 
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.select_prev_item()
+        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
       elseif luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
@@ -74,9 +77,7 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
-    { name = "copilot" }
-  }, {
-    { name = "buffer" },
+--     { name = "copilot" },
   }),
 
   formatting = {
@@ -88,9 +89,20 @@ cmp.setup {
         nvim_lsp = "[LSP]",
         nvim_lua = "[Neovim]",
         luasnip = "[Snippet]",
-        copilot = "[Copilot]",
-        buffer = "[Buffer]"
+--         copilot = "[Copilot]",
       }
     })
+  },
+
+  experimental = {
+    ghost_text = true
   }
 }
+
+cmp.event:on("menu_opened", function()
+  vim.b.copilot_suggestion_hidden = true
+end)
+
+cmp.event:on("menu_closed", function()
+  vim.b.copilot_suggestion_hidden = false
+end)
