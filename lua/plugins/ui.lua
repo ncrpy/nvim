@@ -34,12 +34,22 @@ return {
 
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = "VeryLazy"
+    event = "VeryLazy",
+    config = true
   },
 
   {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
     config = true
+  },
+
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = { "ColorScheme" },
+    config = function()
+      vim.opt.termguicolors = true
+      require("colorizer").setup()
+    end
   }
 }
