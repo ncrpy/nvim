@@ -37,6 +37,24 @@ require("mason-lspconfig").setup_handlers {
         },
       },
     }
+  end,
+  ["jedi_language_server"] = function()
+    lspconfig.jedi_language_server.setup {
+      capabilities = capabilities,
+      init_options = {
+        diagnostics = { enable = false }
+      }
+    }
+  end,
+  ["pyright"] = function()
+    lspconfig.pyright.setup {
+      capabilities = capabilities,
+      settings = {
+        pyright = {
+          disableLanguageServices = true
+        }
+      }
+    }
   end
 }
 
