@@ -1,3 +1,5 @@
 venv
 node_modules
+package-lock.json
+lazy-lock.json
 .DS_Store
