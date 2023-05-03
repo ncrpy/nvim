@@ -78,11 +78,19 @@ cmp.setup {
   }, {
     { name = "buffer" },
   }),
-  
+
   formatting = {
     format = lspkind.cmp_format({
       mode = "symbol",
       maxwidth = 50,
+      menu = {
+        path = "[File]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Neovim]",
+        luasnip = "[Snippet]",
+        copilot = "[Copilot]",
+        buffer = "[Buffer]"
+      }
     })
   }
 }
