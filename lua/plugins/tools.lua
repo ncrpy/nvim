@@ -47,5 +47,11 @@ return {
     config = function()
       require("plugins.config.dap")
     end
+  },
+
+  {
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = true
   }
 }
