@@ -1,10 +1,12 @@
+local ok, install = pcall(require, "nvim-treesitter.install")
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
     version = false,
-    build = ":TSUpdate",
+    build = ok and install.update{ with_sync = true },
     dependencies = {
-      "mrjones2014/nvim-ts-rainbow"
+      "HiPhish/nvim-ts-rainbow2"
     },
     event = { "BufReadPost", "BufNewFile" },
     config = function()
