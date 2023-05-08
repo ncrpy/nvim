@@ -8,7 +8,9 @@ return {
     keys = function()
       return require("plugins.keymap.nvim-tree")
     end,
-    config = true
+    config = function()
+      require("plugins.config.nvim-tree")
+    end
   },
 
   {
