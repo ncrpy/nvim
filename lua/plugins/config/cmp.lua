@@ -45,14 +45,14 @@ cmp.setup {
     }),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
-      local suggestion = require("copilot.suggestion")
+      local ok, suggestion = pcall(require, "copilot.suggestion")
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
       -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
       -- they way you will only jump inside the snippet region
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-      elseif suggestion.is_visible() then
+      elseif ok and suggestion.is_visible() then
         suggestion.accept()
       elseif has_words_before() then
         cmp.complete()
