@@ -11,7 +11,7 @@ set ambiwidth=single
 set number
 set ruler
 
-set laststatus=2
+set laststatus=3
 set showcmd
 set showmode
 
