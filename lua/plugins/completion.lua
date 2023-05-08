@@ -30,7 +30,7 @@ return {
       return vim.fn.executable("node") == 1
     end,
     cmd = { "Copilot" },
-    event = { "InsertEnter" },
+    event = vim.fn.filereadable(vim.fn.expand("$XDG_CONFIG_HOME/github-copilot/hosts.json")) == 1 and { "InsertEnter" },
     config = function()
       require("plugins.config.copilot")
     end
