@@ -9,7 +9,6 @@ return {
 
   {
     "romgrk/barbar.nvim",
-    version = false,
     dependencies = {
       "nvim-tree/nvim-web-devicons"
     },
