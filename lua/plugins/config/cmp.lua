@@ -50,7 +50,7 @@ cmp.setup {
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
       -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
       -- they way you will only jump inside the snippet region
-      elseif luasnip.expand_or_jumpable() then
+      elseif luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
       elseif ok and suggestion.is_visible() then
         suggestion.accept()
@@ -70,6 +70,22 @@ cmp.setup {
         fallback()
       end
     end, { "i", "s" }),
+
+    ["<C-k>"] = cmp.mapping(function(fallback)
+      if luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<C-S-k>"] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" })
   }),
 
   sources = cmp.config.sources({
