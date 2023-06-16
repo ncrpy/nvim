@@ -111,9 +111,7 @@ cmp.setup {
   },
 
   experimental = {
-    ghost_text = {
-      hl_group = nil
-    }
+    ghost_text = true
   }
 }
 
