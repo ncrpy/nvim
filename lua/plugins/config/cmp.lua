@@ -4,6 +4,7 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
+local copilot_ok, suggestion = pcall(require, "copilot.suggestion")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local cmp = require("cmp")
@@ -23,12 +24,8 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert({
     ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
     ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-    ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-    ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.abort(),
     ["<C-s>"] = cmp.mapping.complete(),
     ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 
@@ -44,15 +41,44 @@ cmp.setup {
       c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
     }),
 
+    ["<C-e>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.abort()
+      elseif copilot_ok and suggestion.is_visible() then
+        suggestion.dismiss()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<C-n>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+      elseif copilot_ok and suggestion.is_visible() then
+        suggestion.next()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<C-p>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+      elseif copilot_ok and suggestion.is_visible() then
+        suggestion.prev()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
     ["<Tab>"] = cmp.mapping(function(fallback)
-      local ok, suggestion = pcall(require, "copilot.suggestion")
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
       -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
       -- they way you will only jump inside the snippet region
-      elseif luasnip.expand_or_jumpable() then
+      elseif luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
-      elseif ok and suggestion.is_visible() then
+      elseif copilot_ok and suggestion.is_visible() then
         suggestion.accept()
       elseif has_words_before() then
         cmp.complete()
@@ -70,6 +96,22 @@ cmp.setup {
         fallback()
       end
     end, { "i", "s" }),
+
+    ["<C-k>"] = cmp.mapping(function(fallback)
+      if luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<C-S-k>"] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" })
   }),
 
   sources = cmp.config.sources({
@@ -95,9 +137,7 @@ cmp.setup {
   },
 
   experimental = {
-    ghost_text = {
-      hl_group = nil
-    }
+    ghost_text = true
   }
 }
 
