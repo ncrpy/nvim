@@ -21,7 +21,9 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
     },
-    config = true
+    config = function()
+      require("plugins.config.luasnip")
+    end,
   },
 
   {
