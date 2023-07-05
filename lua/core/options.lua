@@ -38,9 +38,9 @@ set ignorecase
 set smartcase
 
 set expandtab
-set shiftwidth=2
 set tabstop=2
 set softtabstop=0
+set shiftwidth=0
 set autoindent
 set smartindent
 
