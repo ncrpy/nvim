@@ -6,7 +6,8 @@ return {
     version = false,
     build = ok and install.update{ with_sync = true },
     dependencies = {
-      "HiPhish/nvim-ts-rainbow2"
+      "HiPhish/nvim-ts-rainbow2",
+      "JoosepAlviste/nvim-ts-context-commentstring"
     },
     event = { "BufReadPost", "BufNewFile" },
     config = function()
