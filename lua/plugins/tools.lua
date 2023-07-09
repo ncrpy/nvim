@@ -55,5 +55,16 @@ return {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     config = true
+  },
+
+  {
+    "numToStr/Comment.nvim",
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    event = "VeryLazy",
+    config = function()
+      require("plugins.config.comment")
+    end
   }
 }
