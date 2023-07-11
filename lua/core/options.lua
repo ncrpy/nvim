@@ -81,5 +81,5 @@ inoremap <C-l> <C-g>U<Right>
 
 nnoremap <leader>s :<C-u>%s///g<Left><Left>
 
-tnoremap <silent> <ESC> <C-\><C-n>
+tnoremap <silent> <ESC> <ESC><C-\><C-n>
 ]])
