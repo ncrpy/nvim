@@ -49,6 +49,11 @@ set nofixeol
 set list
 set listchars=tab:»-,trail:-,nbsp:%,eol:↲
 
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+  set grepformat+=%f:%l:%c:%m
+endif
+
 noremap <C-l> :<C-u>nohlsearch<CR><C-l>
 noremap <leader>w <C-w>
 
@@ -76,6 +81,5 @@ inoremap <C-l> <C-g>U<Right>
 
 nnoremap <leader>s :<C-u>%s///g<Left><Left>
 
-nnoremap <silent> <leader>t :<C-u>botright vsplit<Bar>:terminal<CR>
-tnoremap <silent> <ESC> <C-\><C-n>
+tnoremap <silent> <ESC> <ESC><C-\><C-n>
 ]])
