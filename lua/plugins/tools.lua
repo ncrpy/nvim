@@ -52,6 +52,17 @@ return {
   },
 
   {
+    "akinsho/toggleterm.nvim",
+    cmd = { "ToggleTerm" },
+    keys = function()
+      return require("plugins.keymap.toggleterm")
+    end,
+    config = function()
+      require("plugins.config.toggleterm")
+    end
+  },
+
+  {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     config = true

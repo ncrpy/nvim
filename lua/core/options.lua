@@ -76,6 +76,5 @@ inoremap <C-l> <C-g>U<Right>
 
 nnoremap <leader>s :<C-u>%s///g<Left><Left>
 
-nnoremap <silent> <leader>t :<C-u>botright vsplit<Bar>:terminal<CR>
 tnoremap <silent> <ESC> <C-\><C-n>
 ]])
