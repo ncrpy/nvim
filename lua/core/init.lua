@@ -16,5 +16,3 @@ require("core.options")
 
 local lazy_opts = require("plugins.config.lazy")
 require("lazy").setup("plugins", lazy_opts)
-
-vim.cmd.colorscheme("catppuccin")
