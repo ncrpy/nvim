@@ -1,6 +1,7 @@
 return {
   -- {
   --   "EdenEast/nightfox.nvim",
+  --   lazy = false,
   --   priority = 1000,
   --   opts = {
   --     groups = {
@@ -13,9 +14,13 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
     priority = 1000,
-    opts = {
-      transparent_background = false
-    }
+    config = function()
+      require("catppuccin").setup {
+        transparent_background = false
+      }
+      vim.cmd.colorscheme("catppuccin")
+    end
   }
 }
