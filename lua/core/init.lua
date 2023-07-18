@@ -16,12 +16,3 @@ require("core.options")
 
 local lazy_opts = require("plugins.config.lazy")
 require("lazy").setup("plugins", lazy_opts)
-
--- vim.api.nvim_create_augroup("color_respect_bg", {})
--- vim.api.nvim_create_autocmd("OptionSet", {
---   pattern = "background",
---   group = "color_respect_bg",
---   callback = function()
---     vim.cmd.colorscheme("catppuccin")
---   end
--- })
