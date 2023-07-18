@@ -20,7 +20,13 @@ return {
       require("catppuccin").setup {
         transparent_background = false
       }
-      vim.cmd.colorscheme("catppuccin")
+      vim.api.nvim_create_augroup( "catppuccin", {} )
+      vim.api.nvim_create_autocmd( "UIEnter", {
+        group = "catppuccin",
+        callback = function()
+          vim.cmd.colorscheme("catppuccin")
+        end
+      })
     end
   }
 }

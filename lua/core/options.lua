@@ -83,3 +83,10 @@ nnoremap <leader>s :<C-u>%s///g<Left><Left>
 
 tnoremap <silent> <ESC> <ESC><C-\><C-n>
 ]])
+
+-- local bg = tonumber(string.match(
+--   os.getenv("COLORFGBG") or "", "%d+;(%d+)"
+-- ))
+-- if bg and not ((0 <= bg and bg <= 6) or bg == 8) then
+--   vim.o.background = "light"
+-- end
