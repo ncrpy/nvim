@@ -16,6 +16,7 @@ return {
     name = "catppuccin",
     lazy = false,
     priority = 1000,
+
     config = function()
       require("catppuccin").setup {
         transparent_background = false
@@ -24,7 +25,9 @@ return {
       vim.api.nvim_create_autocmd( "UIEnter", {
         group = "catppuccin",
         callback = function()
-          vim.cmd.colorscheme("catppuccin")
+          vim.schedule(function()
+            vim.cmd.colorscheme("catppuccin")
+          end)
         end
       })
     end
