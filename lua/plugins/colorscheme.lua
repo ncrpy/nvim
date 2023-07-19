@@ -14,7 +14,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    event = "User VeryLazyPre",
+    event = { "OptionSet background", "User VeryLazyPre" },
     config = function()
       require("catppuccin").setup {
         transparent_background = false
