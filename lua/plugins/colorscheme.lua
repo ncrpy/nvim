@@ -14,22 +14,12 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
-    priority = 1000,
-
+    event = "User VeryLazyPre",
     config = function()
       require("catppuccin").setup {
         transparent_background = false
       }
-      vim.api.nvim_create_augroup( "catppuccin", {} )
-      vim.api.nvim_create_autocmd( "UIEnter", {
-        group = "catppuccin",
-        callback = function()
-          vim.schedule(function()
-            vim.cmd.colorscheme("catppuccin")
-          end)
-        end
-      })
+      vim.cmd.colorscheme("catppuccin")
     end
   }
 }

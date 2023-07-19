@@ -14,5 +14,16 @@ vim.opt.rtp:prepend(lazypath)
 
 require("core.options")
 
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  once = true,
+  callback = function()
+    vim.api.nvim_exec_autocmds("User", {
+      pattern = "VeryLazyPre",
+      modeline = false
+    })
+  end
+})
+
 local lazy_opts = require("plugins.config.lazy")
 require("lazy").setup("plugins", lazy_opts)
