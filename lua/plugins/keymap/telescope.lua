@@ -1,6 +1,4 @@
-local ok, builtin = pcall(require, "telescope.builtin")
-
-return ok and {
+return {
   {
     "<leader>f<Space>",
     ":<C-u>Telescope<Space>",
@@ -8,63 +6,63 @@ return ok and {
   },
   {
     "<leader>f<CR>",
-    builtin.builtin,
+    "<Cmd>Telescope<CR>",
     { desc = "Telescope" }
   },
   {
     "<leader>ff",
-    builtin.find_files,
+    "<Cmd>Telescope find_files<CR>",
     { desc = "Find Files" }
   },
   {
     "<leader>fg",
-    builtin.live_grep,
+    "<Cmd>Telescope live_grep<CR>",
     { desc = "Live Fuzzy Search (Grep)" }
   },
   {
     "<leader>fb",
-    builtin.buffers,
+    "<Cmd>Telescope buffers<CR>",
     { desc = "Buffers" }
   },
   {
     "<leader>fo",
-    builtin.oldfiles,
+    "<Cmd>Telescope oldfiles<CR>",
     { desc = "Old Files" }
   },
   {
     "<leader>fc",
-    builtin.commands,
+    "<Cmd>Telescope commands<CR>",
     { desc = "Commands" }
   },
   {
     "<leader>fj",
-    builtin.jumplist,
+    "<Cmd>Telescope jumplist<CR>",
     { desc = "Jump List" }
   },
   {
     "<leader>fv",
-    builtin.registers,
+    "<Cmd>Telescope registers<CR>",
     { desc = "Vim Registers" }
   },
   {
     "<leader>fz",
-    builtin.current_buffer_fuzzy_find,
+    "<Cmd>Telescope current_buffer_fuzzy_find<CR>",
     { desc = "Live Fuzzy Search in the Current Buffer" }
   },
 
   {
     "<leader>fr",
-    builtin.lsp_references,
+    "<Cmd>Telescope lsp_references<CR>",
     { desc = "LSP References" }
   },
   {
     "<leader>fs",
-    builtin.lsp_document_symbols,
+    "<Cmd>Telescope lsp_document_symbols<CR>",
     { desc = "LSP Symbols in the Current Buffer" }
   },
   {
     "<leader>fd",
-    builtin.diagnostics,
+    "<Cmd>Telescope diagnostics<CR>",
     { desc = "LSP Diagnostics in the Current Buffer" }
   },
-} or {}
+}
