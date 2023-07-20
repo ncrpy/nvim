@@ -56,7 +56,7 @@ return {
 
   {
     "norcalli/nvim-colorizer.lua",
-    event = { "ColorScheme" },
+    cmd = { "ColorizerToggle" },
     config = function()
       vim.opt.termguicolors = true
       require("colorizer").setup()
