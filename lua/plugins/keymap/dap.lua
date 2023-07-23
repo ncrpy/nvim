@@ -1,40 +1,42 @@
-local ok, dap = pcall(require, "dap")
-
-return ok and {
+return {
   {
     "<F5>",
-    dap.continue
+    "<Cmd>lua require'dap'.continue()<CR>"
   },
   {
     "<F17>",  -- <S-F5>
-    dap.pause
+    "<Cmd>lua require'dap'.pause()<CR>"
   },
   {
     "<F29>",  -- <C-F5>
-    dap.run_last
+    "<Cmd>lua require'dap'.run_last()<CR>"
   },
   {
     "<F11>",
-    dap.step_into
+    "<Cmd>lua require'dap'.step_into()<CR>"
   },
   {
     "<F23>",  -- <S-F11>
-    dap.step_out
+    "<Cmd>lua require'dap'.step_out()<CR>"
   },
   {
     "<F10>",
-    dap.step_over
+    "<Cmd>lua require'dap'.step_over()<CR>"
   },
   {
     "<F22>",  -- <S-F10>
-    dap.step_back
+    "<Cmd>lua require'dap'.step_back()<CR>"
   },
   {
     "<F9>",
-    dap.toggle_breakpoint
+    "<Cmd>lua require'dap'.toggle_breakpoint()<CR>"
   },
   {
     "<F21>",  -- <S-F9>
-    function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: "), nil, vim.fn.input("Logpoint message: ")) end
-  }
-} or {}
+    "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log Message: '))<CR>"
+  },
+  {
+    "<leader>dd",
+    "<Cmd>lua require'dapui'.toggle({ reset = true })<CR>"
+  },
+}

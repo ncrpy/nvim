@@ -40,8 +40,7 @@ return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
-      -- https://github.com/rcarriga/nvim-dap-ui/issues/258
-      "rcarriga/nvim-dap-ui", version = "3.6.4"
+      "rcarriga/nvim-dap-ui"
     },
     keys = function()
       return require("plugins.keymap.dap")
