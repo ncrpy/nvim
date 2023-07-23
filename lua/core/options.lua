@@ -74,7 +74,7 @@ noremap("", "<leader>bd", "<Cmd>bdelete<CR>")
 noremap("", "<leader>bD", "<Cmd>bdelete!<CR>")
 noremap("", "<leader>bo", "<Cmd>%bdelete<Bar>edit#<Bar>bdelete#<CR>")
 noremap("", "<leader>i", function()
-  opt.relativenumber = not opt.relativenumber
+  opt.relativenumber = not opt.relativenumber:get()
 end)
 
 noremap("", "<leader>a", "ggVG")
