@@ -45,7 +45,9 @@ return {
       "sindrets/diffview.nvim",        -- optional
     },
     cmd = { "Neogit" },
-    config = true
+    config = function()
+      require("plugins.config.neogit")
+    end
   },
 
   {
