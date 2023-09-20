@@ -55,5 +55,22 @@ return {
       return vim.fn.executable("fcitx5-remote") == 1
     end,
     event = { "InsertEnter" }
+  },
+
+  {
+    "vim-skk/skkeleton",
+    enabled = function()
+      return vim.fn.executable("deno") == 1
+    end,
+    dependencies = {
+      { "vim-denops/denops.vim" , version = false },
+      { "delphinus/skkeleton_indicator.nvim", config = nil }
+    },
+    keys = function()
+      return require("plugins.keymap.skkeleton")
+    end,
+    config = function()
+      require("plugins.config.skkeleton")
+    end,
   }
 }
