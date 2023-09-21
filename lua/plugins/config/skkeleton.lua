@@ -2,20 +2,27 @@ local skkeleton_init = function()
   vim.fn["skkeleton#config"]({
     eggLikeNewline = true,
     globalJisyo = vim.fn.expand("$HOME/.skk/SKK-JISYO.L"),
+    showCandidatesCount = 1
   })
-  -- codes below are not working now
-  --
-  -- vim.fn["skkeleton#register_kanatable"]("rom", {
-  --   ["ca"] = { "か", "" },
-  --   ["cu"] = { "く", "" },
-  --   ["co"] = { "こ", "" },
-  --   ["ci"] = { "し", "" },
-  --   ["xn"] = { "ん", "" },
-  -- })
-  -- table.insert(vim.g["skkeleton#mapped_keys"], "<C-n>")
-  -- table.insert(vim.g["skkeleton#mapped_keys"], "<C-p>")
-  -- vim.fn["skkeleton#register_keymap"]("henkan", "<C-n>", "henkanForward")
-  -- vim.fn["skkeleton#register_keymap"]("henkan", "<C-p>", "henkanBackward")
+
+  vim.fn["skkeleton#register_kanatable"]("rom", {
+    ["ca"] = { "か", "" },
+    ["cu"] = { "く", "" },
+    ["co"] = { "こ", "" },
+    ["ci"] = { "し", "" },
+    ["xn"] = { "ん", "" },
+  })
+
+  local mapped_keys = vim.fn["skkeleton#get_default_mapped_keys"]()
+
+  table.insert(mapped_keys, "<C-n>")
+  table.insert(mapped_keys, "<C-p>")
+  vim.g["skkeleton#mapped_keys"] = mapped_keys
+
+  vim.fn["skkeleton#register_keymap"]("input", "<C-n>", "henkanFirst")
+  vim.fn["skkeleton#register_keymap"]("henkan", "<C-n>", "henkanForward")
+  vim.fn["skkeleton#register_keymap"]("input", "<C-p>", "cancel")
+  vim.fn["skkeleton#register_keymap"]("henkan", "<C-p>", "henkanBackward")
 end
 
 vim.api.nvim_create_augroup("skkeleton-initialize-pre", {})
@@ -28,7 +35,8 @@ vim.api.nvim_create_augroup("skkeleton-disable-pre", {})
 vim.api.nvim_create_autocmd("User", {
   pattern = "skkeleton-disable-pre",
   callback = function()
-    require("cmp").setup.buffer { enabled = true, }
+    local ok, cmp = pcall(require, "cmp")
+    if ok then cmp.setup.buffer { enabled = true } end
   end
 })
 
@@ -36,7 +44,8 @@ vim.api.nvim_create_augroup("skkeleton-enable-post", {})
 vim.api.nvim_create_autocmd("User", {
   pattern = "skkeleton-enable-post",
   callback = function()
-    require("cmp").setup.buffer { enabled = false }
+    local ok, cmp = pcall(require, "cmp")
+    if ok then cmp.setup.buffer { enabled = false } end
   end
 })
 
