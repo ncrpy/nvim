@@ -27,18 +27,6 @@ return {
   },
 
   {
-    "zbirenbaum/copilot.lua",
-    enabled = function()
-      return vim.fn.executable("node") == 1
-    end,
-    cmd = { "Copilot" },
-    event = vim.fn.filereadable(vim.fn.expand("$XDG_CONFIG_HOME/github-copilot/hosts.json")) == 1 and { "InsertEnter" },
-    config = function()
-      require("plugins.config.copilot")
-    end
-  },
-
-  {
     "windwp/nvim-autopairs",
     dependencies = {
       "hrsh7th/nvim-cmp"
@@ -46,6 +34,18 @@ return {
     event = { "InsertEnter" },
     config = function()
       require("plugins.config.nvim-autopairs")
+    end
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    enabled = function()
+      return vim.fn.executable("node") == 1 and vim.fn.filereadable(vim.fn.expand("$XDG_CONFIG_HOME/github-copilot/hosts.json")) == 1
+    end,
+    cmd = { "Copilot" },
+    event = { "InsertEnter" },
+    config = function()
+      require("plugins.config.copilot")
     end
   },
 
@@ -63,8 +63,8 @@ return {
       return vim.fn.executable("deno") == 1
     end,
     dependencies = {
-      { "vim-denops/denops.vim" , version = false },
-      { "delphinus/skkeleton_indicator.nvim", config = nil }
+      { "vim-denops/denops.vim" , version = false },  -- due to a change on Deno v1.36.2
+      { "delphinus/skkeleton_indicator.nvim" }
     },
     keys = function()
       return require("plugins.keymap.skkeleton")
