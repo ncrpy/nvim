@@ -40,10 +40,10 @@ return {
   {
     "zbirenbaum/copilot.lua",
     enabled = function()
-      return vim.fn.executable("node") == 1 and vim.fn.filereadable(vim.fn.expand("$XDG_CONFIG_HOME/github-copilot/hosts.json")) == 1
+      return vim.fn.executable("node") == 1
     end,
     cmd = { "Copilot" },
-    event = { "InsertEnter" },
+    event =  vim.fn.filereadable(vim.fn.expand("$XDG_CONFIG_HOME/github-copilot/hosts.json")) == 1 and { "InsertEnter" },  -- for first auth
     config = function()
       require("plugins.config.copilot")
     end
