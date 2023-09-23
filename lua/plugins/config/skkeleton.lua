@@ -1,7 +1,10 @@
 local skkeleton_init = function()
+  local global_dicts = vim.fn.glob("$XDG_DATA_HOME/skk/*")
+
   vim.fn["skkeleton#config"]({
+    debug = true,
     eggLikeNewline = true,
-    globalJisyo = vim.fn.expand("$HOME/.skk/SKK-JISYO.L"),
+    globalDictionaries = global_dicts == "" and {} or vim.fn.split(global_dicts, "\n"),
     showCandidatesCount = 1
   })
 
@@ -10,6 +13,7 @@ local skkeleton_init = function()
     ["cu"] = { "く", "" },
     ["co"] = { "こ", "" },
     ["ci"] = { "し", "" },
+    ["ce"] = { "せ", "" },
     ["xn"] = { "ん", "" },
   })
 
@@ -27,22 +31,23 @@ end
 
 vim.api.nvim_create_augroup("skkeleton-initialize-pre", {})
 vim.api.nvim_create_autocmd("User", {
+  group = "skkeleton-initialize-pre",
   pattern = "skkeleton-initialize-pre",
   callback = skkeleton_init
 })
 
-vim.api.nvim_create_augroup("skkeleton-disable-pre", {})
+vim.api.nvim_create_augroup("skkeleton-cmp", {})
 vim.api.nvim_create_autocmd("User", {
-  pattern = "skkeleton-disable-pre",
+  group = "skkeleton-cmp",
+  pattern = "skkeleton-disable-post",
   callback = function()
     local ok, cmp = pcall(require, "cmp")
     if ok then cmp.setup.buffer { enabled = true } end
   end
 })
-
-vim.api.nvim_create_augroup("skkeleton-enable-post", {})
 vim.api.nvim_create_autocmd("User", {
-  pattern = "skkeleton-enable-post",
+  group = "skkeleton-cmp",
+  pattern = "skkeleton-enable-pre",
   callback = function()
     local ok, cmp = pcall(require, "cmp")
     if ok then cmp.setup.buffer { enabled = false } end
@@ -56,6 +61,9 @@ vim.api.nvim_create_autocmd("User", {
 --     vim.cmd.redrawstatus()
 --   end
 -- })
+
+
+-- config for skkeleton_indicator.nvim
 
 vim.api.nvim_set_hl(0, "SkkeletonIndicatorEiji",
   { fg = "#88c0d0", bg = "#2e3440", bold = true })

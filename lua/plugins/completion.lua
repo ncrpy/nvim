@@ -13,7 +13,7 @@ return {
     event = { "InsertEnter" },
     config = function()
       require("plugins.config.cmp")
-    end,
+    end
   },
 
   {
@@ -23,7 +23,7 @@ return {
     },
     config = function()
       require("plugins.config.luasnip")
-    end,
+    end
   },
 
   {
@@ -55,22 +55,5 @@ return {
       return vim.fn.executable("fcitx5-remote") == 1
     end,
     event = { "InsertEnter" }
-  },
-
-  {
-    "vim-skk/skkeleton",
-    enabled = function()
-      return vim.fn.executable("deno") == 1
-    end,
-    dependencies = {
-      { "vim-denops/denops.vim" , version = false },  -- due to a change on Deno v1.36.2
-      { "delphinus/skkeleton_indicator.nvim" }
-    },
-    keys = function()
-      return require("plugins.keymap.skkeleton")
-    end,
-    config = function()
-      require("plugins.config.skkeleton")
-    end,
   }
 }
