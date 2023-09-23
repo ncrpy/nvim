@@ -2,7 +2,7 @@ local skkeleton_init = function()
   local global_dicts = vim.fn.glob("$XDG_DATA_HOME/skk/*")
 
   vim.fn["skkeleton#config"]({
-    debug = true,
+    -- debug = true,
     eggLikeNewline = true,
     globalDictionaries = global_dicts == "" and {} or vim.fn.split(global_dicts, "\n"),
     showCandidatesCount = 1
