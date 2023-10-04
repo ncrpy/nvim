@@ -7,7 +7,7 @@ return {
       return ok and install.update({ with_sync = false })
     end,
     dependencies = {
-      "HiPhish/nvim-ts-rainbow2",
+      "HiPhish/rainbow-delimiters.nvim",
       "JoosepAlviste/nvim-ts-context-commentstring"
     },
     event = { "BufReadPost", "BufNewFile" },
