@@ -5,9 +5,7 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     cmd = { "NvimTreeToggle" },
-    keys = function()
-      return require("plugins.keymap.nvim-tree")
-    end,
+    keys = require("plugins.keymap.nvim-tree"),
     config = function()
       require("plugins.config.nvim-tree")
     end
@@ -20,9 +18,7 @@ return {
       "folke/trouble.nvim"
     },
     cmd = { "Telescope" },
-    keys = function()
-      return require("plugins.keymap.telescope")
-    end,
+    keys = require("plugins.keymap.telescope"),
     init = function()
       vim.api.nvim_create_augroup("TelescopeLoaded", {})
     end,
@@ -38,9 +34,7 @@ return {
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle" },
-    keys = function()
-      return require("plugins.keymap.trouble")
-    end,
+    keys = require("plugins.keymap.trouble"),
     config = true
   },
 
@@ -62,9 +56,7 @@ return {
     dependencies = {
       "rcarriga/nvim-dap-ui"
     },
-    keys = function()
-      return require("plugins.keymap.dap")
-    end,
+    keys = require("plugins.keymap.dap"),
     config = function()
       require("plugins.config.dap")
     end
@@ -73,9 +65,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     cmd = { "ToggleTerm" },
-    keys = function()
-      return require("plugins.keymap.toggleterm")
-    end,
+    keys = require("plugins.keymap.toggleterm"),
     config = function()
       require("plugins.config.toggleterm")
     end
