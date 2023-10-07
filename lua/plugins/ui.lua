@@ -43,6 +43,11 @@ return {
   },
 
   {
+    url = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+
+  {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = "VeryLazy",
