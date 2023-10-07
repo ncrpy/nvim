@@ -1,6 +1,6 @@
 local M = {}
 
-M.opts = function()
+M.setup = function()
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -13,15 +13,7 @@ local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local cmp = require("cmp")
 
-cmp.event:on("menu_opened", function()
-  vim.b.copilot_suggestion_hidden = true
-end)
-
-cmp.event:on("menu_closed", function()
-  vim.b.copilot_suggestion_hidden = false
-end)
-
-return {
+local opts = {
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
@@ -140,6 +132,7 @@ return {
       maxwidth = 50,
       menu = {
         path = "[File]",
+        cmdline = "[Cmd]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[Neovim]",
         luasnip = "[Snippet]",
@@ -152,6 +145,23 @@ return {
     ghost_text = true
   }
 }
+
+cmp.setup(opts)
+
+cmp.setup.cmdline("@", {
+  sources = cmp.config.sources({
+    { name = "path" },
+    { name = "cmdline" }
+  })
+})
+
+cmp.event:on("menu_opened", function()
+  vim.b.copilot_suggestion_hidden = true
+end)
+
+cmp.event:on("menu_closed", function()
+  vim.b.copilot_suggestion_hidden = false
+end)
 
 end
 

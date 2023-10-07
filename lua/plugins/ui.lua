@@ -29,7 +29,7 @@ return {
       local group = vim.api.nvim_create_augroup("count_buffers", {})
       local function barbar_setup()
         if #(vim.fn.getbufinfo({ buflisted = 1 })) > 1 then
-          require("plugins.config.barbar").setup(opts)
+          require("barbar").setup(opts)
           vim.api.nvim_del_augroup_by_id(group)
         end
       end
