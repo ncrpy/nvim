@@ -23,8 +23,15 @@ return {
     keys = function()
       return require("plugins.keymap.telescope")
     end,
+    init = function()
+      vim.api.nvim_create_augroup("TelescopeLoaded", {})
+    end,
     config = function()
       require("plugins.config.telescope")
+      vim.api.nvim_exec_autocmds("User", {
+        group = "TelescopeLoaded",
+        pattern = "TelescopeLoaded"
+      })
     end
   },
 

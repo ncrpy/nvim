@@ -46,7 +46,9 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = "VeryLazy",
-    config = true
+    config = function()
+      require("plugins.config.indent-blankline")
+    end
   },
 
   {
@@ -54,6 +56,33 @@ return {
     event = "VeryLazy",
     config = true
   },
+
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    config = true
+  },
+
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    config = function()
+      require("plugins.config.notify")
+    end
+  },
+
+  -- Noice is a good plugin but I prefer to use the legacy cmdline
+  -- {
+  --   "folke/noice.nvim",
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "rcarriga/nvim-notify",
+  --   },
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("plugins.config.noice")
+  --   end
+  -- },
 
   {
     "norcalli/nvim-colorizer.lua",
