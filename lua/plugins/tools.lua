@@ -105,5 +105,10 @@ return {
     config = function()
       require("plugins.config.comment")
     end
+  },
+
+  {
+    "folke/zen-mode.nvim",
+    keys = require("plugins.keymap.zen-mode")
   }
 }
