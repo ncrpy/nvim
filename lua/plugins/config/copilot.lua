@@ -1,4 +1,6 @@
-require("copilot").setup {
+local M = {}
+
+M.opts = {
   panel = {
     enabled = true,
     auto_refresh = true,
@@ -23,3 +25,5 @@ require("copilot").setup {
     }
   }
 }
+
+return M

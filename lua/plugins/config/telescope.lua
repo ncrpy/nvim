@@ -1,7 +1,11 @@
+local M = {}
+
+M.opts = function()
+
 local actions = require("telescope.actions")
 local trouble = require("trouble.providers.telescope")
 
-require("telescope").setup {
+return {
   defaults = {
     layout_config = {
       horizontal = {
@@ -20,3 +24,7 @@ require("telescope").setup {
     }
   }
 }
+
+end
+
+return M

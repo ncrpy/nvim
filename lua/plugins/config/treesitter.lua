@@ -1,4 +1,6 @@
-require "nvim-treesitter.configs".setup {
+local M = {}
+
+M.opts =  {
   ensure_installed = {},
   highlight = {
     enable = true,
@@ -8,3 +10,9 @@ require "nvim-treesitter.configs".setup {
     enable_autocmd = false,
   },
 }
+
+M.setup = function(opts)
+  require("nvim-treesitter.configs").setup(opts)
+end
+
+return M

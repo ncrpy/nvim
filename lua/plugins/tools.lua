@@ -6,9 +6,7 @@ return {
     },
     cmd = { "NvimTreeToggle" },
     keys = require("plugins.keymap.nvim-tree"),
-    config = function()
-      require("plugins.config.nvim-tree")
-    end
+    opts = require("plugins.config.nvim-tree").opts
   },
 
   {
@@ -22,8 +20,9 @@ return {
     init = function()
       vim.api.nvim_create_augroup("TelescopeLoaded", {})
     end,
-    config = function()
-      require("plugins.config.telescope")
+    opts = require("plugins.config.telescope").opts,
+    config = function(opts)
+      require("telescope").setup(opts)
       vim.api.nvim_exec_autocmds("User", {
         group = "TelescopeLoaded",
         pattern = "TelescopeLoaded"
@@ -35,7 +34,7 @@ return {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle" },
     keys = require("plugins.keymap.trouble"),
-    config = true
+    opts = {}
   },
 
   {
@@ -46,9 +45,7 @@ return {
       "sindrets/diffview.nvim",        -- optional
     },
     cmd = { "Neogit" },
-    config = function()
-      require("plugins.config.neogit")
-    end
+    opts = require("plugins.config.neogit").opts
   },
 
   {
@@ -57,33 +54,28 @@ return {
       "rcarriga/nvim-dap-ui"
     },
     keys = require("plugins.keymap.dap"),
-    config = function()
-      require("plugins.config.dap")
-    end
+    opts = require("plugins.config.dap").opts,
+    config = require("plugins.config.dap").setup
   },
 
   {
     "akinsho/toggleterm.nvim",
     cmd = { "ToggleTerm" },
     keys = require("plugins.keymap.toggleterm"),
-    config = function()
-      require("plugins.config.toggleterm")
-    end
+    opts = require("plugins.config.toggleterm").opts
   },
 
   {
     "simrat39/symbols-outline.nvim",
     cmd = { "SymbolsOutline" },
     keys = require("plugins.keymap.outline"),
-    config = function()
-      require("plugins.config.outline")
-    end
+    opts = require("plugins.config.outline").opts
   },
 
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    config = true
+    opts = {}
   },
 
   {
@@ -92,9 +84,7 @@ return {
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
     event = "VeryLazy",
-    config = function()
-      require("plugins.config.comment")
-    end
+    opts = require("plugins.config.comment").opts
   },
 
   {

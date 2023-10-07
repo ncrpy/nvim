@@ -1,8 +1,6 @@
-vim.opt.termguicolors = true
+local M = {}
 
-require("notify").setup {
-  render = "compact"
-}
+M.opts = function()
 
 vim.api.nvim_create_autocmd("User", {
   group = "TelescopeLoaded",
@@ -14,3 +12,11 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 vim.notify = require("notify")
+
+return {
+  render = "compact"
+}
+
+end
+
+return M

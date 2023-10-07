@@ -1,3 +1,7 @@
+local M = {}
+
+M.opts = function()
+
 local has_words_before = function()
   unpack = unpack or table.unpack
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -9,7 +13,15 @@ local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local cmp = require("cmp")
 
-cmp.setup {
+cmp.event:on("menu_opened", function()
+  vim.b.copilot_suggestion_hidden = true
+end)
+
+cmp.event:on("menu_closed", function()
+  vim.b.copilot_suggestion_hidden = false
+end)
+
+return {
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
@@ -141,10 +153,6 @@ cmp.setup {
   }
 }
 
-cmp.event:on("menu_opened", function()
-  vim.b.copilot_suggestion_hidden = true
-end)
+end
 
-cmp.event:on("menu_closed", function()
-  vim.b.copilot_suggestion_hidden = false
-end)
+return M

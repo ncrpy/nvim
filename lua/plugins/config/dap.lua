@@ -1,60 +1,8 @@
-local dap, dapui = require("dap"), require("dapui")
+local M = {}
 
-dapui.setup({
-  controls = {
-    element = "repl",
-    enabled = true,
-    icons = {
-      disconnect = "",
-      pause = "",
-      play = "",
-      run_last = "",
-      step_back = "",
-      step_into = "",
-      step_out = "",
-      step_over = "",
-      terminate = ""
-    }
-  },
-  layouts = {
-    {
-      elements = {
-        {
-          id = "scopes",
-          size = 0.26
-        },
-        {
-          id = "breakpoints",
-          size = 0.24
-        },
-        {
-          id = "stacks",
-          size = 0.24
-        },
-        {
-          id = "watches",
-          size = 0.26
-        }
-      },
-      position = "left",
-      size = 0.25
-    },
-    {
-      elements = {
-        {
-          id = "repl",
-          size = 0.5
-        },
-        {
-          id = "console",
-          size = 0.5
-        }
-      },
-      position = "bottom",
-      size = 0.25
-    }
-  },
-})
+M.opts = function()
+
+local dap, dapui = require("dap"), require("dapui")
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
@@ -134,3 +82,68 @@ end)
 vim.keymap.set("n", "<leader>d<Space>", function()
   dapui.float_element(nil, float_opts())
 end)
+
+
+return {
+  controls = {
+    element = "repl",
+    enabled = true,
+    icons = {
+      disconnect = "",
+      pause = "",
+      play = "",
+      run_last = "",
+      step_back = "",
+      step_into = "",
+      step_out = "",
+      step_over = "",
+      terminate = ""
+    }
+  },
+  layouts = {
+    {
+      elements = {
+        {
+          id = "scopes",
+          size = 0.26
+        },
+        {
+          id = "breakpoints",
+          size = 0.24
+        },
+        {
+          id = "stacks",
+          size = 0.24
+        },
+        {
+          id = "watches",
+          size = 0.26
+        }
+      },
+      position = "left",
+      size = 0.25
+    },
+    {
+      elements = {
+        {
+          id = "repl",
+          size = 0.5
+        },
+        {
+          id = "console",
+          size = 0.5
+        }
+      },
+      position = "bottom",
+      size = 0.25
+    }
+  },
+}
+
+end
+
+M.setup = function(opts)
+  require("dapui").setup(opts)
+end
+
+return M

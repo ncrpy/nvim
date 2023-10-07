@@ -1,19 +1,9 @@
-local noice = require("noice")
+local M = {}
 
-local formats = require("noice.config").defaults().cmdline.format
-
-for _, format in pairs(formats) do
-  format.conceal = false
-end
-
-noice.setup {
-  cmdline = {
-    format = formats
-  }
-}
+M.opts = function()
 
 local ll_ok, lualine = pcall(require, "lualine")
-local status = noice.api.status
+local status = require("noice").api.status
 
 if ll_ok then lualine.setup {
   sections = {
@@ -45,3 +35,19 @@ vim.api.nvim_create_autocmd("User", {
     if ok then telescope.load_extension("noice") end
   end
 })
+
+local formats = require("noice.config").defaults().cmdline.format
+
+for _, format in pairs(formats) do
+  format.conceal = false
+end
+
+return {
+  cmdline = {
+    format = formats
+  }
+}
+
+end
+
+return M

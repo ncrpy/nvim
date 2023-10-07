@@ -10,8 +10,7 @@ return {
       "JoosepAlviste/nvim-ts-context-commentstring"
     },
     event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require("plugins.config.treesitter")
-    end
+    opts = require("plugins.config.treesitter").opts,
+    config = require("plugins.config.treesitter").setup
   }
 }

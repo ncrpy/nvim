@@ -2,9 +2,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    config = function()
-      require("plugins.config.lualine")
-    end
+    opts = require("plugins.config.lualine").opts
   },
 
   {
@@ -26,11 +24,12 @@ return {
       --   end
       -- })
     end,
-    config = function()
+    opts = require("plugins.config.barbar").opts,
+    config = function(opts)
       local group = vim.api.nvim_create_augroup("count_buffers", {})
       local function barbar_setup()
         if #(vim.fn.getbufinfo({ buflisted = 1 })) > 1 then
-          require("plugins.config.barbar")
+          require("plugins.config.barbar").setup(opts)
           vim.api.nvim_del_augroup_by_id(group)
         end
       end
@@ -51,29 +50,25 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = "VeryLazy",
-    config = function()
-      require("plugins.config.indent-blankline")
-    end
+    opts = require("plugins.config.indent-blankline").opts
   },
 
   {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
-    config = true
+    opts = {}
   },
 
   {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
-    config = true
+    opts = {}
   },
 
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
-    config = function()
-      require("plugins.config.notify")
-    end
+    opts = require("plugins.config.notify").opts
   },
 
   -- Noice is a good plugin but I prefer to use the legacy cmdline
@@ -84,9 +79,7 @@ return {
   --     "rcarriga/nvim-notify",
   --   },
   --   event = "VeryLazy",
-  --   config = function()
-  --     require("plugins.config.noice")
-  --   end
+  --   opts = require("plugins.config.noice").opts
   -- },
 
   {

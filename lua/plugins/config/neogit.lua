@@ -1,6 +1,6 @@
-local neogit = require("neogit")
+local M = {}
 
-neogit.setup {
+M.opts = {
   signs = {
     -- { CLOSED, OPENED }
     hunk = { "", "" },
@@ -14,3 +14,5 @@ neogit.setup {
     }
   }
 }
+
+return M
