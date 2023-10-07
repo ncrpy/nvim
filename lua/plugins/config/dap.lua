@@ -37,7 +37,15 @@ dap.configurations.cpp = {
     --   return vim.fn.split(arguments, " ", true)
     -- end,
     program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+      local self = coroutine.running()
+      vim.ui.input({
+        prompt = "Path to executable: ",
+        default = vim.fn.getcwd() .. "/",
+        completion = "file"
+      }, function(input)
+        coroutine.resume(self, input)
+      end)
+      return coroutine.yield()
     end,
     cwd = "${workspaceFolder}",
     stopOnEntry = false,
