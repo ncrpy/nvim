@@ -7,10 +7,6 @@ neogit.setup {
     item = { "", "" },
     section = { "", "" },
   },
-  integrations = {
-    telescope = true,
-    diffview = true
-  },
   mappings = {
     status = {
       ["l"] = false,
