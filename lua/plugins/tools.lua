@@ -82,6 +82,15 @@ return {
   },
 
   {
+    "simrat39/symbols-outline.nvim",
+    cmd = { "SymbolsOutline" },
+    keys = require("plugins.keymap.outline"),
+    config = function()
+      require("plugins.config.outline")
+    end
+  },
+
+  {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     config = true
