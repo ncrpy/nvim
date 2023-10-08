@@ -25,20 +25,7 @@ return {
       -- })
     end,
     opts = require("plugins.config.barbar").opts,
-    config = function(opts)
-      local group = vim.api.nvim_create_augroup("count_buffers", {})
-      local function barbar_setup()
-        if #(vim.fn.getbufinfo({ buflisted = 1 })) > 1 then
-          require("plugins.config.barbar").setup(opts)
-          vim.api.nvim_del_augroup_by_id(group)
-        end
-      end
-      vim.api.nvim_create_autocmd("BufEnter", {
-        group = group,
-        callback = barbar_setup
-      })
-      barbar_setup()
-    end
+    config = require("plugins.config.barbar").setup
   },
 
   {
@@ -50,7 +37,8 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = "VeryLazy",
-    opts = require("plugins.config.indent-blankline").opts
+    opts = require("plugins.config.indent-blankline").opts,
+    config = require("plugins.config.indent-blankline").setup
   },
 
   {
@@ -68,7 +56,8 @@ return {
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
-    opts = require("plugins.config.notify").opts
+    opts = require("plugins.config.notify").opts,
+    config = require("plugins.config.notify").setup
   },
 
   -- Noice is a good plugin but I prefer to use the legacy cmdline
@@ -79,7 +68,8 @@ return {
   --     "rcarriga/nvim-notify",
   --   },
   --   event = "VeryLazy",
-  --   opts = require("plugins.config.noice").opts
+  --   opts = require("plugins.config.noice").opts,
+  --   config = require("plugins.config.noice").setup
   -- },
 
   {

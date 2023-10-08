@@ -21,7 +21,7 @@ return {
       vim.api.nvim_create_augroup("TelescopeLoaded", {})
     end,
     opts = require("plugins.config.telescope").opts,
-    config = function(opts)
+    config = function(_, opts)
       require("telescope").setup(opts)
       vim.api.nvim_exec_autocmds("User", {
         group = "TelescopeLoaded",
@@ -85,6 +85,7 @@ return {
     },
     event = "VeryLazy",
     opts = require("plugins.config.comment").opts
+
   },
 
   {
