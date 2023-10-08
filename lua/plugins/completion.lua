@@ -4,7 +4,6 @@ return {
     version = false,
     dependencies = {
       { "hrsh7th/cmp-path" },
-      { "hrsh7th/cmp-cmdline" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-nvim-lua" },
       { "saadparwaiz1/cmp_luasnip", dependencies = "L3MON4D3/LuaSnip" },
@@ -12,7 +11,7 @@ return {
       { "onsails/lspkind.nvim" }
     },
     event = { "InsertEnter" },
-    config = require("plugins.config.cmp").setup
+    opts = require("plugins.config.cmp").opts
   },
 
   {
@@ -29,7 +28,7 @@ return {
       "hrsh7th/nvim-cmp"
     },
     event = { "InsertEnter" },
-    config = require("plugins.config.nvim-autopairs").setup
+    opts = require("plugins.config.nvim-autopairs").opts
   },
 
   {

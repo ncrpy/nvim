@@ -1,7 +1,7 @@
 local M = {}
 
-M.setup = function()
- 
+M.opts = function()
+
 local dap, dapui = require("dap"), require("dapui")
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -92,7 +92,7 @@ vim.keymap.set("n", "<leader>d<Space>", function()
 end)
 
 
-local opts = {
+return {
   controls = {
     element = "repl",
     enabled = true,
@@ -148,8 +148,10 @@ local opts = {
   },
 }
 
-dapui.setup(opts)
+end
 
+M.setup = function(opts)
+  require("dapui").setup(opts)
 end
 
 return M

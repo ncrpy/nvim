@@ -54,6 +54,7 @@ return {
       "rcarriga/nvim-dap-ui"
     },
     keys = require("plugins.keymap.dap"),
+    opts = require("plugins.config.dap").opts,
     config = require("plugins.config.dap").setup
   },
 
