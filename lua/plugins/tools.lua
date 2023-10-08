@@ -83,9 +83,8 @@ return {
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
-    event = "VeryLazy",
+    event = { "FileType" },
     opts = require("plugins.config.comment").opts
-
   },
 
   {
