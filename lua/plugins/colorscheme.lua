@@ -18,6 +18,7 @@ return {
     opts = {
       transparent_background = false,
       integrations = {
+        aerial = true,
         barbar = true,
         indent_blankline = {
           colored_indent_levels = true

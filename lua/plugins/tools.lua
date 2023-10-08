@@ -65,13 +65,24 @@ return {
     opts = require("plugins.config.toggleterm").opts
   },
 
+  -- {
+  --   -- "simrat39/symbols-outline.nvim",
+  --   "enddeadroyal/symbols-outline.nvim",
+  --   branch = "bugfix/symbol-hover-misplacement",
+  --   cmd = { "SymbolsOutline" },
+  --   keys = require("plugins.keymap.outline"),
+  --   opts = require("plugins.config.outline").opts
+  -- },
+
   {
-    -- "simrat39/symbols-outline.nvim",
-    "enddeadroyal/symbols-outline.nvim",
-    branch = "bugfix/symbol-hover-misplacement",
-    cmd = { "SymbolsOutline" },
-    keys = require("plugins.keymap.outline"),
-    opts = require("plugins.config.outline").opts
+    "stevearc/aerial.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons"
+    },
+    cmd = { "AerialToggle" },
+    keys = require("plugins.keymap.aerial"),
+    opts = require("plugins.config.aerial").opts,
+    config = require("plugins.config.aerial").setup
   },
 
   {
