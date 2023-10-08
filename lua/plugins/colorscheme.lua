@@ -20,7 +20,7 @@ return {
       integrations = {
         barbar = true,
         indent_blankline = {
-          clolored_indent_levels = true
+          colored_indent_levels = true
         },
         mason = true,
         notify = true,
