@@ -66,7 +66,9 @@ return {
   },
 
   {
-    "simrat39/symbols-outline.nvim",
+    -- "simrat39/symbols-outline.nvim",
+    "enddeadroyal/symbols-outline.nvim",
+    branch = "bugfix/symbol-hover-misplacement",
     cmd = { "SymbolsOutline" },
     keys = require("plugins.keymap.outline"),
     opts = require("plugins.config.outline").opts

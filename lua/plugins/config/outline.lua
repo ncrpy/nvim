@@ -1,7 +1,7 @@
 local M = {}
 
 M.opts = {
-  auto_close = true,
+  auto_close = false,
   keymaps = {
     hover_symbol = "<C-k>"
   },
