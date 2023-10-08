@@ -26,7 +26,6 @@ return {
         mason = true,
         notify = true,
         lsp_trouble = true,
-        symbols_outline = true,
       }
     },
     config = function(_, opts)

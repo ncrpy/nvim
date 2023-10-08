@@ -60,18 +60,6 @@ return {
     config = require("plugins.config.notify").setup
   },
 
-  -- Noice is a good plugin but I prefer to use the legacy cmdline
-  -- {
-  --   "folke/noice.nvim",
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     "rcarriga/nvim-notify",
-  --   },
-  --   event = "VeryLazy",
-  --   opts = require("plugins.config.noice").opts,
-  --   config = require("plugins.config.noice").setup
-  -- },
-
   {
     "norcalli/nvim-colorizer.lua",
     cmd = { "ColorizerToggle" },
