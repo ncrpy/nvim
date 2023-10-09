@@ -4,7 +4,7 @@ return {
     "<Cmd>AerialToggle!<CR>"
   },
   {
-    "<leader>l",
+    "<leader>p",
     "<Cmd>AerialNavToggle<CR>"
   }
 }

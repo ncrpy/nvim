@@ -13,8 +13,8 @@ M.setup = function(_, opts)
 
   require("aerial").setup(opts)
 
-  local telescope_ok, telescope = pcall(require, "telescope")
-  if telescope_ok then telescope.load_extension("aerial") end
+  -- local telescope_ok, telescope = pcall(require, "telescope")
+  -- if telescope_ok then telescope.load_extension("aerial") end
 
   local lualine_ok, lualine = pcall(require, "lualine")
   if lualine_ok then
