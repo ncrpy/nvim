@@ -4,16 +4,16 @@ return {
     version = false,
     dependencies = {
       { "hrsh7th/cmp-path" },
+      { "hrsh7th/cmp-cmdline" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-nvim-lua" },
       { "saadparwaiz1/cmp_luasnip", dependencies = "L3MON4D3/LuaSnip" },
---       { "zbirenbaum/copilot-cmp", dependencies = "zbirenbaum/copilot.lua", config = true },
+--       { "zbirenbaum/copilot-cmp", dependencies = "zbirenbaum/copilot.lua", opts = {} },
       { "onsails/lspkind.nvim" }
     },
     event = { "InsertEnter" },
-    config = function()
-      require("plugins.config.cmp")
-    end
+    opts = require("plugins.config.cmp").opts,
+    config = require("plugins.config.cmp").setup
   },
 
   {
@@ -21,9 +21,7 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
     },
-    config = function()
-      require("plugins.config.luasnip")
-    end
+    config = require("plugins.config.luasnip").setup
   },
 
   {
@@ -32,9 +30,8 @@ return {
       "hrsh7th/nvim-cmp"
     },
     event = { "InsertEnter" },
-    config = function()
-      require("plugins.config.nvim-autopairs")
-    end
+    opts = require("plugins.config.nvim-autopairs").opts,
+    config = require("plugins.config.nvim-autopairs").setup
   },
 
   {
@@ -44,9 +41,7 @@ return {
     end,
     cmd = { "Copilot" },
     event =  vim.fn.filereadable(vim.fn.expand("$XDG_CONFIG_HOME/github-copilot/hosts.json")) == 1 and { "InsertEnter" },  -- for first auth
-    config = function()
-      require("plugins.config.copilot")
-    end
+    opts = require("plugins.config.copilot").opts
   },
 
   {

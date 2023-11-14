@@ -7,12 +7,10 @@ return {
       return ok and install.update({ with_sync = false })
     end,
     dependencies = {
-      "HiPhish/rainbow-delimiters.nvim",
       "JoosepAlviste/nvim-ts-context-commentstring"
     },
     event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require("plugins.config.treesitter")
-    end
+    opts = require("plugins.config.treesitter").opts,
+    config = require("plugins.config.treesitter").setup
   }
 }

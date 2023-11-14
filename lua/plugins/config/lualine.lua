@@ -1,4 +1,6 @@
-require("lualine").setup {
+local M = {}
+
+M.opts = {
   options = {
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
@@ -84,3 +86,5 @@ require("lualine").setup {
   },
   extensions = { "nvim-tree" }
 }
+
+return M

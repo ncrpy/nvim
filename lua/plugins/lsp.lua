@@ -9,7 +9,7 @@ return {
       "MasonUninstallAll",
       "MasonLog"
     },
-    config = true
+    opts = {}
   },
 
   {
@@ -17,7 +17,7 @@ return {
     dependencies = {
       "williamboman/mason.nvim"
     },
-    config = true
+    opts = {}
   },
 
   {

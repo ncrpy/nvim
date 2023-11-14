@@ -5,12 +5,8 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     cmd = { "NvimTreeToggle" },
-    keys = function()
-      return require("plugins.keymap.nvim-tree")
-    end,
-    config = function()
-      require("plugins.config.nvim-tree")
-    end
+    keys = require("plugins.keymap.nvim-tree"),
+    opts = require("plugins.config.nvim-tree").opts
   },
 
   {
@@ -20,21 +16,25 @@ return {
       "folke/trouble.nvim"
     },
     cmd = { "Telescope" },
-    keys = function()
-      return require("plugins.keymap.telescope")
+    keys = require("plugins.keymap.telescope"),
+    init = function()
+      vim.api.nvim_create_augroup("TelescopeLoaded", {})
     end,
-    config = function()
-      require("plugins.config.telescope")
+    opts = require("plugins.config.telescope").opts,
+    config = function(_, opts)
+      require("telescope").setup(opts)
+      vim.api.nvim_exec_autocmds("User", {
+        group = "TelescopeLoaded",
+        pattern = "TelescopeLoaded"
+      })
     end
   },
 
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle" },
-    keys = function()
-      return require("plugins.keymap.trouble")
-    end,
-    config = true
+    keys = require("plugins.keymap.trouble"),
+    opts = {}
   },
 
   {
@@ -45,9 +45,7 @@ return {
       "sindrets/diffview.nvim",        -- optional
     },
     cmd = { "Neogit" },
-    config = function()
-      require("plugins.config.neogit")
-    end
+    opts = require("plugins.config.neogit").opts
   },
 
   {
@@ -55,29 +53,41 @@ return {
     dependencies = {
       "rcarriga/nvim-dap-ui"
     },
-    keys = function()
-      return require("plugins.keymap.dap")
-    end,
-    config = function()
-      require("plugins.config.dap")
-    end
+    keys = require("plugins.keymap.dap"),
+    opts = require("plugins.config.dap").opts,
+    config = require("plugins.config.dap").setup
   },
 
   {
     "akinsho/toggleterm.nvim",
     cmd = { "ToggleTerm" },
-    keys = function()
-      return require("plugins.keymap.toggleterm")
-    end,
-    config = function()
-      require("plugins.config.toggleterm")
-    end
+    keys = require("plugins.keymap.toggleterm"),
+    opts = require("plugins.config.toggleterm").opts
+  },
+
+  {
+    "stevearc/aerial.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons"
+    },
+    cmd = { "AerialToggle", "AerialNavToggle", "AerialInfo" },
+    keys = require("plugins.keymap.aerial"),
+    opts = require("plugins.config.aerial").opts,
+    config = require("plugins.config.aerial").setup
+  },
+
+  {
+    "stevearc/conform.nvim",
+    cmd = { "ConformInfo", "Format", "FormatEnable" },
+    keys = require("plugins.keymap.conform"),
+    opts = require("plugins.config.conform").opts,
+    config = require("plugins.config.conform").setup
   },
 
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    config = true
+    opts = {}
   },
 
   {
@@ -85,9 +95,12 @@ return {
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
-    event = "VeryLazy",
-    config = function()
-      require("plugins.config.comment")
-    end
+    event = { "FileType" },
+    opts = require("plugins.config.comment").opts
+  },
+
+  {
+    "folke/zen-mode.nvim",
+    keys = require("plugins.keymap.zen-mode")
   }
 }

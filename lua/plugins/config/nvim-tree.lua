@@ -1,4 +1,6 @@
-require("nvim-tree").setup {
+local M = {}
+
+M.opts = {
   renderer = {
     special_files = { "README.md", "Makefile" }
   },
@@ -11,3 +13,5 @@ require("nvim-tree").setup {
     }
   }
 }
+
+return M

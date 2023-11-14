@@ -1,15 +1,11 @@
-local neogit = require("neogit")
+local M = {}
 
-neogit.setup {
+M.opts = {
   signs = {
     -- { CLOSED, OPENED }
     hunk = { "", "" },
     item = { "", "" },
     section = { "", "" },
-  },
-  integrations = {
-    telescope = true,
-    diffview = true
   },
   mappings = {
     status = {
@@ -18,3 +14,5 @@ neogit.setup {
     }
   }
 }
+
+return M

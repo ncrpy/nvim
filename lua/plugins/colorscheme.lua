@@ -15,10 +15,21 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     event = { "OptionSet background", "User VeryLazyPre" },
-    config = function()
-      require("catppuccin").setup {
-        transparent_background = false
+    opts = {
+      transparent_background = false,
+      integrations = {
+        aerial = true,
+        barbar = true,
+        indent_blankline = {
+          colored_indent_levels = true
+        },
+        mason = true,
+        notify = true,
+        lsp_trouble = true,
       }
+    },
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
       vim.cmd.colorscheme("catppuccin")
     end
   }

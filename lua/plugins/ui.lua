@@ -2,9 +2,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    config = function()
-      require("plugins.config.lualine")
-    end
+    opts = require("plugins.config.lualine").opts
   },
 
   {
@@ -26,33 +24,40 @@ return {
       --   end
       -- })
     end,
-    config = function()
-      local group = vim.api.nvim_create_augroup("count_buffers", {})
-      local function barbar_setup()
-        if #(vim.fn.getbufinfo({ buflisted = 1 })) > 1 then
-          require("plugins.config.barbar")
-          vim.api.nvim_del_augroup_by_id(group)
-        end
-      end
-      vim.api.nvim_create_autocmd("BufEnter", {
-        group = group,
-        callback = barbar_setup
-      })
-      barbar_setup()
-    end
+    opts = require("plugins.config.barbar").opts,
+    config = require("plugins.config.barbar").setup
+  },
+
+  {
+    url = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+    event = { "BufReadPre", "BufNewFile" },
   },
 
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = "VeryLazy",
-    config = true
+    opts = require("plugins.config.indent-blankline").opts,
+    config = require("plugins.config.indent-blankline").setup
   },
 
   {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
-    config = true
+    opts = {}
+  },
+
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    opts = {}
+  },
+
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    opts = require("plugins.config.notify").opts,
+    config = require("plugins.config.notify").setup
   },
 
   {

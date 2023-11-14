@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("User", {
   end
 })
 
-local lazy_opts = require("plugins.config.lazy")
+local lazy_opts = require("plugins.config.lazy").opts
 
 require("core.options")
 require("lazy").setup("plugins", lazy_opts)

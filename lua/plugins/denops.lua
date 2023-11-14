@@ -36,9 +36,7 @@ return {
       "vim-denops/denops.vim",
       "delphinus/skkeleton_indicator.nvim"
     },
-    keys = function()
-      return require("plugins.keymap.skkeleton")
-    end,
+    keys = require("plugins.keymap.skkeleton"),
     config = function()
       denops_register("skkeleton")
       require("plugins.config.skkeleton")
