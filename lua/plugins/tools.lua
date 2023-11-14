@@ -77,6 +77,14 @@ return {
   },
 
   {
+    "stevearc/conform.nvim",
+    cmd = { "ConformInfo", "Format", "FormatEnable" },
+    keys = require("plugins.keymap.conform"),
+    opts = require("plugins.config.conform").opts,
+    config = require("plugins.config.conform").setup
+  },
+
+  {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     opts = {}
