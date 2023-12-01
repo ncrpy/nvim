@@ -1,13 +1,9 @@
 local M = {}
 
-M.opts =  {
+M.opts = {
   ensure_installed = {},
   highlight = {
     enable = true,
-  },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
   },
 }
 

@@ -6,14 +6,14 @@ return {
     },
     cmd = { "NvimTreeToggle" },
     keys = require("plugins.keymap.nvim-tree"),
-    opts = require("plugins.config.nvim-tree").opts
+    opts = require("plugins.config.nvim-tree").opts,
   },
 
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim"
+      "folke/trouble.nvim",
     },
     cmd = { "Telescope" },
     keys = require("plugins.keymap.telescope"),
@@ -25,55 +25,55 @@ return {
       require("telescope").setup(opts)
       vim.api.nvim_exec_autocmds("User", {
         group = "TelescopeLoaded",
-        pattern = "TelescopeLoaded"
+        pattern = "TelescopeLoaded",
       })
-    end
+    end,
   },
 
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle" },
     keys = require("plugins.keymap.trouble"),
-    opts = {}
+    opts = {},
   },
 
   {
     "NeogitOrg/neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
+      "nvim-lua/plenary.nvim", -- required
       "nvim-telescope/telescope.nvim", -- optional
-      "sindrets/diffview.nvim",        -- optional
+      "sindrets/diffview.nvim", -- optional
     },
     cmd = { "Neogit" },
-    opts = require("plugins.config.neogit").opts
+    opts = require("plugins.config.neogit").opts,
   },
 
   {
     "mfussenegger/nvim-dap",
     dependencies = {
-      "rcarriga/nvim-dap-ui"
+      "rcarriga/nvim-dap-ui",
     },
     keys = require("plugins.keymap.dap"),
     opts = require("plugins.config.dap").opts,
-    config = require("plugins.config.dap").setup
+    config = require("plugins.config.dap").setup,
   },
 
   {
     "akinsho/toggleterm.nvim",
     cmd = { "ToggleTerm" },
     keys = require("plugins.keymap.toggleterm"),
-    opts = require("plugins.config.toggleterm").opts
+    opts = require("plugins.config.toggleterm").opts,
   },
 
   {
     "stevearc/aerial.nvim",
     dependencies = {
-      "nvim-tree/nvim-web-devicons"
+      "nvim-tree/nvim-web-devicons",
     },
     cmd = { "AerialToggle", "AerialNavToggle", "AerialInfo" },
     keys = require("plugins.keymap.aerial"),
     opts = require("plugins.config.aerial").opts,
-    config = require("plugins.config.aerial").setup
+    config = require("plugins.config.aerial").setup,
   },
 
   {
@@ -81,26 +81,29 @@ return {
     cmd = { "ConformInfo", "Format", "FormatEnable" },
     keys = require("plugins.keymap.conform"),
     opts = require("plugins.config.conform").opts,
-    config = require("plugins.config.conform").setup
+    config = require("plugins.config.conform").setup,
   },
 
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    opts = {}
+    opts = {},
   },
 
   {
     "numToStr/Comment.nvim",
     dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        opts = require("plugins.config.commentstring").opts,
+      },
     },
     event = { "FileType" },
-    opts = require("plugins.config.comment").opts
+    opts = require("plugins.config.comment").opts,
   },
 
   {
     "folke/zen-mode.nvim",
-    keys = require("plugins.keymap.zen-mode")
-  }
+    keys = require("plugins.keymap.zen-mode"),
+  },
 }
