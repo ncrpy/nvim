@@ -1,7 +1,6 @@
 local M = {}
 
 M.opts = function()
-
   local copilot_ok, suggestion = pcall(require, "copilot.suggestion")
   local luasnip = require("luasnip")
   local lspkind = require("lspkind")
@@ -115,7 +114,7 @@ M.opts = function()
         else
           fallback()
         end
-      end, { "i", "s" })
+      end, { "i", "s" }),
     }),
 
     sources = cmp.config.sources({
@@ -123,7 +122,7 @@ M.opts = function()
       { name = "nvim_lsp" },
       { name = "nvim_lua" },
       { name = "luasnip" },
-  --     { name = "copilot" },
+      -- { name = "copilot" },
     }),
 
     formatting = {
@@ -136,20 +135,18 @@ M.opts = function()
           nvim_lsp = "[LSP]",
           nvim_lua = "[Neovim]",
           luasnip = "[Snippet]",
-  --         copilot = "[Copilot]",
-        }
-      })
+          -- copilot = "[Copilot]",
+        },
+      }),
     },
 
     experimental = {
-      ghost_text = true
-    }
+      ghost_text = true,
+    },
   }
-
 end
 
 M.setup = function(_, opts)
-
   local cmp = require("cmp")
 
   cmp.setup(opts)
@@ -157,8 +154,8 @@ M.setup = function(_, opts)
   cmp.setup.cmdline("@", {
     sources = cmp.config.sources({
       { name = "path" },
-      { name = "cmdline" }
-    })
+      { name = "cmdline" },
+    }),
   })
 
   cmp.event:on("menu_opened", function()
@@ -168,7 +165,6 @@ M.setup = function(_, opts)
   cmp.event:on("menu_closed", function()
     vim.b.copilot_suggestion_hidden = false
   end)
-
 end
 
 return M

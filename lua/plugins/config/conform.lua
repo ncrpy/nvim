@@ -1,5 +1,14 @@
 local M = {}
 
+M.keys = {
+  {
+    "<leader>m",
+    "<Cmd>Format<CR>",
+    mode = "",
+    { desc = "Format buffer" },
+  },
+}
+
 M.opts = {
   -- Define your formatters
   formatters_by_ft = {
@@ -27,7 +36,6 @@ M.opts = {
 }
 
 M.setup = function(_, opts)
-
   require("conform").setup(opts)
 
   vim.api.nvim_create_user_command("Format", function(args)
@@ -58,7 +66,6 @@ M.setup = function(_, opts)
   end, {
     desc = "Enable autoformat-on-save",
   })
-
 end
 
 return M

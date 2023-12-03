@@ -1,16 +1,26 @@
 local M = {}
 
+M.keys = {
+  {
+    "<leader>o",
+    "<Cmd>AerialToggle!<CR>",
+  },
+  {
+    "<leader>p",
+    "<Cmd>AerialNavToggle<CR>",
+  },
+}
+
 M.opts = {
   backends = { "lsp", "treesitter", "markdown", "man" },
   layout = {
-    placement = "edge"
+    placement = "edge",
   },
   filter_kind = false,
   show_guides = true,
 }
 
 M.setup = function(_, opts)
-
   require("aerial").setup(opts)
 
   -- local telescope_ok, telescope = pcall(require, "telescope")
@@ -24,7 +34,6 @@ M.setup = function(_, opts)
       },
     })
   end
-
 end
 
 return M

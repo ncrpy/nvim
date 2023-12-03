@@ -1,17 +1,25 @@
 local M = {}
 
+M.keys = {
+  {
+    "<leader>n",
+    "<Cmd>NvimTreeToggle<CR>",
+    { desc = "NvimTree" },
+  },
+}
+
 M.opts = {
   renderer = {
-    special_files = { "README.md", "Makefile" }
+    special_files = { "README.md", "Makefile" },
   },
   filters = {
-    dotfiles = true
+    dotfiles = true,
   },
   actions = {
     open_file = {
-      quit_on_open = true
-    }
-  }
+      quit_on_open = true,
+    },
+  },
 }
 
 return M

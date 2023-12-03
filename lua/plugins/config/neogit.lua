@@ -10,9 +10,9 @@ M.opts = {
   mappings = {
     status = {
       ["l"] = false,
-      ["L"] = "LogPopup"
-    }
-  }
+      ["L"] = "LogPopup",
+    },
+  },
 }
 
 return M

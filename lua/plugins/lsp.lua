@@ -7,17 +7,17 @@ return {
       "MasonInstallAll",
       "MasonUninstall",
       "MasonUninstallAll",
-      "MasonLog"
+      "MasonLog",
     },
-    opts = {}
+    opts = {},
   },
 
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = {
-      "williamboman/mason.nvim"
+      "williamboman/mason.nvim",
     },
-    opts = {}
+    opts = {},
   },
 
   {
@@ -25,11 +25,10 @@ return {
     version = false,
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp"
+      "hrsh7th/cmp-nvim-lsp",
     },
     event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require("plugins.config.lspconfig")
-    end
-  }
+    keys = require("plugins.config.lspconfig").keys,
+    config = require("plugins.config.lspconfig").setup,
+  },
 }

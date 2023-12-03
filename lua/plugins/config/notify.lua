@@ -1,11 +1,10 @@
 local M = {}
 
 M.opts = {
-  render = "compact"
+  render = "compact",
 }
 
 M.setup = function(_, opts)
-
   require("notify").setup(opts)
 
   vim.api.nvim_create_autocmd("User", {
@@ -13,12 +12,13 @@ M.setup = function(_, opts)
     pattern = "TelescopeLoaded",
     callback = function()
       local ok, telescope = pcall(require, "telescope")
-      if ok then telescope.load_extension("notify") end
-    end
+      if ok then
+        telescope.load_extension("notify")
+      end
+    end,
   })
 
   vim.notify = require("notify")
-
 end
 
 return M

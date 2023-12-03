@@ -5,7 +5,7 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     cmd = { "NvimTreeToggle" },
-    keys = require("plugins.keymap.nvim-tree"),
+    keys = require("plugins.config.nvim-tree").keys,
     opts = require("plugins.config.nvim-tree").opts,
   },
 
@@ -16,7 +16,7 @@ return {
       "folke/trouble.nvim",
     },
     cmd = { "Telescope" },
-    keys = require("plugins.keymap.telescope"),
+    keys = require("plugins.config.telescope").keys,
     init = function()
       vim.api.nvim_create_augroup("TelescopeLoaded", {})
     end,
@@ -33,7 +33,7 @@ return {
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle" },
-    keys = require("plugins.keymap.trouble"),
+    keys = require("plugins.config.trouble").keys,
     opts = {},
   },
 
@@ -53,7 +53,7 @@ return {
     dependencies = {
       "rcarriga/nvim-dap-ui",
     },
-    keys = require("plugins.keymap.dap"),
+    keys = require("plugins.config.dap").keys,
     opts = require("plugins.config.dap").opts,
     config = require("plugins.config.dap").setup,
   },
@@ -61,7 +61,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     cmd = { "ToggleTerm" },
-    keys = require("plugins.keymap.toggleterm"),
+    keys = require("plugins.config.toggleterm").keys,
     opts = require("plugins.config.toggleterm").opts,
   },
 
@@ -71,7 +71,7 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     cmd = { "AerialToggle", "AerialNavToggle", "AerialInfo" },
-    keys = require("plugins.keymap.aerial"),
+    keys = require("plugins.config.aerial").keys,
     opts = require("plugins.config.aerial").opts,
     config = require("plugins.config.aerial").setup,
   },
@@ -79,7 +79,7 @@ return {
   {
     "stevearc/conform.nvim",
     cmd = { "ConformInfo", "Format", "FormatEnable" },
-    keys = require("plugins.keymap.conform"),
+    keys = require("plugins.config.conform").keys,
     opts = require("plugins.config.conform").opts,
     config = require("plugins.config.conform").setup,
   },
@@ -104,6 +104,6 @@ return {
 
   {
     "folke/zen-mode.nvim",
-    keys = require("plugins.keymap.zen-mode"),
+    keys = require("plugins.config.zen-mode").keys,
   },
 }

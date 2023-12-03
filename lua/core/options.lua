@@ -27,10 +27,10 @@ opt.wildmode = { "list:longest", "full" }
 opt.completeopt = { "menuone", "noselect" }
 
 opt.backspace = { "indent", "eol", "start" }
-opt.whichwrap:append "h,l,<,>,[,],~"
+opt.whichwrap:append("h,l,<,>,[,],~")
 opt.virtualedit = { "onemore", "block" }
 
-opt.clipboard:prepend { "unnamed", "unnamedplus" }
+opt.clipboard:prepend({ "unnamed", "unnamedplus" })
 
 opt.hlsearch = true
 opt.incsearch = true
@@ -51,12 +51,12 @@ opt.listchars = {
   tab = "»-",
   trail = "-",
   nbsp = "%",
-  eol = "↲"
+  eol = "↲",
 }
 
 if vim.fn.executable("rg") then
   opt.grepprg = "rg --vimgrep --no-heading --smart-case"
-  opt.grepformat:prepend { "%f:%l:%c:%m" }
+  opt.grepformat:prepend({ "%f:%l:%c:%m" })
 end
 
 noremap("", "<C-l>", ":<C-u>nohlsearch<CR><C-l>")
