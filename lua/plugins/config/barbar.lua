@@ -2,12 +2,11 @@ local M = {}
 
 M.opts = {
   icons = {
-    buffer_number = true
-  }
+    buffer_number = true,
+  },
 }
 
 M.setup = function(_, opts)
-
   local group = vim.api.nvim_create_augroup("count_buffers", {})
   local barbar_setup = function()
     if #(vim.fn.getbufinfo({ buflisted = 1 })) > 1 then
@@ -18,11 +17,10 @@ M.setup = function(_, opts)
 
   vim.api.nvim_create_autocmd("BufEnter", {
     group = group,
-    callback = barbar_setup
+    callback = barbar_setup,
   })
 
   barbar_setup()
-
 end
 
 return M

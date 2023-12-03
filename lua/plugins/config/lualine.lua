@@ -4,12 +4,12 @@ M.opts = {
   options = {
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
-    globalstatus = true
+    globalstatus = true,
   },
   sections = {
     lualine_a = { "mode" },
     lualine_b = {
-      { "b:gitsigns_head", icon = "" }
+      { "b:gitsigns_head", icon = "" },
     },
     lualine_c = {
       {
@@ -27,10 +27,10 @@ M.opts = {
             return {
               added = gitsigns.added,
               modified = gitsigns.changed,
-              removed = gitsigns.removed
+              removed = gitsigns.removed,
             }
           end
-        end
+        end,
       },
       {
         "diagnostics",
@@ -51,14 +51,14 @@ M.opts = {
         --    hint  = 'DiagnosticHint',  -- Changes diagnostics' hint color.
         --  },
         symbols = { error = " ", warn = " ", info = " ", hint = " " },
-        colored = true,           -- Displays diagnostics status in color if set to true.
+        colored = true, -- Displays diagnostics status in color if set to true.
         update_in_insert = false, -- Update diagnostics in insert mode.
-        always_visible = false,   -- Show diagnostics even if there are none.
+        always_visible = false, -- Show diagnostics even if there are none.
       },
       {
         "filename",
-        path = 1
-      }
+        path = 1,
+      },
     },
     lualine_x = {
       "encoding",
@@ -69,22 +69,22 @@ M.opts = {
           unix = "LF",
           dos = "CRLF",
           mac = "CR",
-        }
-      }
+        },
+      },
     },
     lualine_y = { "filetype" },
     lualine_z = {
       {
         "progress",
-        padding = { left = 1, right = 1 }
+        padding = { left = 1, right = 1 },
       },
       {
         "location",
-        padding = { left = 0, right = 0 }
-      }
-    }
+        padding = { left = 0, right = 0 },
+      },
+    },
   },
-  extensions = { "nvim-tree" }
+  extensions = { "nvim-tree" },
 }
 
 return M

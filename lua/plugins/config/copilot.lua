@@ -9,8 +9,8 @@ M.opts = {
       jump_next = "<C-n>",
       accept = "<CR>",
       refresh = false,
-      open = "<C-b>"
-    }
+      open = "<C-b>",
+    },
   },
   suggestion = {
     enabled = true,
@@ -21,9 +21,9 @@ M.opts = {
       accept_line = false,
       next = false,
       prev = false,
-      dismiss = false
-    }
-  }
+      dismiss = false,
+    },
+  },
 }
 
 return M

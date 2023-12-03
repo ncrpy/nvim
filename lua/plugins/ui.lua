@@ -2,13 +2,13 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = require("plugins.config.lualine").opts
+    opts = require("plugins.config.lualine").opts,
   },
 
   {
     "romgrk/barbar.nvim",
     dependencies = {
-      "nvim-tree/nvim-web-devicons"
+      "nvim-tree/nvim-web-devicons",
     },
     event = "VeryLazy",
     init = function()
@@ -25,7 +25,7 @@ return {
       -- })
     end,
     opts = require("plugins.config.barbar").opts,
-    config = require("plugins.config.barbar").setup
+    config = require("plugins.config.barbar").setup,
   },
 
   {
@@ -38,26 +38,26 @@ return {
     main = "ibl",
     event = "VeryLazy",
     opts = require("plugins.config.indent-blankline").opts,
-    config = require("plugins.config.indent-blankline").setup
+    config = require("plugins.config.indent-blankline").setup,
   },
 
   {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
-    opts = {}
+    opts = {},
   },
 
   {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
-    opts = {}
+    opts = {},
   },
 
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     opts = require("plugins.config.notify").opts,
-    config = require("plugins.config.notify").setup
+    config = require("plugins.config.notify").setup,
   },
 
   {
@@ -66,6 +66,6 @@ return {
     config = function()
       vim.opt.termguicolors = true
       require("colorizer").setup()
-    end
-  }
+    end,
+  },
 }

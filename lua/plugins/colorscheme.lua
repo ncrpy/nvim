@@ -21,16 +21,16 @@ return {
         aerial = true,
         barbar = true,
         indent_blankline = {
-          colored_indent_levels = true
+          colored_indent_levels = true,
         },
         mason = true,
         notify = true,
         lsp_trouble = true,
-      }
+      },
     },
     config = function(_, opts)
       require("catppuccin").setup(opts)
       vim.cmd.colorscheme("catppuccin")
-    end
-  }
+    end,
+  },
 }

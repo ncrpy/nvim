@@ -12,7 +12,7 @@ return {
   {
     "vim-denops/denops.vim",
     enabled = deno_enable,
-    version = false,  -- due to changes on Deno v1.36.2
+    version = false, -- due to changes on Deno v1.36.2
     -- init = function()
     --   vim.g["denops#debug"] = true
     -- end
@@ -34,12 +34,12 @@ return {
     enabled = deno_enable,
     dependencies = {
       "vim-denops/denops.vim",
-      "delphinus/skkeleton_indicator.nvim"
+      "delphinus/skkeleton_indicator.nvim",
     },
-    keys = require("plugins.keymap.skkeleton"),
+    keys = require("plugins.config.skkeleton").keys,
     config = function()
       denops_register("skkeleton")
-      require("plugins.config.skkeleton")
-    end
-  }
+      require("plugins.config.skkeleton").setup()
+    end,
+  },
 }
