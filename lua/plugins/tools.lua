@@ -98,8 +98,14 @@ return {
         opts = require("plugins.config.commentstring").opts,
       },
     },
-    event = { "FileType" },
+    event = { "BufReadPost", "BufNewFile" },
     opts = require("plugins.config.comment").opts,
+  },
+
+  {
+    "NMAC427/guess-indent.nvim",
+    event = { "BufReadPre" },
+    opts = require("plugins.config.guess-indent").opts,
   },
 
   {
