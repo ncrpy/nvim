@@ -106,4 +106,10 @@ return {
     "folke/zen-mode.nvim",
     keys = require("plugins.config.zen-mode").keys,
   },
+
+  {
+    "NMAC427/guess-indent.nvim",
+    event = { "BufReadPre" },
+    opts = require("plugins.config.guess-indent").opts,
+  },
 }
