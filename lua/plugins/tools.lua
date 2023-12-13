@@ -98,18 +98,18 @@ return {
         opts = require("plugins.config.commentstring").opts,
       },
     },
-    event = { "FileType" },
+    event = { "BufReadPost", "BufNewFile" },
     opts = require("plugins.config.comment").opts,
-  },
-
-  {
-    "folke/zen-mode.nvim",
-    keys = require("plugins.config.zen-mode").keys,
   },
 
   {
     "NMAC427/guess-indent.nvim",
     event = { "BufReadPre" },
     opts = require("plugins.config.guess-indent").opts,
+  },
+
+  {
+    "folke/zen-mode.nvim",
+    keys = require("plugins.config.zen-mode").keys,
   },
 }
