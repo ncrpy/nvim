@@ -59,9 +59,20 @@ M.opts = {
         "filename",
         path = 1,
       },
+      {
+        "aerial",
+        cond = function()
+          return vim.bo.filetype == "aerial"
+        end,
+      },
     },
     lualine_x = {
-      "encoding",
+      {
+        require("lazy.status").updates,
+        cond = require("lazy.status").has_updates,
+        color = { fg = "#ff9e64" },
+      },
+      { "encoding" },
       {
         "fileformat",
         icons_enabled = true,
@@ -84,7 +95,19 @@ M.opts = {
       },
     },
   },
-  extensions = { "nvim-tree" },
+  extensions = {
+    {
+      sections = {
+        lualine_a = { "filetype" },
+        lualine_c = { "aerial" },
+      },
+      filetypes = { "aerial" },
+    },
+    "lazy",
+    "mason",
+    "nvim-tree",
+    "trouble",
+  },
 }
 
 return M

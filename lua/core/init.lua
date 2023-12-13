@@ -22,6 +22,17 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyDone",
+  once = true,
+  callback = function()
+    print("loaded")
+    vim.defer_fn(function()
+      require("lazy.manage.checker").start()
+    end, 1000)
+  end
+})
+
 local lazy_opts = require("plugins.config.lazy").opts
 
 require("core.options")
