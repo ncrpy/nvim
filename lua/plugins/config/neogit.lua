@@ -8,7 +8,7 @@ M.opts = {
     section = { "", "" },
   },
   mappings = {
-    status = {
+    popup = {
       ["l"] = false,
       ["L"] = "LogPopup",
     },
