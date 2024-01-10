@@ -59,12 +59,6 @@ M.opts = {
         "filename",
         path = 1,
       },
-      {
-        "aerial",
-        cond = function()
-          return vim.bo.filetype == "aerial"
-        end,
-      },
     },
     lualine_x = {
       {
@@ -96,15 +90,7 @@ M.opts = {
     },
   },
   extensions = {
-    {
-      sections = {
-        lualine_a = { "filetype" },
-        lualine_c = { "aerial" },
-      },
-      filetypes = { "aerial" },
-    },
     "lazy",
-    "mason",
     "nvim-tree",
     "trouble",
   },
