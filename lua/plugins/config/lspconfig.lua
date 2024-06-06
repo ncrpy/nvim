@@ -71,15 +71,6 @@ M.opts = function()
         },
       })
     end,
-    ["rust_analyzer"] = function()
-      lspconfig.rust_analyzer.setup({
-        capabilities = merge_capabilities({
-          experimental = {
-            serverStatusNotification = true,
-          },
-        }),
-      })
-    end,
   }
 
   return { handlers = handlers }
@@ -89,8 +80,6 @@ end
 M.setup = function(_, opts)
   require("mason").setup()
   require("mason-lspconfig").setup(opts)
-
-  -- opts.handlers["rust_analyzer"]()
 
   vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
   vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
