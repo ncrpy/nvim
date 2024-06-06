@@ -2,7 +2,7 @@ local M = {}
 
 M.opts = function()
   local actions = require("telescope.actions")
-  local trouble = require("trouble.providers.telescope")
+  local trouble = require("trouble.sources.telescope")
 
   return {
     defaults = {
@@ -15,10 +15,10 @@ M.opts = function()
       mappings = {
         n = {
           ["q"] = actions.close,
-          ["<C-t>"] = trouble.open_with_trouble,
+          ["<C-t>"] = trouble.open,
         },
         i = {
-          ["<C-t>"] = trouble.open_with_trouble,
+          ["<C-t>"] = trouble.open,
         },
       },
     },

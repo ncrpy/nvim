@@ -10,6 +10,13 @@ return {
   },
 
   {
+    "folke/trouble.nvim",
+    cmd = { "Trouble" },
+    keys = require("plugins.config.trouble").keys,
+    opts = {},
+  },
+
+  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -28,13 +35,6 @@ return {
         pattern = "TelescopeLoaded",
       })
     end,
-  },
-
-  {
-    "folke/trouble.nvim",
-    cmd = { "TroubleToggle" },
-    keys = require("plugins.config.trouble").keys,
-    opts = {},
   },
 
   {

@@ -3,33 +3,33 @@ local M = {}
 M.keys = {
   {
     "<leader>xx",
-    "<Cmd>TroubleToggle<CR>",
-    { desc = "Toggle Trouble" },
+    "<cmd>Trouble diagnostics toggle<cr>",
+    desc = "Diagnostics (Trouble)",
   },
   {
-    "<leader>xw",
-    "<Cmd>TroubleToggle workspace_diagnostics<CR>",
-    { desc = "Workspace Diagnostics" },
+    "<leader>xX",
+    "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+    desc = "Buffer Diagnostics (Trouble)",
   },
   {
-    "<leader>xd",
-    "<Cmd>TroubleToggle document_diagnostics<CR>",
-    { desc = "Document Diagnostics" },
+    "<leader>cs",
+    "<cmd>Trouble symbols toggle focus=false<cr>",
+    desc = "Symbols (Trouble)",
   },
   {
-    "<leader>xl",
-    "<Cmd>TroubleToggle loclist<CR>",
-    { desc = "Location List" },
+    "<leader>cl",
+    "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+    desc = "LSP Definitions / references / ... (Trouble)",
   },
   {
-    "<leader>xq",
-    "<Cmd>TroubleToggle quickfix<CR>",
-    { desc = "Quickfix" },
+    "<leader>xL",
+    "<cmd>Trouble loclist toggle<cr>",
+    desc = "Location List (Trouble)",
   },
   {
-    "gr",
-    "<Cmd>TroubleToggle lsp_references<CR>",
-    { desc = "LSP References" },
+    "<leader>xQ",
+    "<cmd>Trouble qflist toggle<cr>",
+    desc = "Quickfix List (Trouble)",
   },
 }
 
