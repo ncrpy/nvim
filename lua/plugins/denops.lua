@@ -12,7 +12,6 @@ return {
   {
     "vim-denops/denops.vim",
     enabled = deno_enable,
-    version = false, -- due to changes on Deno v1.36.2
     -- init = function()
     --   vim.g["denops#debug"] = true
     -- end
