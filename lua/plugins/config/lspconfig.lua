@@ -1,10 +1,15 @@
 local M = {}
 
-M.setup = function()
+-- opts for mason-lspconfig
+M.opts = function()
   local lspconfig = require("lspconfig")
   local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-  require("mason-lspconfig").setup_handlers({
+  local merge_capabilities = function(tbl)
+    return vim.tbl_deep_extend("force", capabilities, tbl)
+  end
+
+  local handlers = {
     function(server_name)
       lspconfig[server_name].setup({
         capabilities = capabilities,
@@ -12,7 +17,14 @@ M.setup = function()
     end,
     ["clangd"] = function()
       lspconfig.clangd.setup({
-        capabilities = vim.tbl_deep_extend("keep", { offsetEncoding = { "utf-16", "utf-8" } }, capabilities),
+        capabilities = merge_capabilities({
+          textdocument = {
+            completion = {
+              editsnearcursor = true,
+            },
+          },
+          offsetencoding = { "utf-8", "utf-16" },
+        }),
       })
     end,
     ["lua_ls"] = function()
@@ -59,7 +71,26 @@ M.setup = function()
         },
       })
     end,
-  })
+    ["rust_analyzer"] = function()
+      lspconfig.rust_analyzer.setup({
+        capabilities = merge_capabilities({
+          experimental = {
+            serverStatusNotification = true,
+          },
+        }),
+      })
+    end,
+  }
+
+  return { handlers = handlers }
+end
+
+-- setup for nvim-lspconfig
+M.setup = function(_, opts)
+  require("mason").setup()
+  require("mason-lspconfig").setup(opts)
+
+  -- opts.handlers["rust_analyzer"]()
 
   vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
   vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
