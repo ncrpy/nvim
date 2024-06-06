@@ -51,7 +51,11 @@ return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
-      "rcarriga/nvim-dap-ui",
+      {
+        "rcarriga/nvim-dap-ui",
+        version = "v3.9.3", -- v4.0.0 is broken
+        -- dependencies = "nvim-neotest/nvim-nio",
+      },
     },
     keys = require("plugins.config.dap").keys,
     opts = require("plugins.config.dap").opts,
