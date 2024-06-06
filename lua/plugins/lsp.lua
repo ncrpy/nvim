@@ -24,4 +24,14 @@ return {
     opts = require("plugins.config.lspconfig").opts,
     config = require("plugins.config.lspconfig").setup,
   },
+
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^4", -- Recommended
+    enabled = function()
+      return vim.fn.executable("rust-analyzer") == 1
+    end,
+    event = { "BufReadPre", "BufNewFile" },
+    ft = { "rust" },
+  },
 }
