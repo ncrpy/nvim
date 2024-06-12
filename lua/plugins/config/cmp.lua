@@ -24,6 +24,8 @@ M.opts = function()
       documentation = cmp.config.window.bordered(),
     },
 
+    preselect = cmp.PreselectMode.None,
+
     mapping = cmp.mapping.preset.insert({
       ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
       ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
