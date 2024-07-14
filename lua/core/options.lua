@@ -30,7 +30,15 @@ opt.backspace = { "indent", "eol", "start" }
 opt.whichwrap:append("h,l,<,>,[,],~")
 opt.virtualedit = { "onemore", "block" }
 
-opt.clipboard:prepend({ "unnamed", "unnamedplus" })
+-- opt.clipboard:prepend({ "unnamedplus" })
+vim.api.nvim_create_autocmd({ "FocusGained" }, {
+  pattern = { "*" },
+  command = [[call setreg("@", getreg("+"))]],
+})
+vim.api.nvim_create_autocmd({ "FocusLost" }, {
+  pattern = { "*" },
+  command = [[call setreg("+", getreg("@"))]],
+})
 
 opt.hlsearch = true
 opt.incsearch = true
