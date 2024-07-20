@@ -30,7 +30,7 @@ opt.backspace = { "indent", "eol", "start" }
 opt.whichwrap:append("h,l,<,>,[,],~")
 opt.virtualedit = { "onemore", "block" }
 
-if vim.fn.has("wsl") == 1 then
+if vim.fn.executable("win32yank.exe") == 1 then
   vim.api.nvim_create_augroup("clipboard", {})
   vim.api.nvim_create_autocmd({ "FocusGained" }, {
     group = "clipboard",
@@ -72,7 +72,7 @@ opt.listchars = {
   eol = "↲",
 }
 
-if vim.fn.executable("rg") then
+if vim.fn.executable("rg") == 1 then
   opt.grepprg = "rg --vimgrep --no-heading --smart-case"
   opt.grepformat:prepend({ "%f:%l:%c:%m" })
 end
