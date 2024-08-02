@@ -31,6 +31,16 @@ opt.whichwrap:append("h,l,<,>,[,],~")
 opt.virtualedit = { "onemore", "block" }
 
 opt.clipboard:prepend({ "unnamedplus" })
+if vim.fn.has("wsl") == 1 then
+  vim.api.nvim_create_augroup("clipboard", {})
+  vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+    group = "clipboard",
+    pattern = { "*" },
+    callback = function()
+      vim.fn.setreg("+", vim.fn.getreg("@"))
+    end
+  })
+end
 
 opt.hlsearch = true
 opt.incsearch = true
