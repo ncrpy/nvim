@@ -30,25 +30,7 @@ opt.backspace = { "indent", "eol", "start" }
 opt.whichwrap:append("h,l,<,>,[,],~")
 opt.virtualedit = { "onemore", "block" }
 
-if vim.fn.executable("win32yank.exe") == 1 then
-  vim.api.nvim_create_augroup("clipboard", {})
-  vim.api.nvim_create_autocmd({ "FocusGained" }, {
-    group = "clipboard",
-    pattern = { "*" },
-    callback = function()
-      vim.fn.setreg("@", vim.fn.getreg("+"))
-    end
-  })
-  vim.api.nvim_create_autocmd({ "FocusLost" }, {
-    group = "clipboard",
-    pattern = { "*" },
-    callback = function()
-      vim.fn.setreg("+", vim.fn.getreg("@"))
-    end
-  })
-else
-  opt.clipboard:prepend({ "unnamedplus" })
-end
+opt.clipboard:prepend({ "unnamedplus" })
 
 opt.hlsearch = true
 opt.incsearch = true
