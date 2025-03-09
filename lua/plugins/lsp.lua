@@ -27,7 +27,7 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
-    version = "^4", -- Recommended
+    version = "^5", -- Recommended
     enabled = function()
       return vim.fn.executable("rust-analyzer") == 1
     end,

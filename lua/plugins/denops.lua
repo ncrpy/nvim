@@ -33,7 +33,10 @@ return {
     enabled = deno_enable,
     dependencies = {
       "vim-denops/denops.vim",
-      "delphinus/skkeleton_indicator.nvim",
+      {
+        "delphinus/skkeleton_indicator.nvim",
+        branch = "v2",
+      },
     },
     keys = require("plugins.config.skkeleton").keys,
     config = function()
