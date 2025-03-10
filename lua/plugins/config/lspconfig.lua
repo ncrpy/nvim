@@ -53,12 +53,21 @@ M.opts = function()
         },
       })
     end,
+    ["jedi_language_server"] = function()
+      lspconfig.jedi_language_server.setup({
+        capabilities = capabilities,
+        init_options = {
+          diagnostics = { enable = false },
+        },
+      })
+    end,
     ["basedpyright"] = function()
       lspconfig.basedpyright.setup({
         capabilities = capabilities,
         settings = {
           basedpyright = {
             typeCheckingMode = "standard",
+            disableLanguageServices = true,
           },
         },
       })
