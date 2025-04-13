@@ -71,10 +71,10 @@ local function update_nvim()
 
     local current_version = get_current_version()
 
-    -- if version == current_version then
-    --   vim.notify("Neovim is already up to date")
-    --   return
-    -- end
+    if version == current_version then
+      vim.notify("Neovim is already up to date")
+      return
+    end
 
     get_arch(function(arch)
       local download_url
