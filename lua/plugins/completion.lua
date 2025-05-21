@@ -34,16 +34,6 @@ return {
   },
 
   {
-    "zbirenbaum/copilot.lua",
-    enabled = function()
-      return vim.fn.executable("node") == 1
-    end,
-    cmd = { "Copilot" },
-    event = vim.fn.filereadable(vim.fn.expand("$XDG_CONFIG_HOME/github-copilot/hosts.json")) == 1 and { "InsertEnter" }, -- for first auth
-    opts = require("plugins.config.copilot").opts,
-  },
-
-  {
     "h-hg/fcitx.nvim",
     enabled = function()
       return vim.fn.executable("fcitx5-remote") == 1
