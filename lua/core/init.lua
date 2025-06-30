@@ -47,3 +47,4 @@ local lazy_opts = require("plugins.config.lazy").opts
 require("core.options")
 require("lazy").setup("plugins", lazy_opts)
 require("commands")
+require("lsp")

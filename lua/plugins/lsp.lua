@@ -1,6 +1,14 @@
 return {
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   -- keys = require("plugins.config.lspconfig").keys,
+  --   -- opts = require("plugins.config.lspconfig").opts,
+  --   -- config = require("plugins.config.lspconfig").setup,
+  -- },
+
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     cmd = {
       "Mason",
       "MasonInstall",
@@ -13,16 +21,14 @@ return {
   },
 
   {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
-    },
+    "mason-org/mason-lspconfig.nvim",
     event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
     keys = require("plugins.config.lspconfig").keys,
-    opts = require("plugins.config.lspconfig").opts,
-    config = require("plugins.config.lspconfig").setup,
+    opts = {},
   },
 
   {
