@@ -42,18 +42,18 @@ return {
     opts = {},
   },
 
-  {
-    "stevearc/dressing.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
+  -- {
+  --   "stevearc/dressing.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  -- },
 
-  {
-    "rcarriga/nvim-notify",
-    event = "VeryLazy",
-    opts = require("plugins.config.notify").opts,
-    config = require("plugins.config.notify").setup,
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   event = "VeryLazy",
+  --   opts = require("plugins.config.notify").opts,
+  --   config = require("plugins.config.notify").setup,
+  -- },
 
   {
     "norcalli/nvim-colorizer.lua",

@@ -1,5 +1,17 @@
 return {
   {
+    "nvim-lua/plenary.nvim",
+    version = false,
+  },
+
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = require("plugins.config.snacks").opts,
+  },
+
+  {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
