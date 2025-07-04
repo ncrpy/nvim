@@ -6,8 +6,12 @@ return {
 
   {
     "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
+    -- priority = 1000,
+    -- lazy = false,
+    event = { "User VeryLazyPre" },
+    dependencies = {
+      "folke/trouble.nvim",
+    },
     keys = require("plugins.config.snacks").keys,
     opts = require("plugins.config.snacks").opts,
   },
@@ -23,11 +27,18 @@ return {
   },
 
   {
-    "folke/trouble.nvim",
-    cmd = { "Trouble" },
-    keys = require("plugins.config.trouble").keys,
-    opts = {},
+    "stevearc/quicker.nvim",
+    ft = { "qf" },
+    keys = require("plugins.config.quicker").keys,
+    opts = require("plugins.config.quicker").opts,
   },
+
+  -- {
+  --   "folke/trouble.nvim",
+  --   cmd = { "Trouble" },
+  --   keys = require("plugins.config.trouble").keys,
+  --   opts = {},
+  -- },
 
   {
     "nvim-telescope/telescope.nvim",
