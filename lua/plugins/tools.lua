@@ -8,6 +8,7 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    keys = require("plugins.config.snacks").keys,
     opts = require("plugins.config.snacks").opts,
   },
 
@@ -35,7 +36,7 @@ return {
       "folke/trouble.nvim",
     },
     cmd = { "Telescope" },
-    keys = require("plugins.config.telescope").keys,
+    -- keys = require("plugins.config.telescope").keys,
     init = function()
       vim.api.nvim_create_augroup("TelescopeLoaded", {})
     end,
