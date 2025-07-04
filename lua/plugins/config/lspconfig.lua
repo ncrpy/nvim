@@ -79,7 +79,6 @@ end
 
 -- setup for nvim-lspconfig
 M.setup = function(_, opts)
-  require("mason").setup()
   require("mason-lspconfig").setup(opts)
 
   vim.diagnostic.config({
@@ -88,7 +87,7 @@ M.setup = function(_, opts)
         [vim.diagnostic.severity.ERROR] = "",
         [vim.diagnostic.severity.WARN] = "",
         [vim.diagnostic.severity.INFO] = "",
-        [vim.diagnostic.severity.HINT] = "",
+        [vim.diagnostic.severity.HINT] = "",
       }
     }
   })
