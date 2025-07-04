@@ -127,7 +127,7 @@ M.keys = {
   },
   {
     "<leader>fu",
-    pick("undo_history"),
+    pick("undo"),
     desc = "Undo History",
   },
   {
