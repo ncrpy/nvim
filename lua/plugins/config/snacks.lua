@@ -101,11 +101,6 @@ M.keys = {
     desc = "Notifications",
   },
   {
-    "<leader>fo",
-    pick("recent"),
-    desc = "Oldfiles",
-  },
-  {
     "<leader>fp",
     pick("projects"),
     desc = "Projects",
@@ -117,8 +112,8 @@ M.keys = {
   },
   {
     "<leader>fr",
-    pick("registers"),
-    desc = "Registers",
+    pick("recent"),
+    desc = "Recent (oldfiles)",
   },
   {
     "<leader>fs",
@@ -132,8 +127,8 @@ M.keys = {
   },
   {
     "<leader>fv",
-    pick("files", { cwd = vim.fn.stdpath("config")}),
-    desc = "Fine Config Files",
+    pick("registers"),
+    desc = "Registers",
   },
   {
     "<leader>fw",
@@ -142,15 +137,20 @@ M.keys = {
     mode = { "n", "x" },
   },
   {
-    "<leader>gb",
-    pick("git_branches"),
-    desc = "Git Branches",
+    "<leader>f,",
+    pick("files", { cwd = vim.fn.stdpath("config")}),
+    desc = "Find Config Files",
   },
   -- Git
   {
     "<leader>g<Space>",
     pick("git_log"),
     desc = "Git Log",
+  },
+  {
+    "<leader>gb",
+    pick("git_branches"),
+    desc = "Git Branches",
   },
   {
     "<leader>gd",
@@ -191,6 +191,42 @@ M.keys = {
     "<leader>gs",
     pick("git_status"),
     desc = "Git Status",
+  },
+  -- LSP
+  {
+    "gd",
+    pick("lsp_definitions"),
+    desc = "LSP Definitions",
+  },
+  {
+    "gD",
+    pick("lsp_declarations"),
+    desc = "LSP Declarations",
+  },
+  {
+    "grr",
+    pick("lsp_references"),
+    desc = "LSP References",
+  },
+  {
+    "gri",
+    pick("lsp_implementations"),
+    desc = "LSP Implementations",
+  },
+  {
+    "grt",
+    pick("lsp_type_definitions"),
+    desc = "LSP Type Definitions",
+  },
+  {
+    "<leader>fo",
+    pick("lsp_symbols"),
+    desc = "LSP Symbols",
+  },
+  {
+    "<leader>fO",
+    pick("lsp_workspace_symbols"),
+    desc = "LSP Workspace Symbols",
   },
 }
 

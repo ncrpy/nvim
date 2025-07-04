@@ -27,7 +27,6 @@ return {
       { "mason-org/mason.nvim", opts = {} },
       "neovim/nvim-lspconfig",
     },
-    keys = require("plugins.config.lspconfig").keys,
     opts = {},
     config = require("plugins.config.lspconfig").setup,
   },
