@@ -42,7 +42,7 @@ M.keys = {
   },
   {
     "<leader>fD",
-    pick("diagnositcs_buffer"),
+    pick("diagnostics_buffer"),
     desc = "Diagnostics Buffer",
   },
   {
