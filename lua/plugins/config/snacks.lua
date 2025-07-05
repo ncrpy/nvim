@@ -20,6 +20,7 @@ M.opts = {
       },
     },
   },
+  zen = { enabled = true },
 }
 
 M.keys = {
@@ -236,6 +237,14 @@ M.keys = {
     pick("lsp_workspace_symbols"),
     desc = "LSP Workspace Symbols",
   },
+  -- Zen
+  {
+    "<leader>z",
+    function()
+      require("snacks.zen")()
+    end,
+    desc = "Zen Mode",
+  }
 }
 
 return M

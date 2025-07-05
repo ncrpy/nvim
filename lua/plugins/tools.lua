@@ -127,8 +127,8 @@ return {
     opts = require("plugins.config.guess-indent").opts,
   },
 
-  {
-    "folke/zen-mode.nvim",
-    keys = require("plugins.config.zen-mode").keys,
-  },
+  -- {
+  --   "folke/zen-mode.nvim",
+  --   keys = require("plugins.config.zen-mode").keys,
+  -- },
 }
