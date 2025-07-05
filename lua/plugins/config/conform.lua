@@ -4,8 +4,14 @@ M.keys = {
   {
     "<leader>m",
     "<Cmd>Format<CR>",
-    mode = "",
-    { desc = "Format buffer" },
+    desc = "Format buffer",
+  },
+  {
+    "<leader>m",
+    ":Format<CR>",
+    mode = "x",
+    silent = true,
+    desc = "Format selected range",
   },
 }
 

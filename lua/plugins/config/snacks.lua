@@ -142,8 +142,8 @@ M.keys = {
   {
     "<leader>fw",
     pick("grep_word"),
-    desc = "Visual selection or word",
     mode = { "n", "x" },
+    desc = "Visual selection or word",
   },
   {
     "<leader>f,",

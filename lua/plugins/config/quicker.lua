@@ -11,7 +11,7 @@ M.keys = {
   {
     "<leader>l",
     function()
-      require("quicker").toggle({ loclist = true})
+      require("quicker").toggle({ loclist = true })
     end,
     desc = "Toggle loclist",
   },

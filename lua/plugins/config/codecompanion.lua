@@ -2,41 +2,43 @@ local M = {}
 
 M.keys = {
   {
+    "<leader>ca",
+    "<Cmd>CodeCompanionActions<CR>",
+    mode = { "n", "x" },
+    desc = "CodeCompanion Actions",
+  },
+  {
     "<leader>cc",
     "<Cmd>CodeCompanionChat Toggle<CR>",
-    desc = "Toggle CodeCompanion Chat",
+    desc = "CodeCompanion Chat",
   },
   {
     "<leader>cc",
     ":CodeCompanionChat Add<CR>",
     mode = "x",
-    desc = "Add selected text to CodeCompanion Chat",
-  },
-  {
-    "<leader>ca",
-    "<Cmd>CodeCompanionActions<CR>",
-    mode = { "n", "x" },
-    desc = "Open CodeCompanion Actions",
+    silent = true,
+    desc = "CodeCompanion Chat: Add selected text",
   },
   {
     "<leader>c<Space>",
     ":CodeCompanion<CR>",
     mode = { "n", "x" },
-    desc = "Open CodeCompanion Prompt",
+    silent = true,
+    desc = "CodeCompanion Prompt",
   },
   {
     "<leader>cm",
     ":<C-u>CodeCompanionCmd<Space>",
     mode = { "n", "x" },
-    desc = "Enter CodeCompanion Command",
-  }
+    desc = "CodeCompanion Command",
+  },
 }
 
 M.opts = {
   strategies = {
     -- Change the default chat adapter
     chat = {
-      adapter = "gemini"
+      adapter = "gemini",
     },
     inline = {
       adapter = "gemini",
@@ -54,7 +56,7 @@ M.opts = {
     gemini = function()
       return require("codecompanion.adapters").extend("gemini", {
         env = {
-          api_key = vim.env.GEMINI_API_KEY
+          api_key = vim.env.GEMINI_API_KEY,
         },
         schema = {
           moodel = {
