@@ -90,6 +90,7 @@ M.setup = function()
   vim.api.nvim_set_hl(0, "SkkeletonIndicatorAbbrev", { fg = "#e5e9f0", bg = "#bf616a", bold = true })
 
   require("skkeleton_indicator").setup({
+    fadeOutMs = 0,
     eijiText = "Aa",
     hiraText = "あ",
     kataText = "ア",
