@@ -60,7 +60,7 @@ if vim.fn.executable("rg") == 1 then
 end
 
 noremap("", "<C-l>", ":<C-u>nohlsearch<CR><C-l>")
-noremap("", "<leader>w", "<C-w>", { remap = false })
+noremap("", "<leader>w", "<C-w>", { remap = true })
 
 noremap("", "<leader>ba", "<Cmd>enew<CR>")
 noremap("", "<leader>bb", "<Cmd>b#<CR>")

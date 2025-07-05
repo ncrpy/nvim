@@ -94,6 +94,7 @@ M.setup = function(_, opts)
 end
 
 M.keys = {
+  -- Supported in snacks.picker
   {
     "gd",
     "<Cmd>lua vim.lsp.buf.definition()<CR>",
