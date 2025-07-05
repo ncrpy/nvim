@@ -102,7 +102,7 @@ return {
     cmd = { "AerialToggle", "AerialNavToggle", "AerialInfo" },
     keys = require("plugins.config.aerial").keys,
     opts = require("plugins.config.aerial").opts,
-    config = require("plugins.config.aerial").setup,
+    -- config = require("plugins.config.aerial").setup,
   },
 
   {
