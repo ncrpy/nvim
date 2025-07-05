@@ -16,6 +16,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     cmd = { "CodeCompanion", "CodeCompanionActions", "CodeCompanionChat", "CodeCompanionCmd" },
+    keys = require("plugins.config.codecompanion").keys,
     opts = require("plugins.config.codecompanion").opts,
   },
 }
