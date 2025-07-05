@@ -88,7 +88,6 @@ noremap("i", "<C-l>", "<C-g>U<Right>")
 noremap("n", "<leader>s", ":<C-u>%s///g<Left><Left>")
 
 noremap("t", "<Esc>", "<C-\\><C-n>")
-noremap("t", "<C-\\><Esc>", "<Esc>")
 
 vim.api.nvim_create_autocmd("TermOpen", {
   group = vim.api.nvim_create_augroup("terminal", {}),
