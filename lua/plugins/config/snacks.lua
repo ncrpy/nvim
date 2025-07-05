@@ -8,6 +8,7 @@ local pick = function(source, opts)
 end
 
 M.opts = {
+  indent = { enabled = true },
   input = { enabled = true },
   notifier = { enabled = true },
   notify = { enabled = true },

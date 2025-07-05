@@ -28,13 +28,13 @@ return {
     config = require("plugins.config.barbar").setup,
   },
 
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    event = "VeryLazy",
-    opts = require("plugins.config.indent-blankline").opts,
-    config = require("plugins.config.indent-blankline").setup,
-  },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   main = "ibl",
+  --   event = "VeryLazy",
+  --   opts = require("plugins.config.indent-blankline").opts,
+  --   config = require("plugins.config.indent-blankline").setup,
+  -- },
 
   {
     "lewis6991/gitsigns.nvim",

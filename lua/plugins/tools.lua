@@ -6,9 +6,8 @@ return {
 
   {
     "folke/snacks.nvim",
-    -- priority = 1000,
-    -- lazy = false,
-    event = { "User VeryLazyPre" },
+    priority = 1000,
+    lazy = false,
     keys = require("plugins.config.snacks").keys,
     opts = require("plugins.config.snacks").opts,
   },
