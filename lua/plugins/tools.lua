@@ -41,33 +41,33 @@ return {
   --   opts = {},
   -- },
 
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
-    },
-    cmd = { "Telescope" },
-    -- keys = require("plugins.config.telescope").keys,
-    init = function()
-      vim.api.nvim_create_augroup("TelescopeLoaded", {})
-    end,
-    opts = require("plugins.config.telescope").opts,
-    config = function(_, opts)
-      require("telescope").setup(opts)
-      vim.api.nvim_exec_autocmds("User", {
-        group = "TelescopeLoaded",
-        pattern = "TelescopeLoaded",
-      })
-    end,
-  },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "folke/trouble.nvim",
+  --   },
+  --   cmd = { "Telescope" },
+  --   keys = require("plugins.config.telescope").keys,
+  --   init = function()
+  --     vim.api.nvim_create_augroup("TelescopeLoaded", {})
+  --   end,
+  --   opts = require("plugins.config.telescope").opts,
+  --   config = function(_, opts)
+  --     require("telescope").setup(opts)
+  --     vim.api.nvim_exec_autocmds("User", {
+  --       group = "TelescopeLoaded",
+  --       pattern = "TelescopeLoaded",
+  --     })
+  --   end,
+  -- },
 
   {
     "NeogitOrg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
-      "nvim-telescope/telescope.nvim", -- optional
       "sindrets/diffview.nvim", -- optional
+      "folke/snacks.nvim", -- optional
     },
     cmd = { "Neogit" },
     opts = require("plugins.config.neogit").opts,
