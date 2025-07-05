@@ -11,7 +11,15 @@ M.opts = {
   input = { enabled = true },
   notifier = { enabled = true },
   notify = { enabled = true },
-  picker = { enabled = true },
+  picker = {
+    sources = {
+      explorer = {
+        auto_close = true,
+        jump = { close = true },
+        layout = { preset = "default", preview = true },
+      },
+    },
+  },
 }
 
 M.keys = {

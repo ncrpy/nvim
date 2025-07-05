@@ -9,9 +9,6 @@ return {
     -- priority = 1000,
     -- lazy = false,
     event = { "User VeryLazyPre" },
-    dependencies = {
-      "folke/trouble.nvim",
-    },
     keys = require("plugins.config.snacks").keys,
     opts = require("plugins.config.snacks").opts,
   },
@@ -21,6 +18,10 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+    init = function()
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+    end,
     cmd = { "NvimTreeToggle" },
     keys = require("plugins.config.nvim-tree").keys,
     opts = require("plugins.config.nvim-tree").opts,
