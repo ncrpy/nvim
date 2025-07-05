@@ -4,7 +4,7 @@ M.keys = {
   {
     "<leader>n",
     "<Cmd>NvimTreeToggle<CR>",
-    { desc = "NvimTree" },
+    desc = "NvimTree",
   },
 }
 

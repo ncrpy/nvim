@@ -92,6 +92,7 @@ return {
     cmd = { "ToggleTerm" },
     keys = require("plugins.config.toggleterm").keys,
     opts = require("plugins.config.toggleterm").opts,
+    config = require("plugins.config.toggleterm").setup,
   },
 
   {
