@@ -27,13 +27,13 @@ M.opts = {
 M.keys = {
   {
     "<leader>f<Space>",
-    pick("pickers"),
-    desc = "Pickers",
+    pick("resume"),
+    desc = "Resume",
   },
   {
     "<leader>fa",
-    pick("resume"),
-    desc = "Resume",
+    pick("pickers"),
+    desc = "Pickers",
   },
   {
     "<leader>fb",
