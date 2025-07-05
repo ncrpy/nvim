@@ -2,7 +2,7 @@ local M = {}
 
 M.keys = {
   {
-    "<C-k>",
+    "<C-q>",
     "<Plug>(skkeleton-toggle)",
     mode = { "i", "c", "t" },
     { desc = "Toggle SKK" },
@@ -53,20 +53,22 @@ M.setup = function()
     group = "skkeleton-cmp",
     pattern = "skkeleton-disable-post",
     callback = function()
-      local ok, cmp = pcall(require, "cmp")
-      if ok then
-        cmp.setup.buffer({ enabled = true })
-      end
+      -- local ok, cmp = pcall(require, "")
+      -- if ok then
+      --   cmp.setup.buffer({ enabled = true })
+      -- end
+      vim.b.completion = true
     end,
   })
   vim.api.nvim_create_autocmd("User", {
     group = "skkeleton-cmp",
     pattern = "skkeleton-enable-pre",
     callback = function()
-      local ok, cmp = pcall(require, "cmp")
-      if ok then
-        cmp.setup.buffer({ enabled = false })
-      end
+      -- local ok, cmp = pcall(require, "cmp")
+      -- if ok then
+      --   cmp.setup.buffer({ enabled = false })
+      -- end
+      vim.b.completion = false
     end,
   })
 
@@ -94,6 +96,17 @@ M.setup = function()
     hankataText = "ｶﾅ",
     zenkakuText = "Ａ",
     abbrevText = "Aｱ",
+  })
+
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "skkeleton-initialize-post",
+    once = true,
+    callback = function()
+      local indicator = require("skkeleton_indicator.indicator")()
+      if indicator then
+        indicator:open()
+      end
+    end,
   })
 end
 
