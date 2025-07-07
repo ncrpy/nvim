@@ -52,20 +52,6 @@ M.opts = {
     log_level = "DEBUG",
     language = "Japanese",
   },
-  adapters = {
-    gemini = function()
-      return require("codecompanion.adapters").extend("gemini", {
-        env = {
-          api_key = vim.env.GEMINI_API_KEY,
-        },
-        schema = {
-          moodel = {
-            default = "gemini-2.5-flash",
-          },
-        },
-      })
-    end,
-  },
   display = {
     action_palette = {
       provider = "snacks",

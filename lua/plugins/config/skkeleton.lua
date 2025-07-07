@@ -53,10 +53,6 @@ M.setup = function()
     group = "skkeleton-cmp",
     pattern = "skkeleton-disable-post",
     callback = function()
-      -- local ok, cmp = pcall(require, "")
-      -- if ok then
-      --   cmp.setup.buffer({ enabled = true })
-      -- end
       vim.b.completion = true
     end,
   })
@@ -64,10 +60,6 @@ M.setup = function()
     group = "skkeleton-cmp",
     pattern = "skkeleton-enable-pre",
     callback = function()
-      -- local ok, cmp = pcall(require, "cmp")
-      -- if ok then
-      --   cmp.setup.buffer({ enabled = false })
-      -- end
       vim.b.completion = false
     end,
   })

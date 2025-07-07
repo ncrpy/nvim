@@ -1,12 +1,4 @@
 return {
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   event = { "BufReadPre", "BufNewFile" },
-  --   -- keys = require("plugins.config.lspconfig").keys,
-  --   -- opts = require("plugins.config.lspconfig").opts,
-  --   -- config = require("plugins.config.lspconfig").setup,
-  -- },
-
   {
     "mason-org/mason.nvim",
     cmd = {
@@ -33,7 +25,7 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
-    version = "^5", -- Recommended
+    version = "^6", -- Recommended
     enabled = function()
       return vim.fn.executable("rust-analyzer") == 1
     end,
