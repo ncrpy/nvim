@@ -4,7 +4,8 @@ M.keys = {
   {
     "<leader>n",
     "<Cmd>NvimTreeToggle<CR>",
-    { desc = "NvimTree" },
+    mode = { "n", "x" },
+    desc = "NvimTree",
   },
 }
 

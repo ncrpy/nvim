@@ -1,48 +1,44 @@
 return {
   {
+    "nvim-lua/plenary.nvim",
+    version = false,
+  },
+
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    keys = require("plugins.config.snacks").keys,
+    opts = require("plugins.config.snacks").opts,
+  },
+
+  {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+    init = function()
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+    end,
     cmd = { "NvimTreeToggle" },
     keys = require("plugins.config.nvim-tree").keys,
     opts = require("plugins.config.nvim-tree").opts,
   },
 
   {
-    "folke/trouble.nvim",
-    cmd = { "Trouble" },
-    keys = require("plugins.config.trouble").keys,
-    opts = {},
-  },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
-    },
-    cmd = { "Telescope" },
-    keys = require("plugins.config.telescope").keys,
-    init = function()
-      vim.api.nvim_create_augroup("TelescopeLoaded", {})
-    end,
-    opts = require("plugins.config.telescope").opts,
-    config = function(_, opts)
-      require("telescope").setup(opts)
-      vim.api.nvim_exec_autocmds("User", {
-        group = "TelescopeLoaded",
-        pattern = "TelescopeLoaded",
-      })
-    end,
+    "stevearc/quicker.nvim",
+    ft = { "qf" },
+    keys = require("plugins.config.quicker").keys,
+    opts = require("plugins.config.quicker").opts,
   },
 
   {
     "NeogitOrg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
-      "nvim-telescope/telescope.nvim", -- optional
       "sindrets/diffview.nvim", -- optional
+      "folke/snacks.nvim", -- optional
     },
     cmd = { "Neogit" },
     opts = require("plugins.config.neogit").opts,
@@ -67,6 +63,7 @@ return {
     cmd = { "ToggleTerm" },
     keys = require("plugins.config.toggleterm").keys,
     opts = require("plugins.config.toggleterm").opts,
+    config = require("plugins.config.toggleterm").setup,
   },
 
   {
@@ -77,7 +74,7 @@ return {
     cmd = { "AerialToggle", "AerialNavToggle", "AerialInfo" },
     keys = require("plugins.config.aerial").keys,
     opts = require("plugins.config.aerial").opts,
-    config = require("plugins.config.aerial").setup,
+    -- config = require("plugins.config.aerial").setup,
   },
 
   {
@@ -99,10 +96,5 @@ return {
     "NMAC427/guess-indent.nvim",
     event = { "BufReadPre" },
     opts = require("plugins.config.guess-indent").opts,
-  },
-
-  {
-    "folke/zen-mode.nvim",
-    keys = require("plugins.config.zen-mode").keys,
   },
 }

@@ -1,6 +1,6 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     cmd = {
       "Mason",
       "MasonInstall",
@@ -13,21 +13,19 @@ return {
   },
 
   {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
-    },
+    "mason-org/mason-lspconfig.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    keys = require("plugins.config.lspconfig").keys,
-    opts = require("plugins.config.lspconfig").opts,
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+    opts = {},
     config = require("plugins.config.lspconfig").setup,
   },
 
   {
     "mrcjkb/rustaceanvim",
-    version = "^5", -- Recommended
+    version = "^6", -- Recommended
     enabled = function()
       return vim.fn.executable("rust-analyzer") == 1
     end,

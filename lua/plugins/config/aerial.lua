@@ -25,17 +25,6 @@ M.opts = {
 M.setup = function(_, opts)
   require("aerial").setup(opts)
 
-  vim.api.nvim_create_autocmd("User", {
-    group = "TelescopeLoaded",
-    pattern = "TelescopeLoaded",
-    callback = function()
-      local ok, telescope = pcall(require, "telescope")
-      if ok then
-        telescope.load_extension("aerial")
-      end
-    end,
-  })
-
   -- local lualine_ok, lualine = pcall(require, "lualine")
   -- if lualine_ok then
   --   lualine.setup({

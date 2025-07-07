@@ -7,16 +7,17 @@ M.opts = {
     keymap = {
       jump_prev = "<C-p>",
       jump_next = "<C-n>",
-      accept = "<CR>",
-      refresh = false,
+      accept = "ga",
+      refresh = "gr",
       open = "<C-b>",
     },
   },
   suggestion = {
     enabled = true,
     auto_trigger = true,
+    trigger_on_accept = false,
     keymap = {
-      accept = false,
+      accept = "<Tab>",
       accept_word = false,
       accept_line = false,
       next = false,

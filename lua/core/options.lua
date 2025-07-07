@@ -60,31 +60,39 @@ if vim.fn.executable("rg") == 1 then
 end
 
 noremap("", "<C-l>", ":<C-u>nohlsearch<CR><C-l>")
-noremap("", "<leader>w", "<C-w>")
 
-noremap("", "<leader>ba", "<Cmd>enew<CR>")
-noremap("", "<leader>bb", "<Cmd>b#<CR>")
-noremap("", "<leader>bm", "<Cmd>bmodified<CR>")
-noremap("", "<leader>bn", "<Cmd>bnext<CR>")
-noremap("", "<leader>bp", "<Cmd>bprevious<CR>")
-noremap("", "<leader>bf", "<Cmd>bfirst<CR>")
-noremap("", "<leader>bl", "<Cmd>blast<CR>")
-noremap("", "<leader>bc", "<Cmd>bdelete<CR>")
-noremap("", "<leader>bd", "<Cmd>bdelete<CR>")
-noremap("", "<leader>bD", "<Cmd>bdelete!<CR>")
-noremap("", "<leader>bo", "<Cmd>%bdelete<Bar>edit#<Bar>bdelete#<CR>")
-noremap("", "<leader>i", function()
+noremap({ "n", "x" }, "<leader>a", "ggVG")
+
+noremap({ "n", "x" }, "<leader>ba", "<Cmd>enew<CR>")
+noremap({ "n", "x" }, "<leader>bb", "<Cmd>b#<CR>")
+noremap({ "n", "x" }, "<leader>bm", "<Cmd>bmodified<CR>")
+noremap({ "n", "x" }, "<leader>bn", "<Cmd>bnext<CR>")
+noremap({ "n", "x" }, "<leader>bp", "<Cmd>bprevious<CR>")
+noremap({ "n", "x" }, "<leader>bf", "<Cmd>bfirst<CR>")
+noremap({ "n", "x" }, "<leader>bl", "<Cmd>blast<CR>")
+noremap({ "n", "x" }, "<leader>bc", "<Cmd>bdelete<CR>")
+noremap({ "n", "x" }, "<leader>bd", "<Cmd>bdelete<CR>")
+noremap({ "n", "x" }, "<leader>bD", "<Cmd>bdelete!<CR>")
+noremap({ "n", "x" }, "<leader>bo", "<Cmd>%bdelete<Bar>edit#<Bar>bdelete#<CR>")
+
+noremap({ "n", "x" }, "<leader>i", function()
   opt.relativenumber = not opt.relativenumber:get()
 end)
 
-noremap("", "<leader>a", "ggVG")
+noremap({ "n", "x" }, "<leader>w", "<C-w>", { remap = true })
 
-noremap("", ";", ":")
-noremap("", ",.", ";")
-noremap("", ",,", ",")
+noremap({ "n", "x" }, ";", ":")
+noremap({ "n", "x" }, ",.", ";")
+noremap({ "n", "x" }, ",,", ",")
 
 noremap("i", "<C-l>", "<C-g>U<Right>")
 
-noremap("n", "<leader>s", ":<C-u>%s///g<Left><Left>")
+noremap("n", "<leader>s", ":<C-u>%s///g<Left><Left><Left>")
+noremap("x", "<leader>s", ":s///g<Left><Left><Left>")
 
-noremap("t", "<Esc>", "<Esc><C-\\><C-n>")
+noremap("t", "<Esc>", "<C-\\><C-n>")
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup("terminal", {}),
+  command = "startinsert",
+})
