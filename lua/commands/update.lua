@@ -1,5 +1,11 @@
 local ERROR = vim.log.levels.ERROR
 
+local function notify(msg, level)
+  vim.schedule(function()
+    vim.notify(msg, level)
+  end)
+end
+
 local function get_nvim_path()
   return vim.uv.exepath() or ""
 end
@@ -31,32 +37,20 @@ local function get_latest_version(callback)
 end
 
 local function check_update()
-  local ok, _ = pcall(get_latest_version, function(err, version)
+  get_latest_version(function(err, version)
     if err then
-      vim.schedule(function()
-        vim.notify(err, ERROR)
-      end)
+      notify(err, ERROR)
       return
     end
 
     local current_version = get_current_version()
 
     if version ~= current_version then
-      vim.schedule(function()
-        vim.notify("New version of Neovim is available: " .. version)
-      end)
+      notify("New version of Neovim is available: " .. version)
     else
-      vim.schedule(function()
-        vim.notify("Neovim is up to date")
-      end)
+      notify("Neovim is up to date")
     end
   end)
-
-  if not ok then
-    vim.schedule(function()
-      vim.notify("Failed to check for updates", ERROR)
-    end)
-  end
 end
 
 local function update_nvim()
@@ -64,26 +58,20 @@ local function update_nvim()
   local appimage_root = nvim_path:match("^(.*)/squashfs%-root/usr/bin/nvim$")
 
   if not appimage_root then
-    vim.schedule(function()
-      vim.notify("NvimUpdate is supported only for AppImageExtract installations", ERROR)
-    end)
+    notify("NvimUpdate is supported only for AppImageExtract installations", ERROR)
     return
   end
 
-  local ok, _ = pcall(get_latest_version, function(err, version)
+  get_latest_version(function(err, version)
     if err then
-      vim.schedule(function()
-        vim.notify(err, ERROR)
-      end)
+      notify(err, ERROR)
       return
     end
 
     local current_version = get_current_version()
 
     if version == current_version then
-      vim.schedule(function()
-        vim.notify("Neovim is already up to date")
-      end)
+      notify("Neovim is already up to date")
       return
     end
 
@@ -95,9 +83,7 @@ local function update_nvim()
     elseif arch == "aarch64" or arch == "arm64" then
       download_url = "https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.appimage"
     else
-      vim.schedule(function()
-        vim.notify("Unsupported architecture: " .. arch, ERROR)
-      end)
+      notify("Unsupported architecture: " .. arch, ERROR)
       return
     end
 
@@ -105,17 +91,13 @@ local function update_nvim()
 
     vim.system({ "curl", "-L", "-o", appimage_path, download_url }, { text = true }, function(obj_download)
       if obj_download.code ~= 0 then
-        vim.schedule(function()
-          vim.notify("Failed to download neovim: " .. obj_download.stderr:gsub("%s+$", ""), ERROR)
-        end)
+        notify("Failed to download neovim: " .. obj_download.stderr:gsub("%s+$", ""), ERROR)
         return
       end
 
       vim.uv.fs_chmod(appimage_path, tonumber("744", 8), function(err_chmod)
         if err_chmod then
-          vim.schedule(function()
-            vim.notify("Failed to set permissions: " .. err_chmod, ERROR)
-          end)
+          notify("Failed to set permissions: " .. err_chmod, ERROR)
           return
         end
 
@@ -123,9 +105,7 @@ local function update_nvim()
 
         vim.uv.fs_rename(nvim_path, backup_path, function(err_backup)
           if err_backup then
-            vim.schedule(function()
-              vim.notify("Failed to backup old Neovim binary: " .. err_backup, ERROR)
-            end)
+            notify("Failed to backup old Neovim binary: " .. err_backup, ERROR)
             return
           end
 
@@ -134,34 +114,22 @@ local function update_nvim()
             { cwd = appimage_root, text = true },
             function(obj_extract)
               if obj_extract.code ~= 0 then
-                vim.schedule(function()
-                  vim.notify("Failed to extract AppImage: " .. obj_extract.stderr:gsub("%s+$", ""), ERROR)
-                end)
+                notify("Failed to extract AppImage: " .. obj_extract.stderr:gsub("%s+$", ""), ERROR)
                 vim.uv.fs_rename(backup_path, nvim_path, function(err_restore)
                   if err_restore then
-                    vim.schedule(function()
-                      vim.notify("Failed to restore old Neovim binary: " .. err_restore, ERROR)
-                    end)
+                    notify("Failed to restore old Neovim binary: " .. err_restore, ERROR)
                   end
                 end)
                 return
               end
 
-              vim.schedule(function()
-                vim.notify("Neovim has been updated to " .. version)
-              end)
+              notify("Neovim has been updated to " .. version)
             end
           )
         end)
       end)
     end)
   end)
-
-  if not ok then
-    vim.schedule(function()
-      vim.notify("Failed to update Neovim", ERROR)
-    end)
-  end
 end
 
 vim.api.nvim_create_user_command("NvimCheckUpdate", check_update, {})
