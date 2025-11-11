@@ -54,8 +54,7 @@ local function check_update()
 end
 
 local function update_nvim()
-  local nvim_path = get_nvim_path()
-  local appimage_root = nvim_path:match("^(.*)/squashfs%-root/usr/bin/nvim$")
+  local appimage_root = get_nvim_path():match("^(.*)/squashfs%-root/usr/bin/nvim$")
 
   if not appimage_root then
     notify("NvimUpdate is supported only for AppImageExtract installations", ERROR)
@@ -101,11 +100,12 @@ local function update_nvim()
           return
         end
 
-        local backup_path = nvim_path .. ".bak"
+        local backup_src = appimage_root .. "/squashfs-root"
+        local backup_dst = appimage_root .. "/.squashfs-root.bak"
 
-        vim.uv.fs_rename(nvim_path, backup_path, function(err_backup)
+        vim.uv.fs_rename(backup_src, backup_dst, function(err_backup)
           if err_backup then
-            notify("Failed to backup old Neovim binary: " .. err_backup, ERROR)
+            notify("Failed to backup old Neovim installation: " .. err_backup, ERROR)
             return
           end
 
@@ -115,15 +115,25 @@ local function update_nvim()
             function(obj_extract)
               if obj_extract.code ~= 0 then
                 notify("Failed to extract AppImage: " .. obj_extract.stderr:gsub("%s+$", ""), ERROR)
-                vim.uv.fs_rename(backup_path, nvim_path, function(err_restore)
+                vim.uv.fs_rename(backup_dst, backup_src, function(err_restore)
                   if err_restore then
-                    notify("Failed to restore old Neovim binary: " .. err_restore, ERROR)
+                    notify("Failed to restore old Neovim installation: " .. err_restore, ERROR)
                   end
                 end)
                 return
               end
 
               notify("Neovim has been updated to " .. version)
+
+              vim.system(
+                { "rm", "-rf", backup_dst },
+                { text = true },
+                function(obj_cleanup)
+                  if obj_cleanup.code ~= 0 then
+                    notify("Failed to remove backup directory: " .. obj_cleanup.stderr:gsub("%s+$", ""), ERROR)
+                  end
+                end
+              )
             end
           )
         end)
@@ -132,5 +142,62 @@ local function update_nvim()
   end)
 end
 
+local function install_nvim(opts)
+  local install_dir = opts.fargs[1] or vim.fn.getcwd()
+
+  vim.uv.fs_stat(install_dir, function(err_stat, stat)
+    if err_stat then
+      notify("Installation directory does not exist: " .. err_stat, ERROR)
+      return
+    end
+
+    if stat.type ~= "directory" then
+      notify("Installation path is not a directory", ERROR)
+      return
+    end
+
+    local arch = vim.uv.os_uname().machine
+    local download_url
+
+    if arch == "x86_64" then
+      download_url = "https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage"
+    elseif arch == "aarch64" or arch == "arm64" then
+      download_url = "https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.appimage"
+    else
+      notify("Unsupported architecture: " .. arch, ERROR)
+      return
+    end
+
+    local appimage_path = install_dir .. "/nvim.appimage"
+
+    vim.system({ "curl", "-L", "-o", appimage_path, download_url }, { text = true }, function(obj_download)
+      if obj_download.code ~= 0 then
+        notify("Failed to download neovim: " .. obj_download.stderr:gsub("%s+$", ""), ERROR)
+        return
+      end
+
+      vim.uv.fs_chmod(appimage_path, tonumber("744", 8), function(err_chmod)
+        if err_chmod then
+          notify("Failed to set permissions: " .. err_chmod, ERROR)
+          return
+        end
+
+        vim.system({ appimage_path, "--appimage-extract" }, { cwd = install_dir, text = true }, function(obj_extract)
+          if obj_extract.code ~= 0 then
+            notify("Failed to extract AppImage: " .. obj_extract.stderr:gsub("%s+$", ""), ERROR)
+            return
+          end
+
+          notify("Neovim has been installed to " .. install_dir)
+        end)
+      end)
+    end)
+  end)
+end
+
 vim.api.nvim_create_user_command("NvimCheckUpdate", check_update, {})
 vim.api.nvim_create_user_command("NvimUpdate", update_nvim, {})
+vim.api.nvim_create_user_command("NvimInstall", install_nvim, {
+  nargs = "?",
+  complete = "dir",
+})
