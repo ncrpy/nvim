@@ -32,4 +32,9 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     ft = { "rust" },
   },
+
+  {
+    "veryl-lang/veryl.vim",
+    ft = { "veryl" },
+  },
 }

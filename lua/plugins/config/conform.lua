@@ -24,6 +24,7 @@ M.opts = {
     -- sh = { "shfmt" },
     c = { "clang_format" },
     cpp = { "clang_format" },
+    veryl = { lsp_format = "fallback" }
   },
   -- Set up format-on-save
   format_on_save = function(bufnr)
