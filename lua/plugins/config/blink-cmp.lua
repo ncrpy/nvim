@@ -102,6 +102,17 @@ M.opts = {
   -- elsewhere in your config, without redefining it, due to `opts_extend`
   sources = {
     default = { "lsp", "path", "snippets", "buffer" },
+    providers = {
+      buffer = {
+        -- Exclude non-ASCIIs
+        -- Could be useful when working with files that contain a lot of non-English text
+        transform_items = function(_, items)
+          return vim.tbl_filter(function(item)
+            return not item.label:match("[^\x00-\x7F]")
+          end, items)
+        end,
+      },
+    },
   },
 
   -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
