@@ -4,12 +4,21 @@ return {
     version = false,
   },
 
+  -- {
+  --   "folke/snacks.nvim",
+  --   priority = 1000,
+  --   lazy = false,
+  --   keys = require("plugins.config.snacks").keys,
+  --   opts = require("plugins.config.snacks").opts,
+  -- },
+
   {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-    keys = require("plugins.config.snacks").keys,
-    opts = require("plugins.config.snacks").opts,
+    "ibhagwan/fzf-lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    cmd = { "FzfLua" },
+    opts = {},
   },
 
   {
@@ -87,14 +96,20 @@ return {
 
   {
     "kylechui/nvim-surround",
-    version = "^3.0.0",
+    version = "^4.0.0",
     event = "VeryLazy",
-    opts = {},
   },
 
   {
     "NMAC427/guess-indent.nvim",
-    event = { "BufReadPre" },
+    event = { "BufReadPost", "BufNewFile" },
     opts = require("plugins.config.guess-indent").opts,
+  },
+
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    cmd = { "Typr", "TyprStats" },
+    opts = require("plugins.config.typr").opts,
   },
 }

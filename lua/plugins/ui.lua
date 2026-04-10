@@ -28,17 +28,17 @@ return {
     config = require("plugins.config.barbar").setup,
   },
 
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   main = "ibl",
-  --   event = "VeryLazy",
-  --   opts = require("plugins.config.indent-blankline").opts,
-  --   config = require("plugins.config.indent-blankline").setup,
-  -- },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = require("plugins.config.indent-blankline").opts,
+    config = require("plugins.config.indent-blankline").setup,
+  },
 
   {
     "lewis6991/gitsigns.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
     opts = {},
   },
 
@@ -48,12 +48,12 @@ return {
   --   opts = {},
   -- },
 
-  -- {
-  --   "rcarriga/nvim-notify",
-  --   event = "VeryLazy",
-  --   opts = require("plugins.config.notify").opts,
-  --   config = require("plugins.config.notify").setup,
-  -- },
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    opts = require("plugins.config.notify").opts,
+    config = require("plugins.config.notify").setup,
+  },
 
   {
     "norcalli/nvim-colorizer.lua",

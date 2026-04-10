@@ -14,7 +14,9 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    event = { "OptionSet background", "User VeryLazyPre" },
+    -- event = { "OptionSet background", "User VeryLazyPre" },
+    lazy = false,
+    priority = 1000,
     opts = {
       transparent_background = false,
       integrations = {
