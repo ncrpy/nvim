@@ -14,10 +14,15 @@ return {
 
   {
     "ibhagwan/fzf-lua",
+    version = false,
+    enabled = function()
+      return vim.fn.executable("fzf") == 1
+    end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
     cmd = { "FzfLua" },
+    keys = require("plugins.config.fzf-lua").keys,
     opts = {},
   },
 
