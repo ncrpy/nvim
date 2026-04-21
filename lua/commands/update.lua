@@ -1,3 +1,5 @@
+local M = {}
+
 local ERROR = vim.log.levels.ERROR
 
 local function notify(msg, level)
@@ -36,7 +38,7 @@ local function get_latest_version(callback)
   )
 end
 
-local function check_update()
+function M.check_update()
   get_latest_version(function(err, version)
     if err then
       notify(err, ERROR)
@@ -53,7 +55,7 @@ local function check_update()
   end)
 end
 
-local function update_nvim()
+function M.update_nvim()
   local appimage_root = get_nvim_path():match("^(.*)/squashfs%-root/usr/bin/nvim$")
 
   if not appimage_root then
@@ -142,7 +144,7 @@ local function update_nvim()
   end)
 end
 
-local function install_nvim(opts)
+function M.install_nvim(opts)
   local install_dir = opts.fargs[1] or vim.fn.getcwd()
 
   vim.uv.fs_stat(install_dir, function(err_stat, stat)
@@ -195,9 +197,4 @@ local function install_nvim(opts)
   end)
 end
 
-vim.api.nvim_create_user_command("NvimCheckUpdate", check_update, {})
-vim.api.nvim_create_user_command("NvimUpdate", update_nvim, {})
-vim.api.nvim_create_user_command("NvimInstall", install_nvim, {
-  nargs = "?",
-  complete = "dir",
-})
+return M

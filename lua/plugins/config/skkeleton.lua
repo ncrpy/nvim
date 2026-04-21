@@ -9,7 +9,7 @@ M.keys = {
   },
 }
 
-M.setup = function()
+M.setup = function(_, _)
   local skkeleton_init = function()
     local global_dicts = vim.fn.glob("$XDG_DATA_HOME/skk/*")
 

@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 return {
   {
     "mason-org/mason.nvim",
@@ -20,15 +22,13 @@ return {
       "neovim/nvim-lspconfig",
     },
     opts = {},
-    config = require("plugins.config.lspconfig").setup,
+    config = utils.wrap_setup("lspconfig")
   },
 
   {
     "mrcjkb/rustaceanvim",
     version = "^6", -- Recommended
-    enabled = function()
-      return vim.fn.executable("rust-analyzer") == 1
-    end,
+    enabled = utils.executable("rust-analyzer"),
     event = { "BufReadPre", "BufNewFile" },
     ft = { "rust" },
   },

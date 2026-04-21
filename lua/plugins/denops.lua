@@ -1,6 +1,5 @@
-local deno_enable = function()
-  return vim.fn.executable("deno") == 1
-end
+local utils = require("utils")
+local deno_enable = utils.executable("deno")
 
 return {
   {
@@ -31,9 +30,7 @@ return {
         branch = "v2",
       },
     },
-    keys = require("plugins.config.skkeleton").keys,
-    config = function()
-      require("plugins.config.skkeleton").setup()
-    end,
+    keys = require("plugins.keymap").skkeleton,
+    config = utils.wrap_setup(),
   },
 }

@@ -56,10 +56,8 @@ M.opts = {
   },
 }
 
-M.setup = function(_, opts)
+M.setup = function(_, _)
   local dap, dapui = require("dap"), require("dapui")
-
-  dapui.setup(opts)
 
   dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
