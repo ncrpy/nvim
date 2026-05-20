@@ -5,6 +5,10 @@ return {
   },
 
   {
+    "nvim-neotest/nvim-nio",
+  },
+
+  {
     "nvim-tree/nvim-web-devicons",
   },
 }

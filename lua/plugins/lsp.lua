@@ -27,7 +27,7 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
-    version = "^6", -- Recommended
+    version = "^9", -- Recommended
     enabled = utils.executable("rust-analyzer"),
     event = { "BufReadPre", "BufNewFile" },
     ft = { "rust" },

@@ -45,14 +45,14 @@ return {
 
   {
     "rcarriga/nvim-dap-ui",
-    version = "v3.9.3", -- v4.0.0 is broken
-    -- dependencies = "nvim-neotest/nvim-nio",
+    version = false,
+    dependencies = "nvim-neotest/nvim-nio",
     opts = utils.wrap_opts("dap"),
   },
 
   {
     "mfussenegger/nvim-dap",
-    keys = require("plugins.keymap.dap").keys,
+    keys = keymap.dap,
     config = utils.wrap_setup("dap"),
   },
 
@@ -83,7 +83,7 @@ return {
   {
     "kylechui/nvim-surround",
     version = "^4.0.0",
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
   },
 
   {
