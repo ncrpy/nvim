@@ -9,7 +9,7 @@ return {
 
   {
     "romgrk/barbar.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
     init = function()
       vim.g.barbar_auto_setup = false
       -- vim.api.nvim_create_autocmd("ColorScheme", {
@@ -49,9 +49,9 @@ return {
 
   {
     "rcarriga/nvim-notify",
-    event = "VeryLazy",
-    opts = utils.wrap_opts("notify"),
-    config = utils.wrap_opts("notify"),
+    cmd = { "Notifications", "NotificationsClear", "NotificationsPick" },
+    opts = utils.wrap_opts(),
+    config = utils.wrap_setup(),
   },
 
   {
