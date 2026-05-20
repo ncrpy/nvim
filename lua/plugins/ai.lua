@@ -1,12 +1,12 @@
+local utils = require("utils")
+
 return {
   {
     "zbirenbaum/copilot.lua",
-    enabled = function()
-      return vim.fn.executable("node") == 1
-    end,
+    enabled = utils.executable("node"),
     cmd = { "Copilot" },
     event = { "InsertEnter" },
-    opts = require("plugins.config.copilot").opts,
+    opts = utils.wrap_opts(),
   },
 
   {
@@ -16,7 +16,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     cmd = { "CodeCompanion", "CodeCompanionActions", "CodeCompanionChat", "CodeCompanionCmd" },
-    keys = require("plugins.config.codecompanion").keys,
-    opts = require("plugins.config.codecompanion").opts,
+    keys = require("plugins.keymap").codecompanion,
+    opts = utils.wrap_opts()
   },
 }

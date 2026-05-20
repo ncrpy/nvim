@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -7,7 +9,7 @@ return {
       return ok and install.update({ with_sync = false })
     end,
     event = { "BufReadPost", "BufNewFile" },
-    opts = require("plugins.config.treesitter").opts,
-    config = require("plugins.config.treesitter").setup,
+    opts = utils.wrap_opts("treesitter"),
+    config = utils.wrap_setup("treesitter"),
   },
 }

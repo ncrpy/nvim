@@ -1,15 +1,14 @@
+local utils = require("utils")
+
 return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = require("plugins.config.lualine").opts,
+    opts = utils.wrap_opts(),
   },
 
   {
     "romgrk/barbar.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
     event = "VeryLazy",
     init = function()
       vim.g.barbar_auto_setup = false
@@ -24,16 +23,16 @@ return {
       --   end
       -- })
     end,
-    opts = require("plugins.config.barbar").opts,
-    config = require("plugins.config.barbar").setup,
+    opts = utils.wrap_opts(),
+    config = utils.wrap_setup(),
   },
 
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = { "BufReadPost", "BufNewFile" },
-    opts = require("plugins.config.indent-blankline").opts,
-    config = require("plugins.config.indent-blankline").setup,
+    opts = utils.wrap_opts(),
+    config = utils.wrap_setup(),
   },
 
   {
@@ -51,16 +50,13 @@ return {
   {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
-    opts = require("plugins.config.notify").opts,
-    config = require("plugins.config.notify").setup,
+    opts = utils.wrap_opts("notify"),
+    config = utils.wrap_opts("notify"),
   },
 
   {
     "norcalli/nvim-colorizer.lua",
     cmd = { "ColorizerToggle" },
-    config = function()
-      vim.opt.termguicolors = true
-      require("colorizer").setup()
-    end,
+    opts = {},
   },
 }

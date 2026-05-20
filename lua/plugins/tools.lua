@@ -1,102 +1,83 @@
-return {
-  {
-    "nvim-lua/plenary.nvim",
-    version = false,
-  },
+local utils = require("utils")
+local keymap = require("plugins.keymap")
 
+return {
   -- {
   --   "folke/snacks.nvim",
   --   priority = 1000,
   --   lazy = false,
-  --   keys = require("plugins.config.snacks").keys,
-  --   opts = require("plugins.config.snacks").opts,
+  --   keys = require("plugins.keymap.snacks").keys,
+  --   opts = require("plugins.keymap.snacks").opts,
   -- },
 
   {
     "ibhagwan/fzf-lua",
     version = false,
-    enabled = function()
-      return vim.fn.executable("fzf") == 1
-    end,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
+    enabled = utils.executable("fzf"),
     cmd = { "FzfLua" },
-    keys = require("plugins.config.fzf-lua").keys,
+    keys = keymap.fzflua,
     opts = {},
   },
 
   {
     "nvim-tree/nvim-tree.lua",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
     init = function()
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
     end,
     cmd = { "NvimTreeToggle" },
-    keys = require("plugins.config.nvim-tree").keys,
-    opts = require("plugins.config.nvim-tree").opts,
+    keys = keymap.nvimtree,
+    opts = utils.wrap_opts("nvim-tree"),
   },
 
   {
     "stevearc/quicker.nvim",
     ft = { "qf" },
-    keys = require("plugins.config.quicker").keys,
-    opts = require("plugins.config.quicker").opts,
+    keys = keymap.quicker,
+    opts = utils.wrap_opts(),
   },
 
   {
     "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim", -- required
-      "sindrets/diffview.nvim", -- optional
-      "folke/snacks.nvim", -- optional
-    },
     cmd = { "Neogit" },
-    opts = require("plugins.config.neogit").opts,
+    opts = utils.wrap_opts(),
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    version = "v3.9.3", -- v4.0.0 is broken
+    -- dependencies = "nvim-neotest/nvim-nio",
+    opts = utils.wrap_opts("dap"),
   },
 
   {
     "mfussenegger/nvim-dap",
-    dependencies = {
-      {
-        "rcarriga/nvim-dap-ui",
-        version = "v3.9.3", -- v4.0.0 is broken
-        -- dependencies = "nvim-neotest/nvim-nio",
-      },
-    },
-    keys = require("plugins.config.dap").keys,
-    opts = require("plugins.config.dap").opts,
-    config = require("plugins.config.dap").setup,
+    keys = require("plugins.keymap.dap").keys,
+    config = utils.wrap_setup("dap"),
   },
 
   {
     "akinsho/toggleterm.nvim",
     cmd = { "ToggleTerm" },
-    keys = require("plugins.config.toggleterm").keys,
-    opts = require("plugins.config.toggleterm").opts,
-    config = require("plugins.config.toggleterm").setup,
+    -- keys = require("plugins.keymap.toggleterm").keys,
+    opts = utils.wrap_opts(),
+    config = utils.wrap_setup(),
   },
 
   {
     "stevearc/aerial.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
     cmd = { "AerialToggle", "AerialNavToggle", "AerialInfo" },
-    keys = require("plugins.config.aerial").keys,
-    opts = require("plugins.config.aerial").opts,
-    -- config = require("plugins.config.aerial").setup,
+    keys = keymap.aerial,
+    opts = utils.wrap_opts(),
+    -- config = utils.wrap_setup(),
   },
 
   {
     "stevearc/conform.nvim",
     cmd = { "ConformInfo", "Format", "FormatEnable" },
-    keys = require("plugins.config.conform").keys,
-    opts = require("plugins.config.conform").opts,
-    config = require("plugins.config.conform").setup,
+    keys = require("plugins.keymap.conform").keys,
+    opts = keymap.conform,
+    config = utils.wrap_setup(),
   },
 
   {
@@ -108,13 +89,13 @@ return {
   {
     "NMAC427/guess-indent.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    opts = require("plugins.config.guess-indent").opts,
+    opts = utils.wrap_opts(),
   },
 
   {
     "nvzone/typr",
     dependencies = "nvzone/volt",
     cmd = { "Typr", "TyprStats" },
-    opts = require("plugins.config.typr").opts,
+    opts = utils.wrap_opts(),
   },
 }
