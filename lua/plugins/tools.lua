@@ -59,7 +59,7 @@ return {
   {
     "akinsho/toggleterm.nvim",
     cmd = { "ToggleTerm" },
-    -- keys = require("plugins.keymap.toggleterm").keys,
+    keys = keymap.toggleterm,
     opts = utils.wrap_opts(),
     config = utils.wrap_setup(),
   },
@@ -75,8 +75,8 @@ return {
   {
     "stevearc/conform.nvim",
     cmd = { "ConformInfo", "Format", "FormatEnable" },
-    keys = require("plugins.keymap.conform").keys,
-    opts = keymap.conform,
+    keys = keymap.conform,
+    opts = utils.wrap_opts(),
     config = utils.wrap_setup(),
   },
 
