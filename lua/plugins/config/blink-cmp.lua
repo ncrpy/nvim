@@ -15,10 +15,6 @@ M.opts = {
   -- See :h blink-cmp-config-keymap for defining your own keymap
   keymap = {
     preset = "enter",
-    ["<Esc>"] = {
-      "hide",
-      "fallback",
-    },
     ["<C-e>"] = {
       function(cmp)
         if not cmp.is_visible() then
