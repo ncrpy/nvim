@@ -3,7 +3,7 @@ local utils = require("utils")
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false,
+    branch = "main",
     build = function()
       local ok, install = pcall(require, "nvim-treesitter.install")
       return ok and install.update({ with_sync = false })
