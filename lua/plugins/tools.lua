@@ -13,7 +13,7 @@ return {
   {
     "ibhagwan/fzf-lua",
     version = false,
-    enabled = utils.executable("fzf"),
+    cond = utils.executable("fzf"),
     cmd = { "FzfLua" },
     keys = keymap.fzflua,
     opts = {},

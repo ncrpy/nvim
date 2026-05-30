@@ -1,9 +1,10 @@
 local utils = require("utils")
+local keymap = require("plugins.keymap")
 
 return {
   {
     "zbirenbaum/copilot.lua",
-    enabled = utils.executable("node"),
+    cond = utils.executable("node"),
     cmd = { "Copilot" },
     event = { "InsertEnter" },
     opts = utils.wrap_opts(),
@@ -16,7 +17,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     cmd = { "CodeCompanion", "CodeCompanionActions", "CodeCompanionChat", "CodeCompanionCmd" },
-    keys = require("plugins.keymap").codecompanion,
+    keys = keymap.codecompanion,
     opts = utils.wrap_opts()
   },
 }

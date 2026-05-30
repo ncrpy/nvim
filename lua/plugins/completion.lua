@@ -23,7 +23,7 @@ return {
 
   {
     "h-hg/fcitx.nvim",
-    enabled = utils.executable("fcitx5-remote"),
+    cond = utils.executable("fcitx5-remote"),
     event = { "InsertEnter" },
   },
 }
