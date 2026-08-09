@@ -50,6 +50,12 @@ return {
   {
     "rcarriga/nvim-notify",
     cmd = { "Notifications", "NotificationsClear", "NotificationsPick" },
+    init = function()
+      vim.notify = function(msg, ...)
+        vim.notify = require("notify")
+        return vim.notify(msg, ...)
+      end
+    end,
     opts = utils.wrap_opts(),
     config = utils.wrap_setup(),
   },
